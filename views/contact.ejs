@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+
+  <main class="container contact-page">
+    <h1>Kapcsolat</h1>
+    <p>Vegye fel velünk a kapcsolatot, és kezdjük el együtt építeni a digitális jövőt.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h2>Elérhetőségek</h2>
+        <p><strong>Cím:</strong> 1051 Budapest, Fő utca 16.</p>
+        <p><strong>Telefon:</strong> +36 1 234 5678</p>
+        <p><strong>Email:</strong> info@optitech.hu</p>
+      </div>
+
+      <div class="contact-card">
+        <h2>Üzenet küldése</h2>
+        <form action="#" method="post" class="contact-form">
+          <label for="name">Név</label>
+          <input type="text" id="name" name="name" placeholder="Teljes név" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="email@pelda.hu" required />
+
+          <label for="message">Üzenet</label>
+          <textarea id="message" name="message" rows="6" placeholder="Miben segíthetünk?" required></textarea>
+
+          <button type="submit" class="btn">Küldés</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+<%- include('partials/footer') %>

@@ -32,6 +32,14 @@ app.get('/terms', (req, res) => {
   res.render('terms', { title: 'ÁSZF - TudatAI', currentPath: req.path });
 });
 
+app.get('/offline-ai', (req, res) => {
+  res.render('offline-ai', { title: 'Offline AI Megoldások - TudatAI', currentPath: req.path });
+});
+
+app.get('/cloud-ai', (req, res) => {
+  res.render('cloud-ai', { title: 'Cloud AI Megoldások - TudatAI', currentPath: req.path });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

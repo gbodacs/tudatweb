@@ -8,7 +8,7 @@
   --bg: #f0fafb;
   --surface: #ffffff;
   --text: #015249;
-  --muted: #64748b;
+  --muted: #268479;
   --accent: #77c9d4;
   --accent-dark: #57bc90;
   --shadow: 0 20px 40px rgba(16, 30, 70, 0.32);
@@ -45,7 +45,7 @@ body {
 .logo {
   font-weight: 800;
   font-size: 1.45rem;
-  color: var(--accent);
+  color: var(--text);
 }
 
 .logo span {
@@ -94,6 +94,11 @@ body {
   cursor: pointer;
   text-decoration: none;
   transition: background 0.3s ease, color 0.3s ease;
+}
+
+.card .btn {
+  display: inline-block;
+  margin: 1rem auto 0;
 }
 
 .btn {
@@ -146,15 +151,14 @@ body {
 }
 
 .card {
-  background: #e6f7f9;
+  background: #d6f0f0;
   border: 1px solid #c4e8ec;
   border-radius: 0.8rem;
   padding: 1.25rem;
-  transition: box-shadow 0.3s ease;
-}
+  transition: box-shadow 0.3s ease;  text-align: center;}
 
 .card:hover {
-  box-shadow: 0 12px 24px rgba(119, 201, 212, 0.3);
+  box-shadow: 0 12px 24px rgba(109, 191, 202, 0.4);
 }
 
 .card h3 {

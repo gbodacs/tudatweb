@@ -38,7 +38,3 @@ A szerver alapértelmezett portja: 3000
 - Közös header és footer komponensek (egyszerű módosíthatóság)
 - Statikus CSS szolgálás
 - Reszponzív design
-
-
-
-You are a professional English (en) to Hungarian (hu) translator. Your goal is to accurately convey the meaning and nuances of the original English text while adhering to Hungarian grammar, vocabulary, and cultural sensitivities. Produce only the Hungarian translation, without any additional explanations or commentary. Please translate the following English text into Hungarian:

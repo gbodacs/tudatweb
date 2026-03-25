@@ -5,13 +5,13 @@
 }
 
 :root {
-  --bg: #f4f8fb;
+  --bg: #f0fafb;
   --surface: #ffffff;
-  --text: #1f2a44;
+  --text: #015249;
   --muted: #64748b;
-  --accent: #0b72ea;
-  --accent-dark: #0459b6;
-  --shadow: 0 20px 40px rgba(16, 30, 70, 0.12);
+  --accent: #77c9d4;
+  --accent-dark: #57bc90;
+  --shadow: 0 20px 40px rgba(16, 30, 70, 0.32);
 }
 
 body {
@@ -65,7 +65,7 @@ body {
 }
 
 .hero {
-  background: linear-gradient(120deg, #0b72ea 0%, #4294ff 60%, #dbf0ff 100%);
+  background: linear-gradient(120deg, #77c9d4 0%, #57bc90 100%);
   color: #ffffff;
   padding: 5rem 0 4rem;
   text-align: center;
@@ -93,22 +93,26 @@ body {
   border: 0;
   cursor: pointer;
   text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .btn {
-  background: var(--accent);
+  background: var(--accent-dark);
   color: #fff;
 }
 
-.btn:hover,
-.btn-secondary:hover {
-  background: var(--accent-dark);
+.btn:hover {
+  background: #77c9d4;
 }
 
 .btn-secondary {
-  background: #eef5ff;
-  color: var(--accent-dark);
+  background: var(--accent);
+  color: #ffffff;
   margin-top: 1rem;
+}
+
+.btn-secondary:hover {
+  background: #5fb8c8;
 }
 
 .features,
@@ -142,10 +146,15 @@ body {
 }
 
 .card {
-  background: #e5f2ff;
-  border: 1px solid #dfebf8;
+  background: #e6f7f9;
+  border: 1px solid #c4e8ec;
   border-radius: 0.8rem;
   padding: 1.25rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 24px rgba(119, 201, 212, 0.3);
 }
 
 .card h3 {
@@ -166,23 +175,28 @@ body {
 }
 
 .contact-card {
-  background: #f6f8fd;
-  border: 1px solid #d8e4f8;
+  background: #e8f5f0;
+  border: 1px solid #d0e8e2;
   border-radius: 0.8rem;
   padding: 1.25rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  box-shadow: 0 12px 24px rgba(87, 188, 144, 0.3);
 }
 
 .contact-form label {
   display: block;
   font-size: 0.95rem;
   margin-bottom: 0.35rem;
-  color: #24334f;
+  color: #015249;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  border: 1px solid #c8d5ee;
+  border: 1px solid #77c9d4;
   border-radius: 0.55rem;
   padding: 0.7rem;
   margin-bottom: 0.8rem;
@@ -192,14 +206,22 @@ body {
 .site-footer {
   margin-top: 2rem;
   padding: 1.4rem 0;
-  background: #0f1f3e;
-  color: #d8e4ff;
+  background: #4a9b85;
+  color: #e6f7f9;
+  text-align: center;
 }
 
 .footer-grid {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  text-align: center;
+}
+
+.site-footer h4,
+.site-footer p,
+.site-footer a {
+  text-align: center;
 }
 
 .site-footer h4 {
@@ -209,7 +231,7 @@ body {
 
 .site-footer a {
   display: inline-block;
-  color: #9bb6ef;
+  color: #77c9d4;
   text-decoration: none;
   margin-bottom: 0.35rem;
 }

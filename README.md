@@ -1,6 +1,6 @@
-# Tudatai - Tudat.AI Weboldal
+# Tudatai - TudatAI Weboldal
 
-Ez a projekt az Tudat.AI vállalati weboldalának TypeScript Node.js implementációja Express.js és EJS template engine használatával.
+Ez a projekt az TudatAI vállalati weboldalának TypeScript Node.js implementációja Express.js és EJS template engine használatával.
 
 ## Telepítés
 

@@ -13,23 +13,23 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // Routes
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Tudat.AI - Professzionális vállalati weboldal', currentPath: req.path });
+  res.render('index', { title: 'TudatAI - Professzionális vállalati weboldal', currentPath: req.path });
 });
 
 app.get('/about', (req, res) => {
-  res.render('about', { title: 'About - Tudat.AI', currentPath: req.path });
+  res.render('about', { title: 'About - TudatAI', currentPath: req.path });
 });
 
 app.get('/contact', (req, res) => {
-  res.render('contact', { title: 'Contact - Tudat.AI', currentPath: req.path });
+  res.render('contact', { title: 'Contact - TudatAI', currentPath: req.path });
 });
 
 app.get('/privacy', (req, res) => {
-  res.render('privacy', { title: 'Adatvédelmi irányelvek - Tudat.AI', currentPath: req.path });
+  res.render('privacy', { title: 'Adatvédelmi irányelvek - TudatAI', currentPath: req.path });
 });
 
 app.get('/terms', (req, res) => {
-  res.render('terms', { title: 'ÁSZF - Tudat.AI', currentPath: req.path });
+  res.render('terms', { title: 'ÁSZF - TudatAI', currentPath: req.path });
 });
 
 app.listen(port, () => {

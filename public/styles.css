@@ -11,7 +11,11 @@
   --muted: #268479;
   --accent: #77c9d4;
   --accent-dark: #57bc90;
-  --shadow: 0 20px 40px rgba(16, 30, 70, 0.12);
+  --shadow: 0 20px 40px rgba(16, 30, 70, 0.08);
+}
+
+.features ul li {
+  margin-left: 20px;
 }
 
 body {

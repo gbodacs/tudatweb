@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tudatai.hu/sitemap.xml
+Host: tudatai.hu

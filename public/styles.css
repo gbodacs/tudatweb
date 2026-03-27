@@ -11,7 +11,7 @@
   --muted: #268479;
   --accent: #77c9d4;
   --accent-dark: #57bc90;
-  --shadow: 0 20px 40px rgba(16, 30, 70, 0.32);
+  --shadow: 0 20px 40px rgba(16, 30, 70, 0.12);
 }
 
 body {
@@ -126,7 +126,7 @@ body {
 .contact-page {
   background: var(--surface);
   margin-top: 1.2rem;
-  border-radius: 1.1rem;
+  border-radius: 0.8rem;
   box-shadow: var(--shadow);
   padding: 2rem;
 }
@@ -148,6 +148,17 @@ body {
   display: grid;
   gap: 1.25rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.logo a {
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: var(--accent-dark);
 }
 
 .card {

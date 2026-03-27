@@ -4,11 +4,37 @@ import fs from 'fs';
 import validator from 'validator';
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 // Set EJS as the template engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
+
+// SEO helpers
+const defaultKeywords = 'AI, mesterséges intelligencia, offline AI, felhős AI, automatizálás, prediktív analitika';
+const defaultImage = '/images/og-image.png';
+
+function renderSEO(
+  res: express.Response,
+  view: string,
+  title: string,
+  description: string,
+  currentPath: string,
+  extra: Record<string, unknown> = {}
+) {
+  res.render(view, {
+    title,
+    description,
+    keywords: defaultKeywords,
+    ogTitle: title,
+    ogDescription: description,
+    ogType: 'website',
+    ogUrl: `https://tudatai.hu${currentPath}`,
+    ogImage: defaultImage,
+    currentPath,
+    ...extra,
+  });
+}
 
 // Serve static files (CSS, images, etc.)
 app.use(express.static(path.join(__dirname, '../public')));
@@ -19,17 +45,17 @@ app.use(express.json());
 
 // Routes
 app.get('/', (req, res) => {
-  res.render('index', { title: 'TudatAI - Professzionális vállalati weboldal', currentPath: req.path });
+  renderSEO(res, 'index', 'TudatAI - Offline és felhős AI megoldások', 'TudatAI: Skálázható, biztonságos offline és felhős AI megoldások vállalatoknak.', req.path);
 });
 
 app.get('/about', (req, res) => {
-  res.render('about', { title: 'About - TudatAI', currentPath: req.path });
+  renderSEO(res, 'about', 'Rólunk - TudatAI', 'Ismerje meg a TudatAI csapatát, küldetését és szakértői AI szolgáltatásait.', req.path);
 });
 
 app.get('/contact', (req, res) => {
   const success = req.query.success === '1';
   const error = req.query.error;
-  res.render('contact', { title: 'Contact - TudatAI', currentPath: req.path, success, error });
+  renderSEO(res, 'contact', 'Kapcsolat - TudatAI', 'Lépjen kapcsolatba velünk: kérjen bemutatót vagy árajánlatot offline és felhős AI megoldásokra.', req.path, { success, error });
 });
 
 app.post('/contact', (req, res) => {
@@ -37,10 +63,10 @@ app.post('/contact', (req, res) => {
 
   // Validation
   if (!validator.isEmail(email)) {
-    return res.render('contact', { title: 'Contact - TudatAI', currentPath: req.path, success: false, error: 'Érvénytelen email cím.' });
+    return renderSEO(res, 'contact', 'Kapcsolat - TudatAI', 'Lépjen kapcsolatba velünk: kérjen bemutatót vagy árajánlatot offline és felhős AI megoldásokra.', req.path, { success: false, error: 'Érvénytelen email cím.' });
   }
   if (message.length > 200) {
-    return res.render('contact', { title: 'Contact - TudatAI', currentPath: req.path, success: false, error: 'Az üzenet maximum 200 karakter lehet.' });
+    return renderSEO(res, 'contact', 'Kapcsolat - TudatAI', 'Lépjen kapcsolatba velünk: kérjen bemutatót vagy árajánlatot offline és felhős AI megoldásokra.', req.path, { success: false, error: 'Az üzenet maximum 200 karakter lehet.' });
   }
 
   // Sanitize inputs
@@ -66,19 +92,19 @@ app.post('/contact', (req, res) => {
 });
 
 app.get('/privacy', (req, res) => {
-  res.render('privacy', { title: 'Adatvédelmi irányelvek - TudatAI', currentPath: req.path });
+  renderSEO(res, 'privacy', 'Adatvédelmi irányelvek - TudatAI', 'Áttekintés az adatkezelési gyakorlatainkról a TudatAI rendszerben.', req.path);
 });
 
 app.get('/terms', (req, res) => {
-  res.render('terms', { title: 'ÁSZF - TudatAI', currentPath: req.path });
+  renderSEO(res, 'terms', 'ÁSZF - TudatAI', 'Általános szerződési feltételek az offline és felhős AI szolgáltatásainkhoz.', req.path);
 });
 
 app.get('/offline-ai', (req, res) => {
-  res.render('offline-ai', { title: 'Offline AI Megoldások - TudatAI', currentPath: req.path });
+  renderSEO(res, 'offline-ai', 'Offline AI Megoldások - TudatAI', 'Biztonságos, internetkapcsolat nélküli AI rendszereinkkel teljes adatkontroll és magas rendelkezésre állás.', req.path);
 });
 
 app.get('/cloud-ai', (req, res) => {
-  res.render('cloud-ai', { title: 'Cloud AI Megoldások - TudatAI', currentPath: req.path });
+  renderSEO(res, 'cloud-ai', 'Felhős AI Megoldások - TudatAI', 'Skálázható, felhőalapú AI megoldások és harmadik fél integrációk üzleti növekedéshez.', req.path);
 });
 
 app.listen(port, () => {

@@ -4,12 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= title %></title>
+  <meta name="description" content="<%= description || 'TudatAI: innovatív offline és felhős AI megoldások vállalatok számára.' %>" />
+  <meta name="keywords" content="<%= keywords || 'AI, mesterséges intelligencia, offline AI, felhős AI, AI szolgáltatások, automatizálás' %>" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://tudatai.hu<%= currentPath %>" />
+
+  <meta property="og:title" content="<%= ogTitle || title %>" />
+  <meta property="og:description" content="<%= ogDescription || description || 'TudatAI: innovatív offline és felhős AI megoldások vállalatok számára.' %>" />
+  <meta property="og:type" content="<%= ogType || 'website' %>" />
+  <meta property="og:url" content="<%= ogUrl || ('https://tudatai.hu' + currentPath) %>" />
+  <meta property="og:image" content="<%= ogImage || '/images/og-image.png' %>" />
+  <meta property="og:locale" content="hu_HU" />
+
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <div class="logo">TudatAI</div>
+      <div class="logo"><a href="/">TudatAI</a></div>
       <nav class="main-nav">
         <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">Főoldal</a>
         <a href="/about" class="<%= currentPath === '/about' ? 'active' : '' %>">Rólunk</a>

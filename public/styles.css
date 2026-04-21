@@ -23,6 +23,9 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -227,7 +230,7 @@ body {
 }
 
 .site-footer {
-  margin-top: 2rem;
+  margin-top: auto;
   padding: 1.4rem 0;
   background: #4a9b85;
   color: #e6f7f9;

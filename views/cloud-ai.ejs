@@ -2,32 +2,34 @@
 
   <section class="products">
     <div class="container">
-    <h1>Felhős AI megoldások</h1>
-    <p>Igény esetén felhő alapú, skálázható AI megoldások tervezését és építését is vállaljuk.</p>
+    <h1><%= t('cloud.pageTitle') %></h1>
+    <p><%= t('cloud.introduction') %></p>
 
     <section class="features">
-      <h2>Egyedi AI rendszerek tervezése és fejlesztése</h2>
+      <h2><%= t('cloud.customDesignTitle') %></h2>
       <ul>
-        <li>az Ön üzleti igényeire szabott megoldások</li>
-        <li>skálázható architektúra</li>
-        <li>integráció meglévő rendszerekkel</li>
+        <li><%= t('cloud.tailoredSolutions') %></li>
+        <li><%= t('cloud.scalableArchitecture') %></li>
+        <li><%= t('cloud.existingIntegration') %></li>
       </ul>
     </section>
 
     <section class="features">
-      <h2>Konzultáció és tervezés</h2>
+      <h2><%= t('cloud.consultationTitle') %></h2>
       <ul>
-        <li>üzleti igények feltérképezése</li>
-        <li>technológiai döntéstámogatás</li>
-        <li>költséghatékony megoldások kialakítása</li>
+        <li><%= t('cloud.requirementMapping') %></li>
+        <li><%= t('cloud.technologyDecision') %></li>
+        <li><%= t('cloud.costEffective') %></li>
       </ul>
     </section>
 
     <section class="features">
-      <h2>Kérjen egyedi ajánlatot</h2>
-      <p>Érdeklődjön csapatunktól a testreszabott felhős AI csomagokért.</p>
+      <h2><%= t('cloud.customOfferTitle') %></h2>
+      <p><%= t('cloud.customOfferDescription') %></p>
     </section>
   </div>
 </section>
-
+<div style="text-align:center"> 
+<a href="/contact" class="btn-secondary"><%= t('cloud.consultationButton') %></a>
+</div>
 <%- include('partials/footer') %>

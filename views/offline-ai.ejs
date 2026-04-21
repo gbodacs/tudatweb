@@ -2,52 +2,52 @@
 
   <section class="products">
     <div class="container">
-    <h1>Offline AI megoldások</h1>
-    <p>Zárt, internetkapcsolat nélküli környezetben működő AI rendszer, amely teljes kontrollt biztosít Ön számára az adatai felett.</p>
+    <h1><%= t('offline.pageTitle') %></h1>
+    <p><%= t('offline.introduction') %></p>
 
     <section class="features">
-      <h2>Helyben telepített AI rendszer</h2>
-      <p>AI megoldás, amely az Ön vállalatának belső hálózatán érhető el.</p>
+      <h2><%= t('offline.onPremisesTitle') %></h2>
+      <p><%= t('offline.onPremisesDescription') %></p>
       <ul>
-        <li>nem érhető el az internetről (igény szerint)</li>
-        <li>nem használ külső szolgáltatásokat</li>
-        <li>nem továbbít adatokat külső rendszerekbe</li>
-        <li>teljes körű kontroll és biztonság</li>
+        <li><%= t('offline.notAccessibleFromInternet') %></li>
+        <li><%= t('offline.noExternalServices') %></li>
+        <li><%= t('offline.noDataTransfer') %></li>
+        <li><%= t('offline.fullControl') %></li>
       </ul>
       </br>
-      <h3>Infrastruktúra támogatás:</h3>
+      <h3><%= t('offline.infrastructureSupport') %></h3>
       <ul>
-        <li>szükség esetén megfelelő hardver biztosítása (kölcsönzés)</li>
-        <li>segítség a kezdeti infrastruktúra kialakításában</li>
-        <li>belső hálózati működés optimalizálása</li>
-        <li>a rendszer hatékony használatának támogatása a munkavállalók számára</li>
+        <li><%= t('offline.hardwareProvision') %></li>
+        <li><%= t('offline.infrastructureHelp') %></li>
+        <li><%= t('offline.networkOptimization') %></li>
+        <li><%= t('offline.userSupport') %></li>
       </ul>
     </section>
 
     <section class="features">
-      <h2>Intelligens keresés vállalati adatokban</h2>
-      <p>Gyors és pontos keresés a vállalati tudástárban.</p>
+      <h2><%= t('offline.enterpriseSearchTitle') %></h2>
+      <p><%= t('offline.enterpriseSearchDescription') %></p>
       <ul>
-        <li>dokumentumok és belső anyagok feldolgozása</li>
-        <li>több adatforrás együttes kezelése</li>
-        <li>a használt rendszerekhez igazítható működés</li>
-        <li>átlátható és egyszerű használat</li>
+        <li><%= t('offline.documentProcessing') %></li>
+        <li><%= t('offline.multiSource') %></li>
+        <li><%= t('offline.adaptableOperation') %></li>
+        <li><%= t('offline.simpleUsage') %></li>
       </ul>
     </section>
 
     <section class="features">
-      <h2>Biztonságos fordítás</h2>
-      <p>Szövegek fordítása külső szolgáltatások igénybevétele nélkül.</p>
+      <h2><%= t('offline.secureTranslationTitle') %></h2>
+      <p><%= t('offline.secureTranslationDescription') %></p>
       <ul>
-        <li>belső dokumentumok fordítása</li>
-        <li>adatbiztonság megőrzése</li>
-        <li>gyors és megbízható működés</li>
+        <li><%= t('offline.internalDocTranslation') %></li>
+        <li><%= t('offline.dataSecurity') %></li>
+        <li><%= t('offline.reliableOperation') %></li>
       </ul>
     </section>
 
     <section class="features">
-      <h2>Automatizált feldolgozás</h2>
-      <p>AI alapú támogatás a mindennapi munkafolyamatokhoz.</p>
+      <h2><%= t('offline.automatedProcessingTitle') %></h2>
+      <p><%= t('offline.automatedProcessingDescription') %></p>
       <ul>
         <li>információk összegyűjtése több forrásból</li>
         <li>ismétlődő feladatok egyszerűsítése</li>
@@ -56,5 +56,8 @@
     </section>
   </div>
 </section>
+<div style="text-align:center"> 
+<a href="/contact" class="btn-secondary"><%= t('automatization.consultationButton') %></a>
+</div>
 
 <%- include('partials/footer') %>

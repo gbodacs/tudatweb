@@ -2,78 +2,103 @@
 
   <section class="hero">
     <div class="container">
-      <h1>Innováció + AI = TudatAI</h1>
-      <p>Fejlett felhős és offline AI megoldások vállalatok számára</p>
-      <a href="#products" class="btn">Ismerje meg szolgáltatásainkat</a>
+      <h1><%= t('home.heroTitle') %></h1>
+      <p><%= t('home.heroSubtitle') %></p>
+      <a href="#products" class="btn"><%= t('home.heroButton') %></a>
     </div>
   </section>
 
   <section class="products" id="products">
     <div class="container">
-      <h1>Szolgáltatásaink</h1>
-      <p>Skálázható felhős és offline AI megoldások, amelyek növelik csapata hatékonyságát</p>
+      </br>
+      <h2><%= t('home.productsSection') %></h2>
+      <p><%= t('home.productsDescription') %></p>
       </br>
       <div class="grid">
         <article class="card">
-          <h3>AI Asszisztensek és Chatbotok</h3>
-          <p>Intelligens chatbotok és virtuális asszisztensek, amelyek automatizálják az ügyfélkapcsolatokat és belső folyamatokat.</p>
+          <h3><%= t('home.lossStopTitle') %></h3>
+          <p><%= t('home.lossStopDescription') %></p>
         </article>
         <article class="card">
-          <h3>Prediktív Elemzések és BI</h3>
-          <p>Valós idejű adatanalitika és prediktív modellek, amelyek segítenek a jövőbeli trendek előrejelzésében és döntéshozatalban.</p>
+          <h3><%= t('home.digitalColleagueTitle') %></h3>
+          <p><%= t('home.digitalColleagueDescription') %></p>
         </article>
         <article class="card">
-          <h3>Automatizált Üzleti Folyamatok</h3>
-          <p>AI-alapú automatizálás, amely optimalizálja a munkafolyamatokat és csökkenti a manuális munka időigényét.</p>
+          <h3><%= t('home.internationalPackageTitle') %></h3>
+          <p><%= t('home.internationalPackageDescription') %></p>
+        </article>
+      </div>
+
+      </br>
+      </br>
+      <h2><%= t('home.remoteSection') %></h2>
+      <p><%= t('home.remoteDescription') %></p>
+      </br>
+      <div class="grid">
+        <article class="card">
+          <h3><%= t('home.aiAssistantsTitle') %></h3>
+          <p><%= t('home.aiAssistantsDescription') %></p>
+        </article>
+        <article class="card">
+          <h3><%= t('home.predictiveAnalyticsTitle') %></h3>
+          <p><%= t('home.predictiveAnalyticsDescription') %></p>
+        </article>
+        <article class="card">
+          <h3><%= t('home.automatedProcessesTitle') %></h3>
+          <p><%= t('home.automatedProcessesDescription') %></p>
         </article>
       </div>
       </br>
-      <p>Zárt, internetkapcsolat nélküli környezetben működő AI rendszer, amely teljes kontrollt biztosít Önnek, az adatai felett.</p>
+      </br>
+      <h2><%= t('home.secureSection') %></h2>
+      <p><%= t('home.secureDescription') %></p>
       </br>
       <div class="grid">
         <article class="card">
-          <h3>Offline AI Modellek Gépbérlettel</h3>
-          <p>Béreljen AI hardvereket és modelleket offline használatra, teljes adatbiztonsággal és egyedi konfigurációval.</p>
+          <h3><%= t('home.offlineModelsTitle') %></h3>
+          <p><%= t('home.offlineModelsDescription') %></p>
         </article>
         <article class="card">
-          <h3>Egyedi AI Megoldások Fejlesztése</h3>
-          <p>Testreszabott AI alkalmazások fejlesztése specifikus üzleti igények alapján, offline vagy felhős környezetben.</p>
+          <h3><%= t('home.customSolutionsTitle') %></h3>
+          <p><%= t('home.customSolutionsDescription') %></p>
         </article>
         <article class="card">
-          <h3>Biztonságos Offline Adatfeldolgozás</h3>
-          <p>Adatvédelmi szempontból biztonságos AI feldolgozás helyi infrastruktúrán, felhős szolgáltatások használata nélkül.</p>
+          <h3><%= t('home.secureProcessingTitle') %></h3>
+          <p><%= t('home.secureProcessingDescription') %></p>
         </article>
       </div>
     </div>
   </section>
 
+  </br>
     <div class="container">
-      <h1>Rólunk</h1>
-      <p>Csapatunk AI szakértőkből áll, akik kis- és középvállalatok számára megfizethető és prémium szintű AI szolgáltatásokat nyújtunk. Célunk, hogy minden ügyfelünk hosszú távon nyerje vissza befektetését az AI innovációban.</p>
+      <h1><%= t('home.aboutSection') %></h1>
+      <p><%= t('home.aboutDescription') %></p>
       </br>
-      <a href="/about" class="btn">Tovább a Rólunk oldalra</a>
+      <a href="/about" class="btn"><%= t('home.aboutButton') %></a>
     </div>
 
+    </br>
     <section class="products" id="products22">
     <div class="container">
       <div class="grid">
         <article class="card">
-          <h3>Offline AI megoldások</h3>
-            <p>Zárt, internetkapcsolat nélküli környezetben működő AI rendszer, amely teljes kontrollt biztosít Ön számára az adatai felett.</p>
+          <h3><%= t('nav.offline') %></h3>
+            <p><%= t('home.secureDescription') %></p>
             </br>
-            <a href="/offline-ai" class="btn">Offline AI megoldások</a>
+            <a href="/offline-ai" class="btn"><%= t('home.offlineAiButton') %></a>
         </article>
         <article class="card">
-          <h3>Kérjen bemutatót</h3>
-            <p>Tegye hatékonyabbá vállalata működését gyors, intelligens és biztonságos AI megoldásainkkal.</p>
+          <h3><%= t('home.aboutSection') %></h3>
+            <p><%= t('home.callToActionDescription') %></p>
             </br>
-            <a href="/contact" class="btn">Kapcsolat</a>
+            <a href="/contact" class="btn"><%= t('home.contactButton') %></a>
         </article>
         <article class="card">
-        <h3>Felhős AI megoldások</h3>
-          <p>Igény esetén felhő alapú, skálázható AI megoldások tervezését és megvalósítását is vállaljuk.</p>
+        <h3><%= t('nav.cloud') %></h3>
+          <p><%= t('cloud.introduction') %></p>
           </br>
-          <a href="/cloud-ai" class="btn">Felhős AI megoldások</a>
+          <a href="/cloud-ai" class="btn"><%= t('home.cloudAiButton') %></a>
         </article>
       </div>
     </div>

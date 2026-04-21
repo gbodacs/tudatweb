@@ -1,21 +1,22 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <h4>TudatAI</h4>
-        <p>Email: tudatai@protonmail.com</p>
-        <p>Az oldal nem használ sütiket (cookies).</p>
+        <h4><%= t('footer.companyName') %></h4>
+        <p><%= t('footer.email') %></p>
+        <p><%= t('footer.noCookies') %></p>
       </div>
       <div>
-        <h4>Gyors linkek</h4>
-        <p><a href="/">Főoldal</a></p>
-        <p><a href="/about">Rólunk</a> | <a href="/contact">Kapcsolat</a></p>
-        <p><a href="/offline-ai">Offline AI</a> | <a href="/cloud-ai">Cloud AI</a></p>
-        <p>&copy; 2026 TudatAI. Minden jog fenntartva.</p>
+        <h4><%= t('footer.quickLinks') %></h4>
+        <p><a href="/"><%= t('nav.home') %></a></p>
+        <p><a href="/about"><%= t('nav.about') %></a> | <a href="/contact"><%= t('nav.contact') %></a></p>
+        <p><a href="/offline-ai"><%= t('nav.offline') %></a> | <a href="/cloud-ai"><%= t('nav.cloud') %></a></p>
+        <p><%= t('footer.copyright') %></p>
       </div>
       <div>
-        <h4>Jogi nyilatkozat</h4>
-        <p><a href="/privacy">Adatvédelmi irányelvek</a></p> 
-        <p><a href="/terms">Felhasználási feltételek</a>.</p>
+        <h4><%= t('footer.legalStatements') %></h4>
+        <p><a href="/privacy"><%= t('footer.privacyPolicy') %></a></p> 
+        <p><a href="/terms"><%= t('footer.termsOfService') %></a></p>
+        <p><a href="/cookiepolicy"><%= t('footer.cookiePolicy') %></a></p>
       </div>
     </div>
   </footer>

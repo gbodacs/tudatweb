@@ -2,63 +2,63 @@
   </br>
   </br>
   <main class="container about-page">
-    <h1>Adatvédelmi tájékoztató</h1>
+    <h1><%= t('privacy.pageTitle') %></h1>
     </br>
-    <h2>1. Bevezetés</h2>
-    <p>Jelen adatvédelmi tájékoztató célja, hogy ismertesse, hogyan kezeljük a weboldalon keresztül megadott személyes adatokat.</p>
-    <p>Az adatkezelő elkötelezett a személyes adatok védelme iránt, és az adatkezelést a hatályos jogszabályoknak megfelelően végzi.</p>
+    <h2><%= t('privacy.introduction') %></h2>
+    <p><%= t('privacy.introductionText') %></p>
+    <p><%= t('privacy.commitmentText') %></p>
     </br>
-    <h2>2. Az adatkezelő adatai</h2>
-    <p>Név: TudatAI</p>
-    <p>Székhely: Budapest XIV Erdőkerülő utca 21.</p>
-    <p>E-mail: tudatai@protonmail.com</p>
+    <h2><%= t('privacy.controllerDataTitle') %></h2>
+    <p><%= t('privacy.name') %></p>
+    <p><%= t('privacy.address') %></p>
+    <p><%= t('privacy.email') %></p>
     </br>
-    <h2>3. A kezelt adatok köre</h2>
-    <p>A weboldalon található kapcsolatfelvételi űrlapon keresztül az alábbi adatokat kezeljük:</p>
-    <p>- E-mail cím</p>
-    <p>- Az üzenetben megadott egyéb személyes adatok</p>
+    <h2><%= t('privacy.dataProcessedTitle') %></h2>
+    <p><%= t('privacy.dataProcessedText') %></p>
+    <p><%= t('privacy.emailData') %></p>
+    <p><%= t('privacy.personalData') %></p>
     </br>
-    <h2>4. Az adatkezelés célja</h2>
-    <p>Az adatkezelés célja:</p>
-    <p>- Kapcsolatfelvétel biztosítása</p>
-    <p>- Beérkező megkeresések megválaszolása</p>
+    <h2><%= t('privacy.processingPurposeTitle') %></h2>
+    <p><%= t('privacy.processingPurposeText') %></p>
+    <p><%= t('privacy.contactPurpose') %></p>
+    <p><%= t('privacy.responsePurpose') %></p>
     </br>
-    <h2>5. Az adatkezelés jogalapja</h2>
-    <p>Az adatkezelés jogalapja az érintett önkéntes hozzájárulása, amelyet az űrlap elküldésével ad meg.</p>
+    <h2><%= t('privacy.legalBasisTitle') %></h2>
+    <p><%= t('privacy.legalBasisText') %></p>
     </br>
-    <h2>6. Az adatok tárolásának időtartama</h2>
-    <p>A személyes adatokat:</p>
-    <p>- a kapcsolatfelvétel lezárásáig, vagy</p>
-    <p>- legfeljebb 6 hónapig</p>
-    <p>őrizzük meg, kivéve, ha jogszabály hosszabb megőrzési időt ír elő.</p>
+    <h2><%= t('privacy.storageDurationTitle') %></h2>
+    <p><%= t('privacy.storageDurationText') %></p>
+    <p><%= t('privacy.storageDuration1') %></p>
+    <p><%= t('privacy.storageDuration2') %></p>
+    <p><%= t('privacy.storageDuration3') %></p>
     </br>
-    <h2>7. Adattovábbítás</h2>
-    <p>A személyes adatokat harmadik fél részére nem továbbítjuk, kivéve:</p>
-    <p>- jogszabályi kötelezettség esetén</p>
+    <h2><%= t('privacy.dataSharingTitle') %></h2>
+    <p><%= t('privacy.dataSharingText') %></p>
+    <p><%= t('privacy.legalObligation') %></p>
     </br>
-    <h2>8. Adatfeldolgozók</h2>
-    <p>A weboldal működtetése során az alábbi adatfeldolgozók vehetnek részt:</p>
-    <p>- Tárhelyszolgáltató - Amazon Web Services</p>
+    <h2><%= t('privacy.processorTitle') %></h2>
+    <p><%= t('privacy.processorText') %></p>
+    <p><%= t('privacy.hostingProvider') %></p>
     </br>
-    <h2>9. Az érintettek jogai</h2>
-    <p>Az érintettek jogosultak:</p>
-    <p>- tájékoztatást kérni a kezelt adataikról</p>
-    <p>- kérni az adatok helyesbítését</p>
-    <p>- kérni az adatok törlését</p>
-    <p>- kérni az adatkezelés korlátozását</p>
-    <p>- tiltakozni az adatkezelés ellen</p>
-    <p>Jogérvényesítés: tudatai@protonmail.com</p>
+    <h2><%= t('privacy.rightsTitle') %></h2>
+    <p><%= t('privacy.rightsIntro') %></p>
+    <p><%= t('privacy.rightInfo') %></p>
+    <p><%= t('privacy.rightCorrection') %></p>
+    <p><%= t('privacy.rightDeletion') %></p>
+    <p><%= t('privacy.rightRestriction') %></p>
+    <p><%= t('privacy.rightObjection') %></p>
+    <p><%= t('privacy.contactEmail') %></p>
     </br>
-    <h2>10. Jogorvoslati lehetőségek</h2>
-    <p>Az érintett panasszal fordulhat a felügyeleti hatósághoz, vagy bírósághoz fordulhat.</p>
-    <p>Felügyeleti hatóság:</p>
-    <p>Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH)</p>
-    <p>Cím: 1055 Budapest, Falk Miksa utca 9-11.</p>
-    <p>Web: https://naih.hu</p>
+    <h2><%= t('privacy.remediesTitle') %></h2>
+    <p><%= t('privacy.remediesText') %></p>
+    <p><%= t('privacy.authorityLabel') %></p>
+    <p><%= t('privacy.authorityName') %></p>
+    <p><%= t('privacy.authorityAddress') %></p>
+    <p><%= t('privacy.authorityWeb') %></p>
     </br>
-    <h2>11. Egyéb rendelkezések</h2>
-    <p>Az adatkezelő fenntartja a jogot jelen tájékoztató módosítására. A módosított verzió a weboldalon történő közzététellel lép hatályba.</p>
-    <p>Hatálybalépés dátuma: 2026. március 25.</p>
+    <h2><%= t('privacy.otherProvisionsTitle') %></h2>
+    <p><%= t('privacy.modificationRightText') %></p>
+    <p><%= t('privacy.effectiveDate') %></p>
   </main>
   </br>
   </br>

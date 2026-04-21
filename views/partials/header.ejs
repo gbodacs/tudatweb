@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="<%= language %>">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= title %></title>
-  <meta name="description" content="<%= description || 'TudatAI: innovatív offline és felhős AI megoldások vállalatok számára.' %>" />
-  <meta name="keywords" content="<%= keywords || 'AI, mesterséges intelligencia, offline AI, felhős AI, AI szolgáltatások, automatizálás' %>" />
+  <meta name="description" content="<%= description || t('home.metaDescription') %>" />
+  <meta name="keywords" content="<%= keywords || t('home.metaDescription') %>" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://tudatai.hu<%= currentPath %>" />
 
   <meta property="og:title" content="<%= ogTitle || title %>" />
-  <meta property="og:description" content="<%= ogDescription || description || 'TudatAI: innovatív offline és felhős AI megoldások vállalatok számára.' %>" />
+  <meta property="og:description" content="<%= ogDescription || description || t('home.metaDescription') %>" />
   <meta property="og:type" content="<%= ogType || 'website' %>" />
   <meta property="og:url" content="<%= ogUrl || ('https://tudatai.hu' + currentPath) %>" />
   <meta property="og:image" content="<%= ogImage || '/images/og-image.png' %>" />
-  <meta property="og:locale" content="hu_HU" />
+  <meta property="og:locale" content="<%= ogLocale || 'hu_HU' %>" />
 
   <link rel="stylesheet" href="/styles.css" />
 </head>
@@ -23,11 +23,21 @@
     <div class="container header-inner">
       <div class="logo"><a href="/">TudatAI</a></div>
       <nav class="main-nav">
-        <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">Főoldal</a>
-        <a href="/about" class="<%= currentPath === '/about' ? 'active' : '' %>">Rólunk</a>
-        <a href="/offline-ai" class="<%= currentPath === '/offline-ai' ? 'active' : '' %>">Offline AI</a>
-        <a href="/cloud-ai" class="<%= currentPath === '/cloud-ai' ? 'active' : '' %>">Cloud AI</a>
-        <a href="/contact" class="<%= currentPath === '/contact' ? 'active' : '' %>">Kapcsolat</a>
+        <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>"><%= t('nav.home') %></a>
+        <a href="/about" class="<%= currentPath === '/about' ? 'active' : '' %>"><%= t('nav.about') %></a>
+        <a href="/automat-ai" class="<%= currentPath === '/automat-ai' ? 'active' : '' %>"><%= t('nav.automat') %></a>
+        <a href="/offline-ai" class="<%= currentPath === '/offline-ai' ? 'active' : '' %>"><%= t('nav.offline') %></a>
+        <a href="/cloud-ai" class="<%= currentPath === '/cloud-ai' ? 'active' : '' %>"><%= t('nav.cloud') %></a>
+        <a href="/contact" class="<%= currentPath === '/contact' ? 'active' : '' %>"><%= t('nav.contact') %></a>
       </nav>
+      <div class="language-selector">
+        <select onchange="window.location.href='<%= currentPath %>?lang=' + this.value" value="<%= language %>">
+          <% availableLanguages.forEach(lang => { %>
+            <option value="<%= lang %>" <%= language === lang ? 'selected' : '' %>>
+              <%= lang === 'hu' ? 'Magyar' : lang === 'en' ? 'English' : 'Deutsch' %>
+            </option>
+          <% }); %>
+        </select>
+      </div>
     </div>
   </header>

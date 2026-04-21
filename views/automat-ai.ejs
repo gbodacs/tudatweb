@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+
+  <section class="products">
+    <div class="container">
+    <h1><%= t('automatization.pageTitle') %></h1>
+    <p><%= t('automatization.introduction') %></p>
+    <section class="features">
+      <h2><%= t('automatization.whyChooseTitle') %></h2>
+      <p><%= t('automatization.whyChooseDescription') %></p>
+      <p><%= t('automatization.coreMessage') %></p>
+    </section>
+    <section class="features">
+      <h2><%= t('automatization.solutionsTitle') %></h2>
+      </br>
+      <h3><%= t('automatization.digitalColleagueTitle') %></h3>
+      <p><%= t('automatization.digitalColleagueDescription') %></p>
+      </br>
+      <h3><%= t('automatization.lossStopTitle') %></h3>
+      <p><%= t('automatization.lossStopDescription') %></p>
+      </br>
+      <h3><%= t('automatization.internationalTitle') %></h3>
+      <p><%= t('automatization.internationalDescription') %></p>
+    </section>
+    </br>
+    <p><b><%= t('automatization.conclusionMessage') %></b></p>
+  </div>
+</section>
+<div style="text-align:center"> 
+<a href="/contact" class="btn-secondary"><%= t('automatization.consultationButton') %></a>
+</div>
+<%- include('partials/footer') %>

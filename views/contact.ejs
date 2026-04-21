@@ -1,11 +1,11 @@
 <%- include('partials/header') %>
 
   <main class="container contact-page">
-    <h1>Kapcsolat</h1>
-    <p>Vegye fel velünk a kapcsolatot és építsük együtt az automatizált digitális jövőt.</p>
+    <h1><%= t('contact.pageTitle') %></h1>
+    <p><%= t('contact.introduction') %></p>
     </br>
     <% if (success) { %>
-      <p style="color: green;">Köszönjük az üzenetet! Hamarosan felvesszük Önnel a kapcsolatot.</p>
+      <p style="color: green;"><%= t('contact.successMessage') %></p>
       </br>
     <% } %>
     <% if (error) { %>
@@ -15,23 +15,23 @@
 
     <div class="contact-grid">
       <div class="contact-card">
-        <h2>Elérhetőségeink</h2>
-        <p><strong>Email:</strong> tudatai@protonmail.com</p>
+        <h2><%= t('contact.contactDetails') %></h2>
+        <p><strong><%= t('contact.emailLabel') %></strong> <%= t('contact.emailValue') %></p>
       </div>
 
       <div class="contact-card">
-        <h2>Üzenet küldése</h2>
+        <h2><%= t('contact.messageForm') %></h2>
         <form action="/contact" method="post" class="contact-form">
-          <label for="name">Név</label>
-          <input type="text" id="name" name="name" placeholder="Teljes név" required />
+          <label for="name"><%= t('contact.nameLabel') %></label>
+          <input type="text" id="name" name="name" placeholder="<%= t('contact.namePlaceholder') %>" required />
 
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="email@pelda.hu" required />
+          <label for="email"><%= t('contact.emailFormLabel') %></label>
+          <input type="email" id="email" name="email" placeholder="<%= t('contact.emailPlaceholder') %>" required />
 
-          <label for="message">Üzenet (200 karakter)</label>
-          <textarea id="message" name="message" rows="6" placeholder="Miben segíthetünk?" required></textarea>
+          <label for="message"><%= t('contact.messageLabel') %></label>
+          <textarea id="message" name="message" rows="6" placeholder="<%= t('contact.messagePlaceholder') %>" required></textarea>
 
-          <button type="submit" class="btn">Küldés</button>
+          <button type="submit" class="btn"><%= t('contact.submitButton') %></button>
         </form>
       </div>
     </div>

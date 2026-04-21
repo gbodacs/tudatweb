@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import fs from 'fs';
 import validator from 'validator';
+import { createI18nContext, getLanguageCookieHeader } from './i18n';
 
 const app = express();
 const port = 8080;
@@ -10,27 +11,48 @@ const port = 8080;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
 
-// SEO helpers
-const defaultKeywords = 'AI, mesterséges intelligencia, offline AI, felhős AI, automatizálás, prediktív analitika';
-const defaultImage = '/images/og-image.png';
+// Middleware for i18n
+app.use((req: any, res: any, next: any) => {
+  const i18n = createI18nContext(req);
+
+  // Persist user language choice when it comes from query (?lang=...)
+  const queryLang = typeof req.query?.lang === 'string' ? req.query.lang : undefined;
+  if (queryLang && queryLang === i18n.language) {
+    res.setHeader('Set-Cookie', getLanguageCookieHeader(i18n.language));
+  }
+
+  req.i18n = i18n;
+  res.locals.i18n = i18n;
+  res.locals.t = i18n.t;
+  res.locals.language = i18n.language;
+  res.locals.availableLanguages = i18n.availableLanguages;
+  next();
+});
 
 function renderSEO(
   res: express.Response,
   view: string,
-  title: string,
-  description: string,
+  req: any,
+  titleKey: string,
+  descriptionKey: string,
   currentPath: string,
   extra: Record<string, unknown> = {}
 ) {
+  const t = (req as any).i18n.t;
+  const title = t(titleKey);
+  const description = t(descriptionKey);
+  const language = (req as any).i18n.language;
+
   res.render(view, {
     title,
     description,
-    keywords: defaultKeywords,
+    keywords: t('home.metaDescription'),
     ogTitle: title,
     ogDescription: description,
     ogType: 'website',
     ogUrl: `https://tudatai.hu${currentPath}`,
-    ogImage: defaultImage,
+    ogImage: '/images/og-image.png',
+    ogLocale: `${language}_${language.toUpperCase()}`,
     currentPath,
     ...extra,
   });
@@ -45,28 +67,29 @@ app.use(express.json());
 
 // Routes
 app.get('/', (req, res) => {
-  renderSEO(res, 'index', 'TudatAI - Offline és felhős AI megoldások', 'TudatAI: Skálázható, biztonságos offline és felhős AI megoldások vállalatoknak.', req.path);
+  renderSEO(res, 'index', req, 'home.title', 'home.metaDescription', req.path);
 });
 
 app.get('/about', (req, res) => {
-  renderSEO(res, 'about', 'Rólunk - TudatAI', 'Ismerje meg a TudatAI csapatát, küldetését és szakértői AI szolgáltatásait.', req.path);
+  renderSEO(res, 'about', req, 'about.title', 'about.metaDescription', req.path);
 });
 
 app.get('/contact', (req, res) => {
   const success = req.query.success === '1';
   const error = req.query.error;
-  renderSEO(res, 'contact', 'Kapcsolat - TudatAI', 'Lépjen kapcsolatba velünk: kérjen bemutatót vagy árajánlatot offline és felhős AI megoldásokra.', req.path, { success, error });
+  renderSEO(res, 'contact', req, 'contact.title', 'contact.metaDescription', req.path, { success, error });
 });
 
 app.post('/contact', (req, res) => {
   const { name, email, message } = req.body;
+  const t = (req as any).i18n.t;
 
   // Validation
   if (!validator.isEmail(email)) {
-    return renderSEO(res, 'contact', 'Kapcsolat - TudatAI', 'Lépjen kapcsolatba velünk: kérjen bemutatót vagy árajánlatot offline és felhős AI megoldásokra.', req.path, { success: false, error: 'Érvénytelen email cím.' });
+    return renderSEO(res, 'contact', req, 'contact.title', 'contact.metaDescription', req.path, { success: false, error: t('contact.invalidEmailError') });
   }
   if (message.length > 200) {
-    return renderSEO(res, 'contact', 'Kapcsolat - TudatAI', 'Lépjen kapcsolatba velünk: kérjen bemutatót vagy árajánlatot offline és felhős AI megoldásokra.', req.path, { success: false, error: 'Az üzenet maximum 200 karakter lehet.' });
+    return renderSEO(res, 'contact', req, 'contact.title', 'contact.metaDescription', req.path, { success: false, error: t('contact.messageTooLongError') });
   }
 
   // Sanitize inputs
@@ -85,26 +108,34 @@ app.post('/contact', (req, res) => {
   fs.writeFile(path.join(__dirname, '../public/aafAs5V5qdq4y3xa', filename), content, (err) => {
     if (err) {
       console.error('Error saving file:', err);
-      return res.render('contact', { title: 'Contact - TudatAI', currentPath: req.path, success: false, error: 'Hiba történt az üzenet mentésekor.' });
+      return renderSEO(res, 'contact', req, 'contact.title', 'contact.metaDescription', req.path, { success: false, error: t('contact.saveError') });
     }
     res.redirect('/contact?success=1');
   });
 });
 
 app.get('/privacy', (req, res) => {
-  renderSEO(res, 'privacy', 'Adatvédelmi irányelvek - TudatAI', 'Áttekintés az adatkezelési gyakorlatainkról a TudatAI rendszerben.', req.path);
+  renderSEO(res, 'privacy', req, 'privacy.title', 'privacy.title', req.path);
+});
+
+app.get('/cookiepolicy', (req, res) => {
+  renderSEO(res, 'cookiepolicy', req, 'cookiepolicy.title', 'cookiepolicy.metaDescription', req.path);
 });
 
 app.get('/terms', (req, res) => {
-  renderSEO(res, 'terms', 'ÁSZF - TudatAI', 'Általános szerződési feltételek az offline és felhős AI szolgáltatásainkhoz.', req.path);
+  renderSEO(res, 'terms', req, 'terms.title', 'terms.title', req.path);
+});
+
+app.get('/automat-ai', (req, res) => {
+  renderSEO(res, 'automat-ai', req, 'automatization.title', 'automatization.metaDescription', req.path);
 });
 
 app.get('/offline-ai', (req, res) => {
-  renderSEO(res, 'offline-ai', 'Offline AI Megoldások - TudatAI', 'Biztonságos, internetkapcsolat nélküli AI rendszereinkkel teljes adatkontroll és magas rendelkezésre állás.', req.path);
+  renderSEO(res, 'offline-ai', req, 'offline.title', 'offline.metaDescription', req.path);
 });
 
 app.get('/cloud-ai', (req, res) => {
-  renderSEO(res, 'cloud-ai', 'Felhős AI Megoldások - TudatAI', 'Skálázható, felhőalapú AI megoldások és harmadik fél integrációk üzleti növekedéshez.', req.path);
+  renderSEO(res, 'cloud-ai', req, 'cloud.title', 'cloud.metaDescription', req.path);
 });
 
 app.listen(port, () => {

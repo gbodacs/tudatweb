@@ -118,6 +118,10 @@ body {
   background: var(--accent);
   color: #ffffff;
   margin-top: 1rem;
+    display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Fallback for horizontal centering */
 }
 
 .btn-secondary:hover {
@@ -280,3 +284,32 @@ body {
     padding: 3.5rem 0 2.5rem;
   }
 }
+
+/* Language Selector */
+.language-selector {
+  display: flex;
+  align-items: center;
+}
+
+.language-selector select {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--accent);
+  border-radius: 0.4rem;
+  background-color: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+}
+
+.language-selector select:hover {
+  border-color: var(--accent-dark);
+}
+
+.language-selector select option {
+  background-color: var(--surface);
+  color: var(--text);
+  padding: 0.5rem;
+}
+

@@ -6,6 +6,7 @@
       "automat": "Automatizációk",
       "offline": "Offline AI",
       "cloud": "Cloud AI",
+      "blog": "Blog",
       "contact": "Kapcsolat"
     },
     "footer": {
@@ -56,6 +57,12 @@
       "contactButton": "Kapcsolat",
       "cloudAiButton": "Felhős AI megoldások",
       "callToActionDescription": "Tegye hatékonyabbá vállalata működését gyors, intelligens és biztonságos AI megoldásainkkal."
+    },
+    "blog": {
+      "title": "Blog - TudatAI",
+      "metaDescription": "TudatAI blog - AI trendek, esettanulmányok és szakértői betekintések a mesterséges intelligencia világából.",
+      "pageTitle": "Blog",
+      "introduction": "Fedezze fel a legfrissebb AI trendeket, esettanulmányokat és szakértői betekintéseket a TudatAI blogján."
     },
     "cookiepolicy": {
       "title": "Sütiszabályzat",
@@ -323,6 +330,12 @@
       "innovationAndExpertise": "Innovation and AI Expertise",
       "transparencyAndPartnership": "Transparency and Partnership"
     },
+    "blog": {
+      "title": "Blog - TudatAI",
+      "metaDescription": "TudatAI blog - AI trends, case studies, and expert insights from the world of artificial intelligence.",
+      "pageTitle": "Blog",
+      "introduction": "Explore the latest AI trends, case studies, and expert insights on the TudatAI blog."
+    },
     "cookiepolicy": {
       "title": "Cookie Policy",
       "metaDescription": "TudatAI cookie policy - how we use cookies to store language settings and improve user experience.",
@@ -566,6 +579,12 @@
       "qualityAndSecurity": "Qualität und Sicherheit",
       "innovationAndExpertise": "Innovation und AI-Expertise",
       "transparencyAndPartnership": "Transparenz und Partnerschaft"
+    },
+    "blog": {
+      "title": "Blog - TudatAI",
+      "metaDescription": "TudatAI Blog - AI-Trends, Fallstudien und Experteneinblicke aus der Welt der künstlichen Intelligenz.",
+      "pageTitle": "Blog",
+      "introduction": "Entdecken Sie die neuesten AI-Trends, Fallstudien und Experteneinblicke auf dem TudatAI-Blog."
     },
     "cookiepolicy": {
       "title": "Cookie-Richtlinie",

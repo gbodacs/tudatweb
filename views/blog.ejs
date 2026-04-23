@@ -1,0 +1,113 @@
+<%- include('partials/header') %>
+
+<%
+	const blogPosts = [
+		{
+			id: 'ai-readiness-audit',
+			eyebrow: 'Strategy',
+			title: 'How to Run a Practical AI Readiness Audit',
+			date: 'April 2026',
+			readTime: '6 min read',
+			summary: 'A compact framework for identifying where AI can create measurable value without forcing a premature platform decision.',
+			sections: [
+				{
+					title: 'Start with operating friction',
+					body: 'The most reliable starting point is not the model catalogue but the daily bottlenecks your team already knows. Repeated manual classification, fragmented reporting, delayed decisions, and inconsistent customer communication are better indicators of AI opportunity than abstract innovation goals.'
+				},
+				{
+					title: 'Score use cases by evidence',
+					body: 'A lightweight readiness audit should rank each candidate use case by data availability, process stability, expected time savings, and delivery risk. This prevents expensive experiments around workflows that are not yet structured enough to automate.'
+				},
+				{
+					title: 'Define the first narrow deployment',
+					body: 'Once the shortlist is clear, choose one workflow where success can be measured within weeks. A bounded pilot with named owners, a fallback process, and explicit review points gives a stronger foundation than a broad multi-team rollout.'
+				}
+			]
+		},
+		{
+			id: 'secure-private-ai-operations',
+			eyebrow: 'Operations',
+			title: 'Designing Private AI Workflows for Sensitive Teams',
+			date: 'April 2026',
+			readTime: '5 min read',
+			summary: 'A placeholder article on how internal teams can introduce AI support while keeping decision trails, access boundaries, and deployment control in-house.',
+			sections: [
+				{
+					title: 'Separate convenience from control',
+					body: 'Teams often adopt cloud tools because they are easy to start, but regulated or sensitive environments need a different evaluation model. The relevant question is whether the workflow keeps documents, prompts, outputs, and audit information within the control boundary of the organization.'
+				},
+				{
+					title: 'Build around reviewable outputs',
+					body: 'The strongest internal AI workflows do not hide behind opaque automation. They produce drafts, classifications, summaries, or recommendations that staff can review quickly. This keeps accountability visible while still reducing repetitive work.'
+				},
+				{
+					title: 'Treat deployment as a process decision',
+					body: 'Private AI is not only an infrastructure choice. It is also a process design task: define who can trigger automations, which sources are allowed, how outputs are validated, and where operational feedback is recorded. That structure is what makes the system usable over time.'
+				}
+			]
+		}
+	];
+%>
+
+<section class="blog-hero">
+	<div class="container">
+		<span class="blog-kicker"><%= t('blog.title') %></span>
+		<h1><%= t('blog.metaDescription') %></h1>
+		<p><%= t('blog.introduction') %></p>
+	</div>
+</section>
+
+<section class="blog-shell">
+	<div class="container blog-layout">
+		<aside class="blog-sidebar" aria-label="Blog navigation">
+			<div class="blog-sidebar-card">
+				<p class="blog-sidebar-label">Table of contents</p>
+				<nav class="blog-toc">
+					<% blogPosts.forEach(post => { %>
+						<a href="#<%= post.id %>"><%= post.title %></a>
+					<% }); %>
+				</nav>
+			</div>
+
+			<div class="blog-sidebar-card">
+				<p class="blog-sidebar-label">Blog posts</p>
+				<div class="blog-post-list">
+					<% blogPosts.forEach(post => { %>
+						<a class="blog-post-link" href="#<%= post.id %>">
+							<span class="blog-post-link-meta"><%= post.eyebrow %> · <%= post.readTime %></span>
+							<strong><%= post.title %></strong>
+							<span><%= post.summary %></span>
+						</a>
+					<% }); %>
+				</div>
+			</div>
+		</aside>
+
+		<div class="blog-content" aria-label="Blog posts">
+			<% blogPosts.forEach(post => { %>
+				<article class="blog-post" id="<%= post.id %>">
+					<div class="blog-post-header">
+						<span class="blog-post-eyebrow"><%= post.eyebrow %></span>
+						<div class="blog-post-meta">
+							<span><%= post.date %></span>
+							<span><%= post.readTime %></span>
+						</div>
+						<h2><%= post.title %></h2>
+						<p><%= post.summary %></p>
+					</div>
+
+					<div class="blog-post-body">
+						<% post.sections.forEach(section => { %>
+							<section>
+								<h3><%= section.title %></h3>
+								<p><%= section.body %></p>
+							</section>
+						<% }); %>
+					</div>
+				</article>
+			<% }); %>
+		</div>
+	</div>
+</section>
+
+<%- include('partials/footer') %>

@@ -138,6 +138,10 @@ app.get('/cloud-ai', (req, res) => {
   renderSEO(res, 'cloud-ai', req, 'cloud.title', 'cloud.metaDescription', req.path);
 });
 
+app.get('/blog', (req, res) => {
+  renderSEO(res, 'blog', req, 'blog.title', 'blog.metaDescription', req.path);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

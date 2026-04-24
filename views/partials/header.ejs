@@ -21,7 +21,12 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <div class="logo"><a href="/">TudatAI</a></div>
+      <div class="logodiv">
+        <img style="max-width: 50px;" src="/apple-touch-icon.png" alt="TudatAI Logo" />
+        <div class="logo">
+          <a href="/">TudatAI</a>
+        </div>
+      </div>      
       <nav class="main-nav">
         <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>"><%= t('nav.home') %></a>
         <a href="/about" class="<%= currentPath === '/about' ? 'active' : '' %>"><%= t('nav.about') %></a>
@@ -38,7 +43,7 @@
         <select onchange="window.location.href='<%= currentPath %>?lang=' + this.value" value="<%= language %>">
           <% availableLanguages.forEach(lang => { %>
             <option value="<%= lang %>" <%= language === lang ? 'selected' : '' %>>
-              <%= lang === 'hu' ? ' Magyar' : lang === 'en' ? ' English' : ' Deutsch' %>
+              <%= lang === 'hu' ? ' Hu' : lang === 'en' ? ' En' : ' De' %>
             </option>
           <% }); %>
         </select>

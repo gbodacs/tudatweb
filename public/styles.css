@@ -51,7 +51,7 @@ body {
 
 .logo {
   font-weight: 800;
-  font-size: 1.45rem;
+  font-size: 2.4rem;
   color: var(--text);
 }
 
@@ -72,10 +72,28 @@ body {
 }
 
 .hero {
-  background: linear-gradient(120deg, #77c9d4 0%, #57bc90 100%);
+  position: relative;
+  isolation: isolate;
+  background-image: url('/images/back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #ffffff;
   padding: 5rem 0 4rem;
   text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(1, 82, 73, 0.72) 0%, rgba(87, 188, 144, 0.48) 100%);
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
@@ -161,6 +179,12 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.logodiv {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
 .logo a {
   color: var(--text);
   text-decoration: none;
@@ -168,7 +192,7 @@ body {
   transition: color 0.3s ease;
 }
 
-.logo a:hover {
+.logo a :hover {
   color: var(--accent-dark);
 }
 

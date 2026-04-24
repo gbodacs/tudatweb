@@ -61,7 +61,7 @@ export function getTranslationFunction(language: Language): (key: string) => str
         result = result[k];
       } else {
         // Fallback to Hungarian if translation not found
-        result = translations.hu;
+        result = translations.en; // Try English as fallback
         for (const k2 of keys) {
           if (result && typeof result === 'object' && k2 in result) {
             result = result[k2];

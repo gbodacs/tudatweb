@@ -411,6 +411,16 @@ body {
   box-shadow: 0 10px 18px rgba(87, 188, 144, 0.12);
 }
 
+.blog-post-section {
+  padding: 1.25rem;
+  border-radius: 0.9rem;
+  background: #f8fcfd;
+  border: 1px solid #dbeff1;
+}
+.blog-post-section ul li {
+  margin-left: 20px;
+}
+
 .blog-post-link strong {
   color: var(--accent-dark);
 }

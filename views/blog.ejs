@@ -3,117 +3,147 @@
 <%
 	const blogPosts = [
 		{
-			id: 'ai-readiness-audit',
-			eyebrow: 'Strategy',
-			title: 'How to Run a Practical AI Readiness Audit',
-			date: 'April 2026',
-			readTime: '6 min read',
-			summary: 'A compact framework for identifying where AI can create measurable value without forcing a premature platform decision.',
+			id: 'search-for-documents',
+			eyebrow: 'Termelékenység',
+			title: 'Dokumentumok keresése cégen belül - fájdalmas, de lehet másképp',
+			date: '2026 Április',
+			readTime: '6 perc olvasás',
+			summary: 'AI használatával a cégen belüli dokumentumkeresés nagyságrendekkel gyorsabb és hatékonyabb lehet.',
 			sections: [
 				{
-					title: 'Start with operating friction',
-					body: 'The most reliable starting point is not the model catalogue but the daily bottlenecks your team already knows. Repeated manual classification, fragmented reporting, delayed decisions, and inconsistent customer communication are better indicators of AI opportunity than abstract innovation goals.'
+					title: '',
+					body: 'Szinte minden szervezetben ugyanaz a jelenet ismétlődik nap mint nap:',
+					list: [
+						'<i>„Megvan valahol az a régi ajánlat…”</i>',
+						'<i>„Volt egy hasonló projektünk, csak nem találom…”</i>',
+						'<i>„Biztos le van írva, de nem tudom hol…”</i>'
+					]
 				},
 				{
-					title: 'Score use cases by evidence',
-					body: 'A lightweight readiness audit should rank each candidate use case by data availability, process stability, expected time savings, and delivery risk. This prevents expensive experiments around workflows that are not yet structured enough to automate.'
+					title: '',
+					body: '<br/>A dokumentumok <b>léteznek</b>, mégis nehéz őket megtalálni. És ez nem csak kényelmetlenség. Ez <b>konkrét üzleti veszteség.</b><br/>',
+					list: []
 				},
 				{
-					title: 'Define the first narrow deployment',
-					body: 'Once the shortlist is clear, choose one workflow where success can be measured within weeks. A bounded pilot with named owners, a fallback process, and explicit review points gives a stronger foundation than a broad multi-team rollout.'
+					title: '<br/>Miért fáj ennyire?<br/>',
+					body: '<br/>Első ránézésre a probléma egyszerűnek tűnik: „rossz a keresés”. Valójában azonban több, egymást erősítő ok áll mögötte.<br/><br/>',
+					list: ["<b>Szétszórt rendszerek</b>"]
+				},
+				{
+					title: '',
+					body: 'A dokumentumok tipikusan több helyen élnek:',
+					list: ["Google Drive / SharePoint",
+									"e-mailek",
+									"helyi mappák",
+									"CRM-be feltöltött fájlok",
+									"PDF-ek, jegyzetek, prezentációk"
+									]
+				},
+				{
+					title: '',
+					body: '<br/>Nincs egyetlen „forrás”, ahol minden megtalálható. Ez megnehezíti a keresést, mert nem tudod, hol kezdj el keresni.<br/><br/>',
+					list: ["<b>Nincs egységes struktúra</b><br/>"]
+				},
+				{
+					title: '',
+					body: 'Még ha egy helyen vannak is a fájlok:',
+					list: ["eltérő elnevezések",
+									"különböző mappastruktúrák",
+									"hiányzó metaadatok"
+								]
+				},
+				{
+					title: '',
+					body: 'Egy dokumentum megtalálása sokszor <b>nem keresés, hanem találgatás.</b><br/><br/>',
+					list: ["<b>A keresés kulcsszó-alapú</b><br/>"]
+				},
+				{
+					title: '',
+					body: 'A legtöbb rendszer így működik, hogy a beírt szóra kiad 200+ találatot, míg az igény más. Arra vagyunk kíváncsiak, ami a jelen helyzetünkre hasonlít, kontextusában illeszkedik a problémához<br/>„Mutasd meg azt az ajánlatot, ami hasonlít erre az ügyfélre és problémára”',
+					list: ["Tudás az emberek fejében marad"]
 				}
-			]
-		},
-		{
-			id: 'secure-private-ai-operations',
-			eyebrow: 'Operations',
-			title: 'Designing Private AI Workflows for Sensitive Teams',
-			date: 'April 2026',
-			readTime: '5 min read',
-			summary: 'A placeholder article on how internal teams can introduce AI support while keeping decision trails, access boundaries, and deployment control in-house.',
-			sections: [
+				,
 				{
-					title: 'Separate convenience from control',
-					body: 'Teams often adopt cloud tools because they are easy to start, but regulated or sensitive environments need a different evaluation model. The relevant question is whether the workflow keeps documents, prompts, outputs, and audit information within the control boundary of the organization.'
+					title: '',
+					body: '<br/>a következő probléma, hogy sokszor a válasz nem a dokumentumban van, hanem:',
+					list: ["egy kolléga emlékeiben",
+								"egy korábbi beszélgetésben",
+								"egy „majdnem kész” anyagban"
+								]
 				},
 				{
-					title: 'Build around reviewable outputs',
-					body: 'The strongest internal AI workflows do not hide behind opaque automation. They produce drafts, classifications, summaries, or recommendations that staff can review quickly. This keeps accountability visible while still reducing repetitive work.'
-				},
-				{
-					title: 'Treat deployment as a process decision',
-					body: 'Private AI is not only an infrastructure choice. It is also a process design task: define who can trigger automations, which sources are allowed, how outputs are validated, and where operational feedback is recorded. That structure is what makes the system usable over time.'
+					title: '',
+					body: 'Ez azt jelenti, hogy a hiábavaló keresés gyakran egy másik kollégát is igényel, aki emlékszik, aki beszélt róla, akinek van egy sablonja, de nem osztotta meg. ',
+					list: []
 				}
-			]
-		},
-		{
-			id: 'secure-private-ai-operations',
-			eyebrow: 'Operations',
-			title: 'Designing Private AI Workflows for Sensitive Teams',
-			date: 'April 2026',
-			readTime: '5 min read',
-			summary: 'A placeholder article on how internal teams can introduce AI support while keeping decision trails, access boundaries, and deployment control in-house.',
-			sections: [
+				,
 				{
-					title: 'Separate convenience from control',
-					body: 'Teams often adopt cloud tools because they are easy to start, but regulated or sensitive environments need a different evaluation model. The relevant question is whether the workflow keeps documents, prompts, outputs, and audit information within the control boundary of the organization.'
+					title: '<br/>Miért nem oldják meg a hagyományos eszközök?<br/>',
+					body: '<br/>Sok cég próbálkozik a mappastruktúra rendbetételével, dokumentációs szabályokkal vagy különböző keresőmotorokkal. Ezek valóban segítenek, de nem oldják meg a problémát. Miért? Mert a keresés alapja továbbra is az, hogy <b>tudni kell, pontosan mit keressünk és milyen szavakkal.</b><br/>A valóságban viszont gyakran csak annyit tudunk, hogy mi a célunk, milyen helyzetben vagyunk, és hogy milyen problémára keresünk megoldást.',
+					list: []
 				},
 				{
-					title: 'Build around reviewable outputs',
-					body: 'The strongest internal AI workflows do not hide behind opaque automation. They produce drafts, classifications, summaries, or recommendations that staff can review quickly. This keeps accountability visible while still reducing repetitive work.'
+					title: '<br/>A valódi megoldás: kontextus-alapú keresés<br/>',
+					body: '<br/>Itt hoz áttörést az AI. Egy jól felépített rendszerben a keresés így néz ki:',
+					list: []
 				},
 				{
-					title: 'Treat deployment as a process decision',
-					body: 'Private AI is not only an infrastructure choice. It is also a process design task: define who can trigger automations, which sources are allowed, how outputs are validated, and where operational feedback is recorded. That structure is what makes the system usable over time.'
-				}
-			]
-		},
-		{
-			id: 'secure-private-ai-operations',
-			eyebrow: 'Operations',
-			title: 'Designing Private AI Workflows for Sensitive Teams',
-			date: 'April 2026',
-			readTime: '5 min read',
-			summary: 'A placeholder article on how internal teams can introduce AI support while keeping decision trails, access boundaries, and deployment control in-house.',
-			sections: [
-				{
-					title: 'Separate convenience from control',
-					body: 'Teams often adopt cloud tools because they are easy to start, but regulated or sensitive environments need a different evaluation model. The relevant question is whether the workflow keeps documents, prompts, outputs, and audit information within the control boundary of the organization.'
+					title: '',
+					body: '<i>„Volt már hasonló projektünk logisztikai cégnél, ahol költségcsökkentés volt a cél?”</i>',
+					list: []
 				},
 				{
-					title: 'Build around reviewable outputs',
-					body: 'The strongest internal AI workflows do not hide behind opaque automation. They produce drafts, classifications, summaries, or recommendations that staff can review quickly. This keeps accountability visible while still reducing repetitive work.'
+					title: '',
+					body: '<br/>És a válasz:',
+					list: ["releváns dokumentumok",
+									"kiemelt részek",
+									"kapcsolódó anyagok"
+								]
 				},
 				{
-					title: 'Treat deployment as a process decision',
-					body: 'Private AI is not only an infrastructure choice. It is also a process design task: define who can trigger automations, which sources are allowed, how outputs are validated, and where operational feedback is recorded. That structure is what makes the system usable over time.'
-				}
-			]
-		},
-		{
-			id: 'secure-private-ai-operations',
-			eyebrow: 'Operations',
-			title: 'Designing Private AI Workflows for Sensitive Teams',
-			date: 'April 2026',
-			readTime: '5 min read',
-			summary: 'A placeholder article on how internal teams can introduce AI support while keeping decision trails, access boundaries, and deployment control in-house.',
-			sections: [
-				{
-					title: 'Separate convenience from control',
-					body: 'Teams often adopt cloud tools because they are easy to start, but regulated or sensitive environments need a different evaluation model. The relevant question is whether the workflow keeps documents, prompts, outputs, and audit information within the control boundary of the organization.'
+					title: '',
+					body: '<br/>a kontextus alapú keresés eredményeképp nem egy több száz elemű listát kap a kérdező szóegyezésekkel, hanem választ a kérdésre.',
+					list: []
 				},
 				{
-					title: 'Build around reviewable outputs',
-					body: 'The strongest internal AI workflows do not hide behind opaque automation. They produce drafts, classifications, summaries, or recommendations that staff can review quickly. This keeps accountability visible while still reducing repetitive work.'
+					title: '<br/>Hogyan működik ez a gyakorlatban?<br/>',
+					body: '<br/>Egy belső AI rendszer:',
+					list: ["<b>Összeköti az adatforrásokat</b>",				
+									"<b>„Érti” a tartalmat</b> - Nem csak kulcsszavakat keres, hanem jelentést, összefüggéseket, hasonlóságokat",
+									"<b>Kérdés-alapú használatot tesz lehetővé</b> - Nem kell tudni fájlnevet vagy pontos kifejezést. Elég a szándék."
+									]
 				},
 				{
-					title: 'Treat deployment as a process decision',
-					body: 'Private AI is not only an infrastructure choice. It is also a process design task: define who can trigger automations, which sources are allowed, how outputs are validated, and where operational feedback is recorded. That structure is what makes the system usable over time.'
+					title: '<br/>A megoldás nem csak technológiai kérdés<br/>',
+					body: '<br/>Fontos észben tartani, hogy sikerhez nem elég egy AI eszköz. Szükséges továbbá minimum szintű strukturáltság, hozzáférések tisztázása, valamint a releváns adatforrások kiválasztása.',
+					list: []
+				},
+				{
+					title: '',
+					body: 'Az AI nem varázsol rendet, de <b>nagyságrendekkel kényelmesebbé teszi a keresést egy „elég jó” alapra építve.</b>',
+					list: []
+				},
+				{
+					title: '<br/>Mit lehet elérni?<br/>',
+					body: '<br/>Egy jól bevezetett AI megoldással:',
+					list: ["a keresési idő töredékére csökken",
+						"kevesebb a duplikált munka",
+						"javul a betanulási idő",
+						"gyorsul a döntéshozatal"]
+				},
+				{
+					title: '',
+					body: '<br/>És ami talán a legfontosabb,hogy <b>a cégben meglévő tudás végre valóban használhatóvá válik.</b>',
+					list: []
+				},
+				{
+					title: '',
+					body: '<br/>A dokumentum keresés nem azért fáj, mert kevés az adat, hanem mert <b>nem tudjuk hatékonyan elérni azt, ami már rendelkezésre áll.</b> A hagyományos keresés erre csak részmegoldást ad. A valódi előrelépést az jelenti, amikor <b>nem pusztán dokumentumokat keresünk, hanem válaszokat kapunk.</b> Ezen a pontos az AI nem csak egy hangzatos és divatos megoldás, hanem egy az üzleti előny szolgálatba állított eszköz.',
+					list: []
 				}
 			]
 		}
-
-	];
+	]
 %>
 
 <section class="blog-hero">
@@ -162,14 +192,19 @@
 						<h2><%= post.title %></h2>
 						<p><%= post.summary %></p>
 					</div>
-
+					
 					<div class="blog-post-body">
-						<% post.sections.forEach(section => { %>
-							<section>
-								<h3><%= section.title %></h3>
-								<p><%= section.body %></p>
-							</section>
-						<% }); %>
+						<section class ="blog-post-section">
+							<% post.sections.forEach(section => { %>
+								<h3><%- section.title %></h3>
+								<p><%- section.body %></p>
+								<ul>
+									<% section.list.forEach(item => { %>
+										<li><%- item %></li>
+									<% }); %>
+								</ul>
+							<% }); %>
+						</section>
 					</div>
 				</article>
 			<% }); %>

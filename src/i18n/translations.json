@@ -77,7 +77,7 @@
     "cookiepolicy": {
       "title": "Sütiszabályzat",
       "metaDescription": "TudatAI sütiszabályzat - hogyan használjuk a sütiket a nyelvi beállítások tárolására és a felhasználói élmény javítására.",
-      "t_name":"A süti neve: tudatai_language",
+      "t_name": "A süti neve: tudatai_language",
       "t_provider": "Szolgáltató: tudatai.hu",
       "t_purpose": "Célja: A felhasználó által választott nyelv megjegyzése a következő látogatásig.",
       "t_type": "Típusa: Funkcionális süti.",
@@ -360,7 +360,7 @@
     "cookiepolicy": {
       "title": "Cookie Policy",
       "metaDescription": "TudatAI cookie policy - how we use cookies to store language settings and improve user experience.",
-      "t_name":"Cookie name: tudatai_language",
+      "t_name": "Cookie name: tudatai_language",
       "t_provider": "Provider: tudatai.hu",
       "t_purpose": "Purpose: Remember the user's chosen language until the next visit.",
       "t_type": "Type: Functional cookie.",
@@ -542,6 +542,16 @@
       "termsOfService": "Nutzungsbedingungen",
       "copyright": "© 2026 TudatAI. Alle Rechte vorbehalten."
     },
+    "chatWidget": {
+      "title": "Website-Assistent",
+      "welcomeMessage": "Fragen Sie einfach, ich helfe gerne.",
+      "subtitle": "Chat mit dem Assistenten",
+      "placeholder": "Schreiben Sie Ihre Frage hier...",
+      "sendLabel": "Senden",
+      "sendingLabel": "Wird gesendet...",
+      "launcherAriaLabel": "Chat öffnen",
+      "minimizeAriaLabel": "Chat minimieren"
+    },
     "home": {
       "title": "TudatAI - Offline und Cloud AI Lösungen",
       "metaDescription": "TudatAI: Skalierbare, sichere Offline- und Cloud-AI-Lösungen für Unternehmen.",
@@ -553,16 +563,6 @@
       "lossStopTitle": "Verlustpräventionssystem",
       "lossStopDescription": "Prognostiziert steckengebliebene Bestände und Kundenabgang, damit Sie zeitnah eingreifen können.",
       "digitalColleagueTitle": "Digitaler Kollege",
-    "chatWidget": {
-      "title": "Website-Assistent",
-      "welcomeMessage": "Fragen Sie einfach, ich helfe gerne.",
-      "subtitle": "Chat mit dem Assistenten",
-      "placeholder": "Schreiben Sie Ihre Frage hier...",
-      "sendLabel": "Senden",
-      "sendingLabel": "Wird gesendet...",
-      "launcherAriaLabel": "Chat öffnen",
-      "minimizeAriaLabel": "Chat minimieren"
-    },
       "digitalColleagueDescription": "Beantwortet nicht nur Fragen, sondern erfasst automatisch Daten in Ihrem CRM und vereinbart Termine.",
       "internationalPackageTitle": "Internationales Expansionspaket",
       "internationalPackageDescription": "Automatisch generierter mehrsprachiger Kundenservice und Produktbeschreibungen für schnellen Markteintritt.",
@@ -621,7 +621,7 @@
     "cookiepolicy": {
       "title": "Cookie-Richtlinie",
       "metaDescription": "TudatAI Cookie-Richtlinie - wie wir Cookies verwenden, um Spracheinstellungen zu speichern und die Benutzererfahrung zu verbessern.",
-      "t_name":"Cookie-Name: tudatai_language",
+      "t_name": "Cookie-Name: tudatai_language",
       "t_provider": "Anbieter: tudatai.hu",
       "t_purpose": "Zweck: Die vom Benutzer gewählte Sprache bis zum nächsten Besuch merken.",
       "t_type": "Typ: Funktionaler Cookie.",

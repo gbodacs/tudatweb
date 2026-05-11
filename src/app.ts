@@ -109,14 +109,32 @@ app.options('/chatapi/tudatai', chatApiCors)
 app.post('/chatapi/tudatai', chatApiCors, async (req, res) => {
   try {
     console.log('Received /chatapi/tudatai request with body:', req.body)
-    const i = await toAIProxy(req.body.text)
-    res.json({ response: i })
+    const proxyResponse = await toAIProxy(req.body)
+    res.json(proxyResponse)
   } catch (error: unknown) {
-    if (error instanceof Error) {
-      res.status(500).json({ error: error.message })
-    } else {
-      res.status(500).json({ error: 'An unknown error occurred.' })
+    if (
+      error &&
+      typeof error === 'object' &&
+      'status' in error &&
+      typeof error.status === 'number' &&
+      'body' in error
+    ) {
+      return res.status(error.status).json(error.body)
     }
+
+    if (error instanceof Error) {
+      return res.status(500).json({
+        error: {
+          message: error.message,
+        },
+      })
+    }
+
+    return res.status(500).json({
+      error: {
+        message: 'An unknown error occurred.',
+      },
+    })
   }
 })
 

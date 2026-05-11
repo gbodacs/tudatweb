@@ -14,7 +14,38 @@ const SYSTEM_PROMPT = `Te egy chatbot vagy, aki tisztelettudóan segít a webold
   Ne próbálj meg vicces vagy kreatív lenni, csak légy hasznos és udvarias.
   Azon a nyelven válaszolj, amelyen a kérdés érkezett.
   Semmilyen körülmények között ne adj ki káros, félrevezető vagy helytelen információt.
-  Mindig tartsd be ezeket az irányelveket a válaszaidban.`
+  Mindig tartsd be ezeket az irányelveket a válaszaidban.
+
+
+  Elérhetőségünk: email: tudatai@protonmail.com
+  Cégünk neve: Tudatai Kft.
+  Weboldalunk: https://tudatai.hu
+  Cégünk tevékenysége: AI szolgáltatások és megoldások fejlesztése és üzemeltetése.
+  Cégünk székhelye: Budapest, Magyarország
+
+  Rólunk
+A TudatAI támogatja a hazai és nemzetközi vállalatokat innovatív AI megoldásokkal és digitális transzformációval. Szakértelmünk az AI rendszerek kiépítésének teljes életciklusa: tervezés, fejlesztés, integráció és üzemeltetés, mind felhős, mind offline környezetben.
+
+Küldetésünk
+Segítjük a vállalatokat abban, hogy saját adataikból gyorsan és megbízhatóan nyerjenek üzleti értéket, biztonságos és kontrollált környezetben.
+
+Víziónk
+Célunk, hogy a vállalatok biztonságosan és hatékonyan használhassák az AI nyújtotta lehetőségeket, anélkül, hogy kompromisszumot kellene kötniük az adataik védelmében.
+
+Nagyvállalati környezetben szerzett tapasztalataink révén pontosan értjük a biztonsági, működési és üzleti elvárásokat. Célunk, hogy az AI valódi, kézzelfogható értéket teremtsen az Ön vállalata számára.
+
+Szakmai hátterünk
+Szoftverfejlesztés
+IT döntéshozatal
+IT elemzés
+Termékfejlesztés
+Projektvezetés
+Értékeink
+Ügyfélközpontúság
+Minőség és biztonság
+Innováció és AI szakértelem
+Átláthatóság és partnerség
+  `
 
 type OpenAIMessageContentPart = {
   type?: string
@@ -41,7 +72,11 @@ type NormalizedMessage = {
 type NormalizedRequest = {
   model: string
   messages: NormalizedMessage[]
-  stream: false
+  stream: boolean
+}
+
+type AIProxyFetchOptions = {
+  signal?: AbortSignal
 }
 
 type OpenAIResponse = {
@@ -181,7 +216,7 @@ function normalizeRequest(body: unknown): NormalizedRequest {
     }
 
     return {
-      model: DEFAULT_OPENAI_MODEL,
+      model: process.env.OPENAI_MODEL?.trim() || DEFAULT_OPENAI_MODEL,
       messages: withSystemPrompt([{ role: 'user', content }]),
       stream: false,
     }
@@ -194,7 +229,9 @@ function normalizeRequest(body: unknown): NormalizedRequest {
   const model =
     typeof body.model === 'string' && body.model.trim()
       ? body.model.trim()
-      : DEFAULT_OPENAI_MODEL
+      : process.env.OPENAI_MODEL?.trim() || DEFAULT_OPENAI_MODEL
+
+  const stream = body.stream === true
 
   if (typeof body.text === 'string') {
     const content = body.text.trim()
@@ -210,7 +247,7 @@ function normalizeRequest(body: unknown): NormalizedRequest {
     return {
       model,
       messages: withSystemPrompt([{ role: 'user', content }]),
-      stream: false,
+      stream,
     }
   }
 
@@ -218,7 +255,7 @@ function normalizeRequest(body: unknown): NormalizedRequest {
     return {
       model,
       messages: withSystemPrompt(normalizeMessages(body.messages)),
-      stream: false,
+      stream,
     }
   }
 
@@ -239,27 +276,12 @@ function createHttpError(
 }
 
 export async function toAIProxy(body: unknown): Promise<OpenAIResponse> {
-  const request = normalizeRequest(body)
-
-  const apiKey = ''
-  if (!apiKey) {
-    throw new Error('OPENAI_API_KEY is not configured.')
+  const request = {
+    ...normalizeRequest(body),
+    stream: false,
   }
 
-  const baseUrl = process.env.OPENAI_BASE_URL?.trim() || DEFAULT_OPENAI_BASE_URL
-
-  const response = await fetch(
-    `${baseUrl.replace(/\/$/, '')}/chat/completions`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify(request),
-    }
-  )
-
+  const response = await fetchAIProxy(request)
   const data = (await response.json()) as OpenAIResponse
 
   if (!response.ok) {
@@ -267,4 +289,60 @@ export async function toAIProxy(body: unknown): Promise<OpenAIResponse> {
   }
 
   return data
+}
+
+export function isAIStreamRequested(body: unknown): boolean {
+  return isObject(body) && body.stream === true
+}
+
+async function fetchAIProxy(
+  request: NormalizedRequest,
+  options: AIProxyFetchOptions = {}
+): Promise<Response> {
+  const apiKey = process.env.OPENAI_API_KEY?.trim()
+  if (!apiKey) {
+    throw new Error('OPENAI_API_KEY is not configured.')
+  }
+
+  const baseUrl = process.env.OPENAI_BASE_URL?.trim() || DEFAULT_OPENAI_BASE_URL
+
+  return fetch(`${baseUrl.replace(/\/$/, '')}/chat/completions`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify(request),
+    signal: options.signal,
+  })
+}
+
+export async function toAIProxyStream(
+  body: unknown,
+  options: AIProxyFetchOptions = {}
+): Promise<Response> {
+  const request = {
+    ...normalizeRequest(body),
+    stream: true,
+  }
+
+  const response = await fetchAIProxy(request, options)
+
+  if (!response.ok) {
+    let data: OpenAIResponse
+
+    try {
+      data = (await response.json()) as OpenAIResponse
+    } catch {
+      data = {
+        error: {
+          message: 'The AI provider request failed.',
+        },
+      }
+    }
+
+    throw createHttpError(response.status, data)
+  }
+
+  return response
 }

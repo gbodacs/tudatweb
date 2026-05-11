@@ -3,7 +3,7 @@ import path from 'path'
 import fs from 'fs'
 import validator from 'validator'
 import { createI18nContext, getLanguageCookieHeader } from './i18n'
-import { toAIProxy } from './aiproxy'
+import { isAIStreamRequested, toAIProxy, toAIProxyStream } from './aiproxy'
 import { chatApiCors, webCors } from './cors'
 import { chatRateLimiters, webRateLimiters } from './ratelimiter'
 
@@ -108,10 +108,70 @@ app.get('/contact', (req, res) => {
 app.options('/chatapi/tudatai', chatApiCors)
 app.post('/chatapi/tudatai', chatApiCors, async (req, res) => {
   try {
-    console.log('Received /chatapi/tudatai request with body:', req.body)
+    if (isAIStreamRequested(req.body)) {
+      const abortController = new AbortController()
+      const abortUpstream = () => {
+        if (!abortController.signal.aborted) {
+          abortController.abort()
+        }
+      }
+
+      res.once('close', abortUpstream)
+
+      try {
+        const proxyResponse = await toAIProxyStream(req.body, {
+          signal: abortController.signal,
+        })
+
+        res.status(proxyResponse.status)
+        res.setHeader('Content-Type', 'text/event-stream; charset=utf-8')
+        res.setHeader('Cache-Control', 'no-cache, no-transform')
+        res.setHeader('Connection', 'keep-alive')
+        res.setHeader('X-Accel-Buffering', 'no')
+        res.flushHeaders()
+
+        if (!proxyResponse.body) {
+          res.end()
+          return
+        }
+
+        const reader = proxyResponse.body.getReader()
+
+        while (true) {
+          const { done, value } = await reader.read()
+
+          if (done) {
+            break
+          }
+
+          res.write(value)
+        }
+
+        res.end()
+      } finally {
+        res.off('close', abortUpstream)
+      }
+
+      return
+    }
+
     const proxyResponse = await toAIProxy(req.body)
     res.json(proxyResponse)
   } catch (error: unknown) {
+    if (
+      error instanceof Error &&
+      error.name === 'AbortError' &&
+      res.headersSent
+    ) {
+      res.end()
+      return
+    }
+
+    if (res.headersSent) {
+      res.end()
+      return
+    }
+
     if (
       error &&
       typeof error === 'object' &&

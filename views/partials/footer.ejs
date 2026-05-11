@@ -20,5 +20,34 @@
       </div>
     </div>
   </footer>
+  <script src="/chatbubble.js"></script>
+  <script>
+    window.ChatBubbleWidget.create({
+      url: '/chatapi/tudatai',
+      iconUrl: '/chat-icon.svg',
+      title: <%- JSON.stringify(t('chatWidget.title')) %>,
+      welcomeMessage: <%- JSON.stringify(t('chatWidget.welcomeMessage')) %>,
+      subtitle: <%- JSON.stringify(t('chatWidget.subtitle')) %>,
+      placeholder: <%- JSON.stringify(t('chatWidget.placeholder')) %>,
+      sendLabel: <%- JSON.stringify(t('chatWidget.sendLabel')) %>,
+      sendingLabel: <%- JSON.stringify(t('chatWidget.sendingLabel')) %>,
+      launcherAriaLabel: <%- JSON.stringify(t('chatWidget.launcherAriaLabel')) %>,
+      minimizeAriaLabel: <%- JSON.stringify(t('chatWidget.minimizeAriaLabel')) %>,
+      startMinimized: true,
+      openai: {
+        stream: true,
+      },
+      themeColors: {
+        primary: '#4a9b85',
+        background: '#d6f0f0',
+        surface: '#F9FFF9',
+        userBubble: '#4fcb8a',
+        userText: '#F8F5F0',
+        botBubble: '#5fb8c8',
+        botText: '#1F2933',
+        border: '#c4e8ec'
+      }
+    })
+  </script>
 </body>
 </html>

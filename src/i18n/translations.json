@@ -20,6 +20,16 @@
       "termsOfService": "Felhasználási feltételek",
       "copyright": "© 2026 TudatAI. Minden jog fenntartva."
     },
+    "chatWidget": {
+      "title": "Weboldal Segéd",
+      "welcomeMessage": "Kérdezz bátran, segítek!",
+      "subtitle": "Chat a segéddel",
+      "placeholder": "Ide írja kérdését...",
+      "sendLabel": "Küldés",
+      "sendingLabel": "Küldés...",
+      "launcherAriaLabel": "Chat megnyitása",
+      "minimizeAriaLabel": "Chat minimalizálása"
+    },
     "home": {
       "title": "TudatAI - Offline és felhős AI megoldások",
       "metaDescription": "TudatAI: Skálázható, biztonságos offline és felhős AI megoldások vállalatoknak.",
@@ -270,6 +280,16 @@
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service",
       "copyright": "© 2026 TudatAI. All rights reserved."
+    },
+    "chatWidget": {
+      "title": "Website Assistant",
+      "welcomeMessage": "Ask anything, I can help.",
+      "subtitle": "Chat with the assistant",
+      "placeholder": "Type your question here...",
+      "sendLabel": "Send",
+      "sendingLabel": "Sending...",
+      "launcherAriaLabel": "Open chat",
+      "minimizeAriaLabel": "Minimize chat"
     },
     "home": {
       "title": "TudatAI - Offline and Cloud AI Solutions",
@@ -533,6 +553,16 @@
       "lossStopTitle": "Verlustpräventionssystem",
       "lossStopDescription": "Prognostiziert steckengebliebene Bestände und Kundenabgang, damit Sie zeitnah eingreifen können.",
       "digitalColleagueTitle": "Digitaler Kollege",
+    "chatWidget": {
+      "title": "Website-Assistent",
+      "welcomeMessage": "Fragen Sie einfach, ich helfe gerne.",
+      "subtitle": "Chat mit dem Assistenten",
+      "placeholder": "Schreiben Sie Ihre Frage hier...",
+      "sendLabel": "Senden",
+      "sendingLabel": "Wird gesendet...",
+      "launcherAriaLabel": "Chat öffnen",
+      "minimizeAriaLabel": "Chat minimieren"
+    },
       "digitalColleagueDescription": "Beantwortet nicht nur Fragen, sondern erfasst automatisch Daten in Ihrem CRM und vereinbart Termine.",
       "internationalPackageTitle": "Internationales Expansionspaket",
       "internationalPackageDescription": "Automatisch generierter mehrsprachiger Kundenservice und Produktbeschreibungen für schnellen Markteintritt.",

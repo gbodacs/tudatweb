@@ -20,7 +20,7 @@ const SYSTEM_PROMPT = `Te egy chatbot vagy, aki tisztelettudóan segít a webold
   Elérhetőségünk: email: tudatai@protonmail.com
   Cégünk neve: Tudatai Kft.
   Weboldalunk: https://tudatai.hu
-  Cégünk tevékenysége: AI szolgáltatások és megoldások fejlesztése és üzemeltetése.
+  Cégünk tevékenysége: AI szolgáltatások és webes megoldások fejlesztése és üzemeltetése.
   Cégünk székhelye: Budapest, Magyarország
 
   Rólunk
@@ -34,18 +34,8 @@ Célunk, hogy a vállalatok biztonságosan és hatékonyan használhassák az AI
 
 Nagyvállalati környezetben szerzett tapasztalataink révén pontosan értjük a biztonsági, működési és üzleti elvárásokat. Célunk, hogy az AI valódi, kézzelfogható értéket teremtsen az Ön vállalata számára.
 
-Szakmai hátterünk
-Szoftverfejlesztés
-IT döntéshozatal
-IT elemzés
-Termékfejlesztés
-Projektvezetés
-Értékeink
-Ügyfélközpontúság
-Minőség és biztonság
-Innováció és AI szakértelem
-Átláthatóság és partnerség
-  `
+Szakmai hátterünk: Szoftverfejlesztés, IT döntéshozatal, IT elemzés, Termékfejlesztés, Projektvezetés
+Értékeink: Ügyfélközpontúság, Minőség és biztonság, Innováció és AI szakértelem, Átláthatóság és partnerség`
 
 type OpenAIMessageContentPart = {
   type?: string

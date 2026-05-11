@@ -14,6 +14,7 @@
     subtitle: '',
     placeholder: '',
     sendLabel: '',
+    sendingLabel: 'Sending...',
     launcherAriaLabel: '',
     minimizeAriaLabel: '',
     width: 360,
@@ -501,7 +502,7 @@
       this.input.disabled = isSending
       this.sendButton.disabled = isSending
       this.sendButton.textContent = isSending
-        ? 'Sending...'
+        ? this.config.sendingLabel
         : this.config.sendLabel
     }
 

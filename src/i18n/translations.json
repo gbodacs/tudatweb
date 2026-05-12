@@ -21,10 +21,10 @@
       "copyright": "© 2026 TudatAI. Minden jog fenntartva."
     },
     "chatWidget": {
-      "title": "Weboldal Segéd",
+      "title": "TudatAI Segéd",
       "welcomeMessage": "Kérdezz bátran, segítek!",
       "subtitle": "Chat a segéddel",
-      "placeholder": "Ide írja kérdését...",
+      "placeholder": "Ide írd a kérdésedet...",
       "sendLabel": "Küldés",
       "sendingLabel": "Küldés...",
       "launcherAriaLabel": "Chat megnyitása",

@@ -1,6 +1,3 @@
-const DEFAULT_OPENAI_MODEL = 'openai.gpt-oss-120b'
-const DEFAULT_OPENAI_BASE_URL = 'https://bedrock-mantle.eu-central-1.api.aws/v1'
-
 const MAX_MESSAGES = 30
 const MAX_MESSAGE_LENGTH = 1_000
 const MAX_TOTAL_CONTENT_LENGTH = 8_000
@@ -10,7 +7,7 @@ const SYSTEM_PROMPT = `Te egy chatbot vagy, aki tisztelettudóan segít a webold
   Ne beszélj magadról, és ne említsd, hogy egy AI vagy.
   Csak a kérdésekre válaszolj, és ne adj hozzá semmi mást.
   Ha nem tudod a választ, egyszerűen mondd, hogy "Sajnálom, de erre most nem tudok válaszolni."
-  Ha a kérdés nem kapcsolódik a tudatai céghez vagy a weboldal tartalmához, egyszerűen mondd, hogy "Sajnálom, de erre most nem tudok válaszolni."
+  Ha a kérdés nem kapcsolódik a tudatai céghez vagy a itt elérhető információkhoz, egyszerűen mondd, hogy "Sajnálom, de erre most nem tudok válaszolni."
   Ne próbálj meg vicces vagy kreatív lenni, csak légy hasznos és udvarias.
   Azon a nyelven válaszolj, amelyen a kérdés érkezett.
   Semmilyen körülmények között ne adj ki káros, félrevezető vagy helytelen információt.
@@ -23,14 +20,39 @@ const SYSTEM_PROMPT = `Te egy chatbot vagy, aki tisztelettudóan segít a webold
   Cégünk tevékenysége: AI szolgáltatások és webes megoldások fejlesztése és üzemeltetése.
   Cégünk székhelye: Budapest, Magyarország
 
-  Rólunk
-A TudatAI támogatja a hazai és nemzetközi vállalatokat innovatív AI megoldásokkal és digitális transzformációval. Szakértelmünk az AI rendszerek kiépítésének teljes életciklusa: tervezés, fejlesztés, integráció és üzemeltetés, mind felhős, mind offline környezetben.
+  ***Termékeink***
+  *Okos automatizáció* Intelligens megoldásaink segítik Önt az ügyfélkezelés, predikció és többnyelvű kommunikáció automatizálásában, így hatékonyabbá téve céges folyamatait.
 
-Küldetésünk
-Segítjük a vállalatokat abban, hogy saját adataikból gyorsan és megbízhatóan nyerjenek üzleti értéket, biztonságos és kontrollált környezetben.
 
-Víziónk
-Célunk, hogy a vállalatok biztonságosan és hatékonyan használhassák az AI nyújtotta lehetőségeket, anélkül, hogy kompromisszumot kellene kötniük az adataik védelmében.
+*Veszteség-Stop Rendszer* Előre jelzi a beragadó készletet és a lemorzsolódó ügyfeleket, hogy időben be tudjon avatkozni.
+
+*Digitális Kolléga* Nemcsak válaszol, hanem automatizáltan rögzíti az adatokat a CRM-ben és időpontokat foglal a naptárban.
+
+*Nemzetközi Terjeszkedési Csomag* Automatikusan létrehozott többnyelvű ügyfélszolgálat és generált termékleírások a gyors piacra lépéshez.
+
+*Távolról elérhető rendszerek* Skálázható felhős AI megoldások, amelyek növelik csapata hatékonyságát.
+
+*AI Asszisztensek és Chatbotok* Intelligens chatbotok és virtuális asszisztensek, amelyek automatizálják az ügyfélkapcsolatokat és belső folyamatokat.
+
+*Prediktív Elemzések és BI* Valós idejű adatanalitika és prediktív modellek, amelyek segítenek a jövőbeli trendek előrejelzésében és döntéshozatalban.
+
+*Automatizált Üzleti Folyamatok* AI-alapú automatizálás, amely optimalizálja a munkafolyamatokat és csökkenti a manuális munka időigényét.
+
+*Biztonságos adatfeldolgozás* Zárt, internetkapcsolat nélküli környezetben működő AI rendszer, amely teljes kontrollt biztosít Önnek az adatai felett.
+
+
+*Offline AI Modellek Gépbérlettel* Béreljen AI hardvereket és modelleket offline használatra, teljes adatbiztonsággal és egyedi konfigurációval.
+
+*Egyedi AI Megoldások Fejlesztése* Testreszabott AI alkalmazások fejlesztése specifikus üzleti igények alapján, zárt környezetben.
+
+*Biztonságos Offline Adatfeldolgozás* Adatvédelmi szempontból biztonságos AI feldolgozás helyi infrastruktúrán, felhős szolgáltatások használata nélkül.
+
+
+Rólunk: Csapatunk web és AI szakértőkből áll, akik kis- és középvállalatok számára megfizethető és prémium szintű AI szolgáltatásokat nyújtunk.
+
+Küldetésünk: Segítjük a vállalatokat abban, hogy saját adataikból gyorsan és megbízhatóan nyerjenek üzleti értéket, biztonságos és kontrollált környezetben.
+
+Víziónk: Célunk, hogy a vállalatok biztonságosan és hatékonyan használhassák az AI nyújtotta lehetőségeket, anélkül, hogy kompromisszumot kellene kötniük az adataik védelmében.
 
 Nagyvállalati környezetben szerzett tapasztalataink révén pontosan értjük a biztonsági, működési és üzleti elvárásokat. Célunk, hogy az AI valódi, kézzelfogható értéket teremtsen az Ön vállalata számára.
 
@@ -93,6 +115,18 @@ type OpenAIResponse = {
 type AIProxyHttpError = Error & {
   status: number
   body: OpenAIResponse
+}
+
+function getRequiredEnv(
+  name: 'OPENAI_MODEL' | 'OPENAI_BASE_URL' | 'OPENAI_API_KEY'
+): string {
+  const value = process.env[name]?.trim()
+
+  if (!value) {
+    throw new Error(`${name} is not configured.`)
+  }
+
+  return value
 }
 
 function isObject(value: unknown): value is Record<string, unknown> {
@@ -206,7 +240,7 @@ function normalizeRequest(body: unknown): NormalizedRequest {
     }
 
     return {
-      model: process.env.OPENAI_MODEL?.trim() || DEFAULT_OPENAI_MODEL,
+      model: getRequiredEnv('OPENAI_MODEL'),
       messages: withSystemPrompt([{ role: 'user', content }]),
       stream: false,
     }
@@ -219,7 +253,7 @@ function normalizeRequest(body: unknown): NormalizedRequest {
   const model =
     typeof body.model === 'string' && body.model.trim()
       ? body.model.trim()
-      : process.env.OPENAI_MODEL?.trim() || DEFAULT_OPENAI_MODEL
+      : getRequiredEnv('OPENAI_MODEL')
 
   const stream = body.stream === true
 
@@ -289,12 +323,8 @@ async function fetchAIProxy(
   request: NormalizedRequest,
   options: AIProxyFetchOptions = {}
 ): Promise<Response> {
-  const apiKey = process.env.OPENAI_API_KEY?.trim()
-  if (!apiKey) {
-    throw new Error('OPENAI_API_KEY is not configured.')
-  }
-
-  const baseUrl = process.env.OPENAI_BASE_URL?.trim() || DEFAULT_OPENAI_BASE_URL
+  const apiKey = getRequiredEnv('OPENAI_API_KEY')
+  const baseUrl = getRequiredEnv('OPENAI_BASE_URL')
 
   return fetch(`${baseUrl.replace(/\/$/, '')}/chat/completions`, {
     method: 'POST',

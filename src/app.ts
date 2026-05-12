@@ -1,3 +1,4 @@
+import dotenv from 'dotenv'
 import express from 'express'
 import path from 'path'
 import fs from 'fs'
@@ -6,6 +7,8 @@ import { createI18nContext, getLanguageCookieHeader } from './i18n'
 import { isAIStreamRequested, toAIProxy, toAIProxyStream } from './aiproxy'
 import { chatApiCors, webCors } from './cors'
 import { chatRateLimiters, webRateLimiters } from './ratelimiter'
+
+dotenv.config()
 
 const app = express()
 const port = 8080

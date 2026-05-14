@@ -6,21 +6,34 @@ Ez a projekt az TudatAI vállalati weboldalának TypeScript Node.js implementác
 
 1. Klónozd a repository-t
 2. Futtasd `npm install` a függőségek telepítéséhez
+3. Hozz létre egy `.env` fájlt az `.env.example` alapján
 
 ## Futtatás
 
 ### Fejlesztési mód (hot reload)
+
 ```
 npm run dev
 ```
 
 ### Production build
+
 ```
 npm run build
 npm start
 ```
 
-A szerver alapértelmezett portja: 3000
+A szerver alapértelmezett portja: 8080
+
+## Környezeti változók
+
+Az AI proxy futásához ezek a változók szükségesek a `.env` fájlban:
+
+```env
+OPENAI_MODEL=openai.gpt-oss-120b
+OPENAI_BASE_URL=https://bedrock-mantle.eu-central-1.api.aws/v1
+OPENAI_API_KEY=...
+```
 
 ## Struktúra
 
@@ -35,6 +48,20 @@ A szerver alapértelmezett portja: 3000
 - TypeScript alapú Node.js alkalmazás
 - Express.js web szerver
 - EJS template engine
+- OpenAI-kompatibilis backend chat proxy a `POST /chatapi/tudatai` endpointon
+- Streamelt chat valaszok OpenAI-kompatibilis SSE formatumban
 - Közös header és footer komponensek (egyszerű módosíthatóság)
 - Statikus CSS szolgálás
 - Reszponzív design
+
+## teszt
+
+```bash
+curl -X POST http://127.0.0.1:8080/chatapi/tudatai \
+  -H "Content-Type: application/json" \
+  -d '{"text":"yxyxyx"}'
+
+curl -N -X POST http://127.0.0.1:8080/chatapi/tudatai \
+  -H "Content-Type: application/json" \
+  -d '{"messages":[{"role":"user","content":"yxyxyx"}],"stream":true}'
+```

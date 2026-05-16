@@ -1,4 +1,4 @@
-import translations from './translations.json';
+import translations from './web_trans.json';
 
 export type Language = 'hu' | 'en' | 'de';
 

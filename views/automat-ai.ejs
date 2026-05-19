@@ -18,15 +18,19 @@
       <h3><%= t('home.lossStopTitle') %></h3>
       <p><%= t('home.lossStopDescription') %></p>
       </br>
-      <h3><%= t('home.internationalTitle') %></h3>
-      <p><%= t('home.internationalDescription') %></p>
+      <h3><%= t('home.internationalPackageTitle') %></h3>
+      <p><%= t('home.internationalPackageDescription') %></p>
+      <br/>
+      <div style="text-align:center">
+        <a href="/solutions" class="btn"><%= t('home.solutionsButton') %></a>
+      </div>
     </section>
     </br>
     <p><b><%= t('automatization.conclusionMessage') %></b></p>
   </div>
 </section>
-<div style="text-align:center"> 
-<a href="/contact" class="btn-secondary"><%= t('automatization.consultationButton') %></a>
+<div style="text-align:center">
+  <a href="/contact" class="btn-secondary"><%= t('automatization.consultationButton') %></a>
 </div>
 <br/><br/><br/>
 <%- include('partials/footer') %>

@@ -294,13 +294,13 @@ app.get('/automat-ai', (req, res) => {
   )
 })
 
-app.get('/offline-ai', (req, res) => {
+app.get('/solutions', (req, res) => {
   renderSEO(
     res,
-    'offline-ai',
+    'solutions',
     req,
-    'offline.title',
-    'offline.metaDescription',
+    'solutions.title',
+    'solutions.metaDescription',
     req.path
   )
 })

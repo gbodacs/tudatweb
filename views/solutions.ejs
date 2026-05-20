@@ -1,10 +1,16 @@
 <%- include('partials/header') %>
 
-  <section class="products">
-    <div class="container">
-    <h1><%= t('solutions.pageTitle') %></h1>
+<section class="blog-hero">
+	<div class="container">
+    <span class="blog-kicker"><%= t('solutions.title') %></span>
+		<h1><%= t('solutions.pageTitle') %></h1>
     <p><%= t('solutions.introduction1') %></p>
     <br/><p><%= t('solutions.introduction2') %></p>
+	</div>
+</section>
+
+  <section class="products">
+    <div class="container">
     <section class="features feature-row">
       <div class="feature-row__content">
         <h2><%= t('solutions.buildingBlocksTitle') %></h2>
@@ -22,6 +28,7 @@
         <img src="/images/simple_chat.webp" alt="<%= t('solutions.buildingBlocksImageAlt') %>" />
       </figure>
     </section>
+    <br/>
     <section class="features feature-row">
       <div class="feature-row__content">
         <h2><%= t('solutions.automationTitle') %></h2>
@@ -36,6 +43,7 @@
        <img src="/images/rag_search.webp" alt="<%= t('solutions.automationImageAlt') %>" />
       </figure>
     </section>
+    <br/>
     <section class="features feature-row">
       <div class="feature-row__content">
         <h2><%= t('solutions.forecastingTitle') %></h2>
@@ -51,6 +59,7 @@
         <img src="/images/prophet.webp" alt="<%= t('solutions.forecastingImageAlt') %>" />
       </figure>
     </section>
+    <br/>
     <section class="features">
       <h3><%= t('solutions.otherServicesTitle') %></h3>
       <ul>
@@ -69,10 +78,17 @@
        </li>
       </ul>
     </section>
+    <section class="features">
+      <h3><%= t('solutions.impTitle') %></h3>
+      <ul>
+        <li><%= t('solutions.impCloudIntro') %></li>
+        <li><%= t('solutions.impOfflineIntro') %></li>
+      </ul>
+    </section>
   </div>
 </section>
 <div style="text-align:center"> 
-<a href="/contact" class="btn-secondary"><%= t('solutions.consultationButton') %></a>
+<a href="/contact" class="btn-secondary"><%= t('global.consultationButton') %></a>
 </div>
 <br/><br/>
 <%- include('partials/footer') %>

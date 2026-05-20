@@ -1,5 +1,9 @@
 {
   "hu": {
+    "global": {
+      "consultationButton":"Kérjen ingyenes konzultációt"
+
+    },
     "nav": {
       "home": "Főoldal",
       "about": "Rólunk",
@@ -137,14 +141,13 @@
       "coreMessage": "Az Okos Automatizációk nem puszán technológiák - az Ön mindennapi üzleti értékének motorjai.",
       "solutionsTitle": "Intelligens megoldásaink",
       "digitalColleagueDescription": "Így Ön értékes időt nyer stratégiai feladatokra.",   
-      "conclusionMessage": "Ezek az automatizációk nem puszán technológiák - a vállalkozás minden napján közvetlenül értéket teremtenek, csökkentik a manuális munkát, növelik az ügyfél-elégedettséget és elősegítik a fenntartható növekedést.",
-      "consultationButton": "Kérjen ingyenes konzultációt"
+      "conclusionMessage": "Ezek az automatizációk nem puszán technológiák - a vállalkozás minden napján közvetlenül értéket teremtenek, csökkentik a manuális munkát, növelik az ügyfél-elégedettséget és elősegítik a fenntartható növekedést."
     },
     "solutions": {
       "title": "Megoldásaink - TudatAI",
       "metaDescription": "AI alapú, offline és webes megoldások automatizációhoz, intelligens kereséshez, előrejelzéshez és biztonságos vállalati adatfeldolgozáshoz.",
       "pageTitle": "AI alapú megoldásaink",
-      "introduction1": "A jelenleg elérhető legtöbb AI szolgáltatás a felhőben működik, ami sok esetben nem ideális megoldás, hiszen a felhasználói adatokkal tanítják be a következő modelleket. Az adatbiztonság, a gyors válaszidő és a teljes kontroll hiánya miatt egyre több vállalat keresi az offline AI megoldásokat.",
+      "introduction1": "A jelenleg elérhető legtöbb AI szolgáltatás a felhőben működik, ami sok esetben nem ideális megoldás, hiszen a felhasználói adatokat harmadik félnek adjuk ki és ők ezekkel az adatokkal tanítják be a következő generációs modelleket. Az adatbiztonság, a gyors válaszidő és a teljes kontroll hiánya miatt egyre több vállalat keresi az offline AI megoldásokat.",
       "introduction2": "Szinte bármilyen igényt le tudunk fedni, megoldásaink weben és helyben telepítve is elérhetők.",
       "buildingBlocksTitle": "AI építőkövek automatizációs megoldásokhoz",
       "buildingBlocksItem1": "Egyszerű AI chat",
@@ -179,24 +182,9 @@
       "customSolutionsItem3": "Költséghatékony megoldások kialakítása",
       "customSolutionsItem4": "Egyedi AI megoldások fejlesztése a vállalat specifikus igényei alapján",
       "customSolutionsItem5": "Rendszeres karbantartás és frissítések biztosítása a folyamatos működés érdekében",
-      "consultationButton": "Kérjen ingyenes konzultációt"
-    },
-    "cloud": {
-      "title": "Felhős AI Megoldások - TudatAI",
-      "metaDescription": "Skálázható, felhőalapú AI megoldások és harmadik fél integrációk üzleti növekedéshez.",
-      "pageTitle": "Felhős AI megoldások",
-      "introduction": "Igény esetén felhő alapú, skálázható AI megoldások tervezését és építését is vállaljuk.",
-      "customDesignTitle": "Egyedi AI rendszerek tervezése és fejlesztése",
-      "tailoredSolutions": "az Ön üzleti igényeire szabott megoldások",
-      "scalableArchitecture": "skálázható architektúra",
-      "existingIntegration": "integráció meglévő rendszerekkel",
-      "consultationTitle": "Konzultáció és tervezés",
-      "requirementMapping": "üzleti igények feltérképezése",
-      "technologyDecision": "technológiai döntéstámogatás",
-      "costEffective": "költséghatékony megoldások kialakítása",
-      "customOfferTitle": "Kérjen egyedi ajánlatot",
-      "customOfferDescription": "Érdeklődjön csapatunktól a testreszabott felhős AI csomagokért.",
-      "consultationButton": "Kérjen ingyenes konzultációt"
+      "impTitle": "Hová telepítsük a rendszert? Segítünk a döntésben!",
+      "impCloudIntro": "Ha a gyorsabb, egyszerűbb és olcsóbb megoldás megfelelő Önnek, a felhőalapú AI rendszerek jelenthetik a legjobb választást.",
+      "impOfflineIntro": "Ha érzékeny adatokkal dolgozik és nem szeretné, hogy adatai harmadik félhez kerülnének, a helyben telepített AI rendszer lesz a jobb megoldás."
     },
     "privacy": {
       "title": "Adatvédelmi tájékoztató - TudatAI",
@@ -383,6 +371,10 @@
     }
   },
   "en": {
+    "global": {
+      "consultationButton":"Request Free Consultation"
+
+    },
     "nav": {
       "home": "Home",
       "about": "About",
@@ -520,14 +512,13 @@
       "coreMessage": "Smart Automations are not merely technologies - they are the engines of your daily business value.",
       "solutionsTitle": "Our Intelligent Solutions",
       "digitalColleagueDescription": "You gain valuable time for strategic tasks while the digital colleague handles routine communications and data management.",
-      "conclusionMessage": "These automations are not merely technologies - they create direct value every day in your business, reduce manual work, increase customer satisfaction, and promote sustainable growth.",
-      "consultationButton": "Request Free Consultation"
+      "conclusionMessage": "These automations are not merely technologies - they create direct value every day in your business, reduce manual work, increase customer satisfaction, and promote sustainable growth."
     },
     "solutions": {
       "title": "Our Solutions - TudatAI",
       "metaDescription": "AI-based offline and web solutions for automation, intelligent search, forecasting, and secure enterprise data processing.",
       "pageTitle": "Our AI Solutions",
-      "introduction1": "Most AI services available today run in the cloud, which is often less than ideal because user data may be used to improve future models. Data security, response time, and the lack of full control are key reasons why more and more companies are turning to offline AI solutions.",
+      "introduction1": "Most AI services currently available operate in the cloud, which in many cases is not an ideal solution, as user data is shared with third parties and used to train next-generation models. Due to concerns about data security, response speed, and the lack of full control, more and more companies are looking for offline AI solutions.",
       "introduction2": "We cover a broad range of business needs, with solutions available either as web-based services or on-premises deployments.",
       "buildingBlocksTitle": "AI building blocks for automation solutions",
       "buildingBlocksItem1": "Simple AI chat",
@@ -562,7 +553,9 @@
       "customSolutionsItem3": "Designing cost-effective solutions",
       "customSolutionsItem4": "Developing custom AI solutions around company-specific requirements",
       "customSolutionsItem5": "Providing regular maintenance and updates for continuous operation",
-      "consultationButton": "Request Free Consultation"
+      "impTitle": "Where should the system be deployed? We help you decide!",
+      "impCloudIntro": "If a faster, simpler, and more cost-effective solution suits your needs, cloud-based AI systems may be the best choice.",
+      "impOfflineIntro": "If you work with sensitive data and do not want your information shared with third parties, an on-premises AI system will be the better solution."
     },
     "cloud": {
       "title": "Cloud AI Solutions - TudatAI",
@@ -578,8 +571,7 @@
       "technologyDecision": "technology decision support",
       "costEffective": "cost-effective solution design",
       "customOfferTitle": "Request a Custom Quote",
-      "customOfferDescription": "Inquire with our team about customized cloud AI packages.",
-      "consultationButton": "Request Free Consultation"
+      "customOfferDescription": "Inquire with our team about customized cloud AI packages."
     },
     "privacy": {
       "title": "Privacy Policy - TudatAI",
@@ -766,6 +758,9 @@
     }
   },
   "de": {
+    "global": {
+      "consultationButton":"Kostenlose Beratung anfordern"
+    },
     "nav": {
       "home": "Startseite",
       "about": "Über uns",
@@ -844,7 +839,7 @@
       "visionTitle": "Unsere Vision",
       "visionDescription": "Wir streben danach, die führende Anlaufstelle für Unternehmen zu sein, die innovative AI-Lösungen suchen, um ihre Geschäftsprozesse zu optimieren und nachhaltiges Wachstum zu fördern.",
       "backgroundTitle": "Beruflicher Hintergrund",
-      "backgroundMore": "Unsere Teammitglieder verfügen über umfangreiche Erfahrung in verschiedenen Bereichen der IT und AI, darunter:",
+      "backgroundMore": "Unsere Teammitglieder verfügen über umfangreiche Erfahrung in verschiedenen Bereichen der IT und AI, darunter.",
       "softwareDevelopment": "Softwareentwicklung",
       "itDecisionMaking": "IT-Entscheidungsfindung",
       "itAnalysis": "IT-Analyse",
@@ -903,14 +898,13 @@
       "coreMessage": "Intelligente Automatisierungen sind nicht einfach Technologien - sie sind die Motoren Ihres täglichen Geschäftswerts.",
       "solutionsTitle": "Unsere intelligenten Lösungen",
       "digitalColleagueDescription": "Sie gewinnen wertvolle Zeit für strategische Aufgaben, während der digitale Kollege Routinekommunikation und Datenmanagement übernimmt.",
-      "conclusionMessage": "Diese Automatisierungen sind nicht einfach Technologien - sie schaffen täglich direkten Wert in Ihrem Unternehmen, reduzieren manuelle Arbeit, steigern die Kundenzufriedenheit und fördern nachhaltiges Wachstum.",
-      "consultationButton": "Kostenlose Beratung anfordern"
+      "conclusionMessage": "Diese Automatisierungen sind nicht einfach Technologien - sie schaffen täglich direkten Wert in Ihrem Unternehmen, reduzieren manuelle Arbeit, steigern die Kundenzufriedenheit und fördern nachhaltiges Wachstum."
     },
     "solutions": {
       "title": "Unsere Lösungen - TudatAI",
       "metaDescription": "AI-basierte Offline- und Web-Lösungen für Automatisierung, intelligente Suche, Prognosen und sichere Datenverarbeitung im Unternehmen.",
       "pageTitle": "Unsere AI-Lösungen",
-      "introduction1": "Die meisten heute verfügbaren AI-Dienste laufen in der Cloud. Das ist in vielen Fällen nicht ideal, weil Nutzerdaten häufig zur Verbesserung künftiger Modelle verwendet werden. Datensicherheit, schnelle Reaktionszeiten und vollständige Kontrolle sind zentrale Gründe dafür, dass immer mehr Unternehmen nach Offline-AI-Lösungen suchen.",
+      "introduction1": "Die meisten derzeit verfügbaren KI-Dienste arbeiten in der Cloud, was in vielen Fällen keine ideale Lösung ist, da Benutzerdaten an Dritte weitergegeben und zum Training der nächsten Modellgenerationen verwendet werden. Aufgrund von Bedenken hinsichtlich Datensicherheit, Reaktionsgeschwindigkeit und fehlender vollständiger Kontrolle suchen immer mehr Unternehmen nach Offline-KI-Lösungen.",
       "introduction2": "Wir decken ein breites Spektrum an Anforderungen ab; unsere Lösungen sind sowohl webbasiert als auch lokal installiert verfügbar.",
       "buildingBlocksTitle": "AI-Bausteine für Automatisierungslösungen",
       "buildingBlocksItem1": "Einfacher AI-Chat",
@@ -945,7 +939,10 @@
       "customSolutionsItem3": "Entwicklung kosteneffizienter Lösungen",
       "customSolutionsItem4": "Entwicklung individueller AI-Lösungen auf Basis unternehmensspezifischer Anforderungen",
       "customSolutionsItem5": "Regelmäßige Wartung und Updates für einen stabilen Betrieb",
-      "consultationButton": "Kostenlose Beratung anfordern"
+      "": "Kostenlose Beratung anfordern",
+      "impTitle": "Wo soll das System installiert werden? Wir helfen Ihnen bei der Entscheidung!",
+      "impCloudIntro": "Wenn für Sie eine schnellere, einfachere und kostengünstigere Lösung geeignet ist, können cloudbasierte KI-Systeme die beste Wahl sein.",
+      "impOfflineIntro": "Wenn Sie mit sensiblen Daten arbeiten und nicht möchten, dass Ihre Daten an Dritte weitergegeben werden, ist ein lokal installiertes KI-System die bessere Lösung."
     },
     "cloud": {
       "title": "Cloud-AI-Lösungen - TudatAI",
@@ -961,8 +958,7 @@
       "technologyDecision": "Unterstützung bei technologischen Entscheidungen",
       "costEffective": "kosteneffektive Lösungsgestaltung",
       "customOfferTitle": "Benutzerdefiniertes Angebot anfordern",
-      "customOfferDescription": "Fragen Sie unser Team nach maßgeschneiderten Cloud-AI-Paketen.",
-      "consultationButton": "Kostenlose Beratung anfordern"
+      "customOfferDescription": "Fragen Sie unser Team nach maßgeschneiderten Cloud-AI-Paketen."
     },
     "privacy": {
       "title": "Datenschutzrichtlinie - TudatAI",

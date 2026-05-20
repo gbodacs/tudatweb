@@ -324,6 +324,13 @@ body {
   color: var(--accent-dark);
 }
 
+.card-icon {
+  margin: 0.5rem 0;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--accent-dark);
+}
+
 .about-page ul {
   list-style: inside disc;
   margin-top: 0.75rem;

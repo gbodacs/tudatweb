@@ -5,16 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= title %></title>
   <meta name="description" content="<%= description || t('home.metaDescription') %>" />
-  <meta name="keywords" content="<%= keywords || t('home.metaDescription') %>" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://tudatai.hu<%= currentPath %>" />
+  <% if (typeof keywords === 'string' && keywords.length > 0) { %>
+    <meta name="keywords" content="<%= keywords %>" />
+  <% } %>
+  <meta name="robots" content="<%= robots || 'index,follow' %>" />
+  <meta name="author" content="TudatAI" />
+  <meta name="theme-color" content="#57BC90" />
+  <meta name="apple-mobile-web-app-title" content="<%= siteName || 'TudatAI' %>" />
+  <link rel="canonical" href="<%= canonicalUrl %>" />
+  <% (alternateUrls || []).forEach((alternate) => { %>
+    <link rel="alternate" hreflang="<%= alternate.hrefLang %>" href="<%= alternate.href %>" />
+  <% }) %>
+  <% if (xDefaultUrl) { %>
+    <link rel="alternate" hreflang="x-default" href="<%= xDefaultUrl %>" />
+  <% } %>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
+  <meta property="og:site_name" content="<%= siteName || 'TudatAI' %>" />
   <meta property="og:title" content="<%= ogTitle || title %>" />
   <meta property="og:description" content="<%= ogDescription || description || t('home.metaDescription') %>" />
   <meta property="og:type" content="<%= ogType || 'website' %>" />
-  <meta property="og:url" content="<%= ogUrl || ('https://tudatai.hu' + currentPath) %>" />
-  <meta property="og:image" content="<%= ogImage || '/images/og-image.png' %>" />
+  <meta property="og:url" content="<%= ogUrl || canonicalUrl %>" />
+  <meta property="og:image" content="<%= ogImage %>" />
+  <meta property="og:image:alt" content="<%= ogImageAlt || title %>" />
   <meta property="og:locale" content="<%= ogLocale || 'hu_HU' %>" />
+  <% (ogLocaleAlternates || []).forEach((locale) => { %>
+    <meta property="og:locale:alternate" content="<%= locale %>" />
+  <% }) %>
+
+  <meta name="twitter:card" content="<%= twitterCard || 'summary_large_image' %>" />
+  <meta name="twitter:title" content="<%= twitterTitle || title %>" />
+  <meta name="twitter:description" content="<%= twitterDescription || description || t('home.metaDescription') %>" />
+  <meta name="twitter:image" content="<%= twitterImage || ogImage %>" />
+
+  <% (structuredData || []).forEach((schema) => { %>
+    <script type="application/ld+json"><%- JSON.stringify(schema) %></script>
+  <% }) %>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="/styles.css" />
 </head>
@@ -24,22 +55,22 @@
       <div class="logodiv">
         <img style="max-width: 50px;" src="/apple-touch-icon.png" alt="TudatAI Logo" />
         <div class="logo">
-          <a href="/">TudatAI</a>
+          <a href="<%= localizePath('/') %>">TudatAI</a>
         </div>
       </div>      
       <nav class="main-nav">
-        <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>"><%= t('nav.home') %></a>
-        <a href="/about" class="<%= currentPath === '/about' ? 'active' : '' %>"><%= t('nav.about') %></a>
-        <a href="/automat-ai" class="<%= currentPath === '/automat-ai' ? 'active' : '' %>"><%= t('nav.automat') %></a>
-        <a href="/solutions" class="<%= currentPath === '/solutions' ? 'active' : '' %>"><%= t('nav.solutions') %></a>
-        <a href="/blog" class="<%= currentPath === '/blog' ? 'active' : '' %>"><%= t('nav.blog') %></a>
-        <a href="/contact" class="<%= currentPath === '/contact' ? 'active' : '' %>"><%= t('nav.contact') %></a>
+        <a href="<%= localizePath('/') %>" class="<%= currentPath === '/' ? 'active' : '' %>"><%= t('nav.home') %></a>
+        <a href="<%= localizePath('/about') %>" class="<%= currentPath === '/about' ? 'active' : '' %>"><%= t('nav.about') %></a>
+        <a href="<%= localizePath('/automat-ai') %>" class="<%= currentPath === '/automat-ai' ? 'active' : '' %>"><%= t('nav.automat') %></a>
+        <a href="<%= localizePath('/solutions') %>" class="<%= currentPath === '/solutions' ? 'active' : '' %>"><%= t('nav.solutions') %></a>
+        <a href="<%= localizePath('/blog') %>" class="<%= currentPath === '/blog' ? 'active' : '' %>"><%= t('nav.blog') %></a>
+        <a href="<%= localizePath('/contact') %>" class="<%= currentPath === '/contact' ? 'active' : '' %>"><%= t('nav.contact') %></a>
       </nav>
       <div class="language-selector">
        <!-- <img style="max-width: 30px;" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Hungary.svg" alt="Hungarian Flag" />
         <img style="max-width: 30px;" src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK Flag" />
         <img style="max-width: 30px;" src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg" alt="German Flag" /> -->
-        <select onchange="window.location.href='<%= currentPath %>?lang=' + this.value" value="<%= language %>">
+        <select aria-label="<%= t('language.select') %>" onchange="window.location.href='<%= currentPath %>?lang=' + this.value" value="<%= language %>">
           <% availableLanguages.forEach(lang => { %>
             <option value="<%= lang %>" <%= language === lang ? 'selected' : '' %>>
               <%= lang === 'hu' ? ' Hu' : lang === 'en' ? ' En' : ' De' %>

@@ -188,6 +188,7 @@
     },
     "privacy": {
       "title": "Adatvédelmi tájékoztató - TudatAI",
+      "metaDescription": "TudatAI adatvédelmi tájékoztató a kapcsolatfelvétel során megadott személyes adatok kezeléséről, megőrzéséről és az érintettek jogairól.",
       "pageTitle": "Adatvédelmi tájékoztató",
       "introduction": "Bevezetés",
       "introductionText": "Jelen adatvédelmi tájékoztató célja, hogy ismertesse, hogyan kezeljük a weboldalon keresztül megadott személyes adatokat.",
@@ -237,6 +238,7 @@
     },
     "terms": {
       "title": "Felhasználási feltételek - TudatAI",
+      "metaDescription": "TudatAI felhasználási feltételek az AI szolgáltatások igénybevételéről, szerződéskötésről, díjazásról és felelősségről.",
       "pageTitle": "Felhasználási feltételek",
       "intro": "Az TudatAI szolgáltatásainak igénybevételekor az alábbi felhasználási feltételek alkalmazandók.",
       "servicesTitle": "Szolgáltatások",
@@ -575,6 +577,7 @@
     },
     "privacy": {
       "title": "Privacy Policy - TudatAI",
+      "metaDescription": "TudatAI privacy policy covering how contact form data is processed, stored, and protected, plus your rights as a data subject.",
       "pageTitle": "Privacy Policy",
       "introduction": "Introduction",
       "introductionText": "This privacy policy explains how we handle personal data provided through our website.",
@@ -624,6 +627,7 @@
     },
     "terms": {
       "title": "Terms of Service - TudatAI",
+      "metaDescription": "TudatAI terms of service covering AI service usage, contract formation, pricing, and liability.",
       "pageTitle": "Terms of Service",
       "intro": "The following terms and conditions apply when using TudatAI services.",
       "servicesTitle": "Services",
@@ -962,6 +966,7 @@
     },
     "privacy": {
       "title": "Datenschutzrichtlinie - TudatAI",
+      "metaDescription": "TudatAI-Datenschutzrichtlinie zur Verarbeitung, Speicherung und zum Schutz der über das Kontaktformular übermittelten personenbezogenen Daten.",
       "pageTitle": "Datenschutzrichtlinie",
       "introduction": "Einführung",
       "introductionText": "Diese Datenschutzrichtlinie erläutert, wie wir über unsere Website bereitgestellte persönliche Daten verarbeiten.",
@@ -1011,6 +1016,7 @@
     },
     "terms": {
       "title": "Nutzungsbedingungen - TudatAI",
+      "metaDescription": "TudatAI-Nutzungsbedingungen zu Leistungsumfang, Vertragsabschluss, Preisen und Haftung für AI-Dienstleistungen.",
       "pageTitle": "Nutzungsbedingungen",
       "intro": "Die folgenden Bedingungen gelten bei der Nutzung von TudatAI-Dienstleistungen.",
       "servicesTitle": "Dienstleistungen",

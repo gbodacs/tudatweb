@@ -2,55 +2,91 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tudatai.hu/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://tudatai.hu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tudatai.hu/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tudatai.hu/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tudatai.hu/"/>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tudatai.hu/about</loc>
-    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://tudatai.hu/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tudatai.hu/about?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tudatai.hu/about?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tudatai.hu/about"/>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tudatai.hu/contact</loc>
-    <lastmod>2026-03-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://tudatai.hu/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tudatai.hu/contact?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tudatai.hu/contact?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tudatai.hu/contact"/>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tudatai.hu/offline-ai</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://tudatai.hu/cloud-ai</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://tudatai.hu/automat-ai</loc>
-    <lastmod>2026-04-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://tudatai.hu/automat-ai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tudatai.hu/automat-ai?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tudatai.hu/automat-ai?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tudatai.hu/automat-ai"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tudatai.hu/solutions</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://tudatai.hu/solutions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tudatai.hu/solutions?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tudatai.hu/solutions?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tudatai.hu/solutions"/>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tudatai.hu/blog</loc>
-    <lastmod>2026-04-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://tudatai.hu/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tudatai.hu/blog?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tudatai.hu/blog?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tudatai.hu/blog"/>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tudatai.hu/privacy</loc>
-    <lastmod>2026-04-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://tudatai.hu/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tudatai.hu/privacy?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tudatai.hu/privacy?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tudatai.hu/privacy"/>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://tudatai.hu/terms</loc>
-    <lastmod>2026-04-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://tudatai.hu/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tudatai.hu/terms?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tudatai.hu/terms?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tudatai.hu/terms"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tudatai.hu/cookiepolicy</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://tudatai.hu/cookiepolicy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tudatai.hu/cookiepolicy?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tudatai.hu/cookiepolicy?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tudatai.hu/cookiepolicy"/>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

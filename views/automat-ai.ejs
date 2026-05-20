@@ -22,7 +22,7 @@
       <p><%= t('home.internationalPackageDescription') %></p>
       <br/>
       <div style="text-align:center">
-        <a href="/solutions" class="btn"><%= t('home.solutionsButton') %></a>
+        <a href="<%= localizePath('/solutions') %>" class="btn"><%= t('home.solutionsButton') %></a>
       </div>
     </section>
     </br>
@@ -30,7 +30,7 @@
   </div>
 </section>
 <div style="text-align:center">
-  <a href="/contact" class="btn-secondary"><%= t('global.consultationButton') %></a>
+  <a href="<%= localizePath('/contact') %>" class="btn-secondary"><%= t('global.consultationButton') %></a>
 </div>
 <br/><br/><br/>
 <%- include('partials/footer') %>

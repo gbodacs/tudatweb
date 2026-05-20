@@ -16,15 +16,15 @@
       </br>
       <div class="grid">
         <article class="card">
-          <h3><%= t('home.lossStopTitle') %></h3><h1><i class="bi bi-activity"></i></h1>
+          <h3><%= t('home.lossStopTitle') %></h3><p class="card-icon" aria-hidden="true"><i class="bi bi-activity"></i></p>
           <p><%= t('home.lossStopDescription') %></p>
         </article>
         <article class="card">
-          <h3><%= t('home.internationalPackageTitle') %></h3><h1><i class="bi bi-megaphone"></i></h1>
+          <h3><%= t('home.internationalPackageTitle') %></h3><p class="card-icon" aria-hidden="true"><i class="bi bi-megaphone"></i></p>
           <p><%= t('home.internationalPackageDescription') %></p>
         </article>
         <article class="card">
-          <h3><%= t('home.digitalColleagueTitle') %></h3><h1><i class="bi bi-people"></i></h1>
+          <h3><%= t('home.digitalColleagueTitle') %></h3><p class="card-icon" aria-hidden="true"><i class="bi bi-people"></i></p>
           <p><%= t('home.digitalColleagueDescription') %></p>
         </article>
       </div>
@@ -70,11 +70,11 @@
   </section>
   </br>
   <div class="container">
-    <h1><%= t('home.aboutSection') %></h1>
+    <h2><%= t('home.aboutSection') %></h2>
     <p><%= t('home.aboutDescription') %></p>
     </br>
     <div style="text-align:center"> 
-      <a href="/about" class="btn-secondary"><%= t('home.aboutButton') %></a>
+      <a href="<%= localizePath('/about') %>" class="btn-secondary"><%= t('home.aboutButton') %></a>
     </div>
   </div>
   </br>
@@ -85,19 +85,19 @@
           <h3><%= t('nav.solutions') %></h3>
             <p><%= t('home.secureDescription') %></p>
             </br>
-            <a href="/solutions" class="btn"><%= t('home.solutionsButton') %></a>
+            <a href="<%= localizePath('/solutions') %>" class="btn"><%= t('home.solutionsButton') %></a>
         </article>
         <article class="card">
           <h3><%= t('home.aboutSection') %></h3>
             <p><%= t('home.callToActionDescription') %></p>
             </br>
-            <a href="/contact" class="btn"><%= t('home.contactButton') %></a>
+            <a href="<%= localizePath('/contact') %>" class="btn"><%= t('home.contactButton') %></a>
         </article>
         <article class="card">
         <h3><%= t('nav.cloud') %></h3>
           <p><%= t('cloud.introduction') %></p>
           <br/>
-          <a href="/cloud-ai" class="btn"><%= t('home.cloudAiButton') %></a>
+          <a href="<%= localizePath('/solutions') %>" class="btn"><%= t('home.solutionsButton') %></a>
         </article>
       </div>
     </div>

@@ -7,16 +7,16 @@
       </div>
       <div>
         <h4><%= t('footer.quickLinks') %></h4>
-        <p><a href="/"><%= t('nav.home') %></a></p>
-        <p><a href="/about"><%= t('nav.about') %></a> | <a href="/contact"><%= t('nav.contact') %></a> | <a href="/blog"><%= t('nav.blog') %></a></p>
-        <p><a href="/automat-ai"><%= t('nav.automat') %></a> | <a href="/solutions"><%= t('nav.solutions') %></a></p>
+        <p><a href="<%= localizePath('/') %>"><%= t('nav.home') %></a></p>
+        <p><a href="<%= localizePath('/about') %>"><%= t('nav.about') %></a> | <a href="<%= localizePath('/contact') %>"><%= t('nav.contact') %></a> | <a href="<%= localizePath('/blog') %>"><%= t('nav.blog') %></a></p>
+        <p><a href="<%= localizePath('/automat-ai') %>"><%= t('nav.automat') %></a> | <a href="<%= localizePath('/solutions') %>"><%= t('nav.solutions') %></a></p>
         <p><%= t('footer.copyright') %></p>
       </div>
       <div>
         <h4><%= t('footer.legalStatements') %></h4>
-        <p><a href="/privacy"><%= t('footer.privacyPolicy') %></a></p> 
-        <p><a href="/terms"><%= t('footer.termsOfService') %></a></p>
-        <p><a href="/cookiepolicy"><%= t('footer.cookiePolicy') %></a></p>
+        <p><a href="<%= localizePath('/privacy') %>"><%= t('footer.privacyPolicy') %></a></p> 
+        <p><a href="<%= localizePath('/terms') %>"><%= t('footer.termsOfService') %></a></p>
+        <p><a href="<%= localizePath('/cookiepolicy') %>"><%= t('footer.cookiePolicy') %></a></p>
       </div>
     </div>
   </footer>

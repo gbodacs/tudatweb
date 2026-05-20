@@ -3,7 +3,12 @@ import express from 'express'
 import path from 'path'
 import fs from 'fs'
 import validator from 'validator'
-import { createI18nContext, getLanguageCookieHeader } from './i18n'
+import {
+  createI18nContext,
+  DEFAULT_LANGUAGE,
+  getLanguageCookieHeader,
+  type Language,
+} from './i18n'
 import { isAIStreamRequested, toAIProxy, toAIProxyStream } from './aiproxy'
 import { chatApiCors, webCors } from './cors'
 import { chatRateLimiters, webRateLimiters } from './ratelimiter'
@@ -14,6 +19,39 @@ const app = express()
 const port = 8080
 
 const trustProxy = process.env.TRUST_PROXY ?? 'loopback'
+const baseUrl = (process.env.PUBLIC_BASE_URL ?? 'https://tudatai.hu').replace(
+  /\/+$/,
+  ''
+)
+
+const localeByLanguage: Record<Language, string> = {
+  hu: 'hu_HU',
+  en: 'en_US',
+  de: 'de_DE',
+}
+
+function getLocalizedPath(routePath: string, language: Language): string {
+  const [pathname, search = ''] = routePath.split('?')
+  const params = new URLSearchParams(search)
+
+  if (language === DEFAULT_LANGUAGE) {
+    params.delete('lang')
+  } else {
+    params.set('lang', language)
+  }
+
+  const query = params.toString()
+
+  return query ? `${pathname}?${query}` : pathname
+}
+
+function getAbsoluteUrl(routePath: string): string {
+  if (/^https?:\/\//i.test(routePath)) {
+    return routePath
+  }
+
+  return `${baseUrl}${routePath.startsWith('/') ? routePath : `/${routePath}`}`
+}
 
 app.set('trust proxy', trustProxy)
 
@@ -37,6 +75,8 @@ app.use((req: any, res: any, next: any) => {
   res.locals.t = i18n.t
   res.locals.language = i18n.language
   res.locals.availableLanguages = i18n.availableLanguages
+  res.locals.localizePath = (routePath: string, targetLanguage?: Language) =>
+    getLocalizedPath(routePath, targetLanguage ?? i18n.language)
   next()
 })
 
@@ -52,18 +92,67 @@ function renderSEO(
   const t = (req as any).i18n.t
   const title = t(titleKey)
   const description = t(descriptionKey)
-  const language = (req as any).i18n.language
+  const language = (req as any).i18n.language as Language
+  const availableLanguages = (req as any).i18n.availableLanguages as Language[]
+  const canonicalUrl = getAbsoluteUrl(getLocalizedPath(currentPath, language))
+  const alternateUrls = availableLanguages.map((alternateLanguage) => ({
+    hrefLang: alternateLanguage,
+    href: getAbsoluteUrl(getLocalizedPath(currentPath, alternateLanguage)),
+  }))
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'TudatAI',
+      url: baseUrl,
+      logo: getAbsoluteUrl('/apple-touch-icon.png'),
+      email: 'tudatai@protonmail.com',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'TudatAI',
+      url: baseUrl,
+      inLanguage: availableLanguages,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: title,
+      description,
+      url: canonicalUrl,
+      inLanguage: language,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'TudatAI',
+        url: baseUrl,
+      },
+    },
+  ]
 
   res.render(view, {
     title,
     description,
-    keywords: t('home.metaDescription'),
+    canonicalUrl,
+    alternateUrls,
+    xDefaultUrl: getAbsoluteUrl(currentPath),
+    robots: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1',
+    siteName: 'TudatAI',
     ogTitle: title,
     ogDescription: description,
     ogType: 'website',
-    ogUrl: `https://tudatai.hu${currentPath}`,
-    ogImage: '/images/og-image.png',
-    ogLocale: `${language}_${language.toUpperCase()}`,
+    ogUrl: canonicalUrl,
+    ogImage: getAbsoluteUrl('/images/og-image.png'),
+    ogImageAlt: `${title} - TudatAI`,
+    ogLocale: localeByLanguage[language],
+    ogLocaleAlternates: alternateUrls
+      .filter(({ hrefLang }) => hrefLang !== language)
+      .map(({ hrefLang }) => localeByLanguage[hrefLang]),
+    twitterCard: 'summary_large_image',
+    twitterTitle: title,
+    twitterDescription: description,
+    twitterImage: getAbsoluteUrl('/images/og-image.png'),
+    structuredData,
     currentPath,
     ...extra,
   })
@@ -265,7 +354,14 @@ app.post('/contact', webCors, (req, res) => {
 })
 
 app.get('/privacy', (req, res) => {
-  renderSEO(res, 'privacy', req, 'privacy.title', 'privacy.title', req.path)
+  renderSEO(
+    res,
+    'privacy',
+    req,
+    'privacy.title',
+    'privacy.metaDescription',
+    req.path
+  )
 })
 
 app.get('/cookiepolicy', (req, res) => {
@@ -280,7 +376,7 @@ app.get('/cookiepolicy', (req, res) => {
 })
 
 app.get('/terms', (req, res) => {
-  renderSEO(res, 'terms', req, 'terms.title', 'terms.title', req.path)
+  renderSEO(res, 'terms', req, 'terms.title', 'terms.metaDescription', req.path)
 })
 
 app.get('/automat-ai', (req, res) => {
@@ -301,17 +397,6 @@ app.get('/solutions', (req, res) => {
     req,
     'solutions.title',
     'solutions.metaDescription',
-    req.path
-  )
-})
-
-app.get('/cloud-ai', (req, res) => {
-  renderSEO(
-    res,
-    'cloud-ai',
-    req,
-    'cloud.title',
-    'cloud.metaDescription',
     req.path
   )
 })

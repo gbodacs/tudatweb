@@ -4,104 +4,120 @@
     <div class="container">
       <h1><%= t('home.heroTitle') %></h1>
       <p><%= t('home.heroSubtitle') %></p>
-      <a href="#products" class="btn"><%= t('home.heroButton') %></a>
+      <a href="/contact" class="btn"><%= t('global.consultationButton') %></a>
+      <br/><br/>
+      <a href="#products" class="btn-secondary"><%= t('global.solutionsButton') %></a>
     </div>
   </section>
 
   <section class="products" id="products">
     <div class="container">
-      </br>
-      <h2><%= t('home.productsSection') %></h2>
-      <p><%= t('home.productsDescription') %></p>
+      </br></br>
+      <h2><%= t('home.painHeader') %></h2>
       </br>
       <div class="grid">
         <article class="card">
-          <h3><%= t('home.lossStopTitle') %></h3><p class="card-icon" aria-hidden="true"><i class="bi bi-activity"></i></p>
-          <p><%= t('home.lossStopDescription') %></p>
+          <p class="card-icon" aria-hidden="true"><i class="bi bi-box-seam"></i></p><h3>Raktár & Kereslet</h3>
+          <p><b>Kiszámíthatatlan készletek.</b> Folyton a raktárában ragadnak a termékei, vagy épp ellenkezőleg: kifogy a termék, mire a vásárló megvenné?</p>
         </article>
         <article class="card">
-          <h3><%= t('home.internationalPackageTitle') %></h3><p class="card-icon" aria-hidden="true"><i class="bi bi-megaphone"></i></p>
-          <p><%= t('home.internationalPackageDescription') %></p>
+          <p class="card-icon" aria-hidden="true"><i class="bi bi-clock"></i></p><h3>Tempó</h3>
+          <p><b>Lassú reakcióidő.</b> A kollégák értékes órákat töltenek e-mailek megválaszolásával, adatok manuális másolásával és riportálással ahelyett, hogy eladnának?</p>
         </article>
         <article class="card">
-          <h3><%= t('home.digitalColleagueTitle') %></h3><p class="card-icon" aria-hidden="true"><i class="bi bi-people"></i></p>
-          <p><%= t('home.digitalColleagueDescription') %></p>
+          <p class="card-icon" aria-hidden="true"><i class="bi bi-graph-down-arrow"></i></p><h3>Ügyfélmegtartás</h3>
+          <p><b>Eltűnő ügyfelek.</b> Csak akkor veszi észre, hogy egy kulcsfontosságú partnere vagy vevőcsoportja elpártolt Önöktől, amikor már késő?</p>
+        </article>
+        <article class="card">
+          <p class="card-icon" aria-hidden="true"><i class="bi bi-shield-lock"></i></p><h3>Adatbiztonság (ÚJ)</h3>
+          <p><b>Adatszivárgási kockázat.</b> Szeretné kihasználni az AI előnyeit, de tart tőle, hogy a nyilvános felhőmodellekbe feltöltött belső adatai, üzleti titkai kikerülnek a cégből?</p>
         </article>
       </div>
+      </br></br></br>
+      <h2>Miért kockázatosak a kész felhőmodellek, és mit kínál helyette a TudatAI?</h2>
       </br>
-      </br>
-      <h2><%= t('home.remoteSection') %></h2>
-      <p><%= t('home.remoteDescription') %></p>
-      </br>
-      <div class="grid">
-        <article class="card">
-          <h3><%= t('home.aiAssistantsTitle') %></h3>
-          <p><%= t('home.aiAssistantsDescription') %></p>
-        </article>
-        <article class="card">
-          <h3><%= t('home.predictiveAnalyticsTitle') %></h3>
-          <p><%= t('home.predictiveAnalyticsDescription') %></p>
-        </article>
-        <article class="card">
-          <h3><%= t('home.automatedProcessesTitle') %></h3>
-          <p><%= t('home.automatedProcessesDescription') %></p>
-        </article>
+      <div class="table-scroll">
+        <table class="theme-table">
+          <colgroup>
+            <col>
+            <col>
+            <col class="is-highlighted">
+          </colgroup>
+          <thead>
+            <tr>
+              <th><b>Szempont</b></th>
+              <th><b>Nyilvános kész modellek (pl. ChatGPT, Claude)</b></th>
+              <th class="is-highlighted"><b>TudatAI Zárt Rendszerek</b></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Adatbiztonság</b></td>
+              <td>Az adatokat külső felhős szerverekre küldik, és felhasználhatják a modellek nyilvános tanítására.</td>
+              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b>100% lokális adatvédelem.</b> Az adatok az Ön saját szerverén vagy zárt privát felhőjében maradnak.</td>
+            </tr>
+            <tr>
+              <td><b>Internet-kitettség</b></td>
+              <td>Folyamatos online kapcsolatot igényel. Egy internetkimaradás vagy külső szerverhiba leállítja a munkát.</td>
+              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b>Offline működés.</b> Megoldásaink internetkapcsolat nélkül, teljesen elszigetelt hálózaton is stabilan futnak.</td>
+            </tr>
+            <tr>
+              <td><b>Üzleti titokvédelem</b></td>
+              <td>Nem garantált a teljes szuverenitás. Fennáll az ipari kémkedés és adatszivárgás kockázata.</td>
+              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b>GDPR és üzleti titok kompatibilis.</b> Harmadik fél soha, semmilyen körülmények között nem férhet hozzá az adatokhoz.</td>
+            </tr>
+            <tr>
+              <td><b>Költségek skálázódása</b></td>
+              <td>Gyorsan dráguló token-alapú havidíjak. Minél többet használja a cég, annál drágább.</td>
+              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b>Kiszámítható beruházás.</b> Egyszeri fejlesztési és ismert licencdíj, nincsenek növekedésből adódó rejtett havidíjak.</td>
+            </tr>
+            <tr>
+              <td><b>Személyre szabottság</b></td>
+              <td>Általános tudás. Nem ismeri a cége belső rövidítéseit, múltbéli adatait és egyedi munkafolyamatait.</td>
+              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b>Cégre hangolt működés.</b> Pontosan az Ön meglévő rendszereivel (ERP, CRM) integrálva, az Ön adataiból tanul.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+      </br></br>
+      <section class="module-showcase" aria-labelledby="business-modules-title">
+        <div class="module-showcase__intro">
+          <h2 id="business-modules-title">Nem dobozos szoftver – hanem az Ön cégére szabott digitális modulok</h2>
+          <p class="subtitle">Csak azt az építőkockát integráljuk a rendszerébe, amire valóban szüksége van. Nincs felesleges funkció, nincs felesleges költség.</p>
+        </div>
+        <div class="module-showcase__grid">
+          <article class="card module-card">
+            <p class="module-card__eyebrow">Modul 01</p>
+            <h3>Készlet és kereslet optimalizálása</h3>
+            <p class="module-card__outcome">Tőkefelszabadítás a beragadó raktárkészletek megszüntetésével.</p>
+          </article>
+          <article class="card module-card module-card--featured">
+            <p class="module-card__eyebrow">Modul 02</p>
+            <h3>Automata Dokumentum- és Adatfeldolgozó</h3>
+            <p class="module-card__outcome">Szerződések, számlák és e-mailek másodpercek alatti, kézi munka nélküli rendszerezése.</p>
+          </article>
+          <article class="card module-card">
+            <p class="module-card__eyebrow">Modul 03</p>
+            <h3>Prediktív Ügyfélvédelmi Rendszer</h3>
+            <p class="module-card__outcome">A lemorzsolódni készülő partnerek automatikus kiszűrése még az elpártolás előtt.</p>
+          </article>
+        </div>
+        <div class="module-showcase__cta">
+          <a href="<%= localizePath('/solutions') %>" class="btn">Az összes üzleti modul áttekintése</a>
+        </div>
+      </section>
       </br>
-      </br>
-      <h2><%= t('home.secureSection') %></h2>
-      <p><%= t('home.secureDescription') %></p>
-      </br>
-      <div class="grid">
-        <article class="card">
-          <h3><%= t('home.offlineModelsTitle') %></h3>
-          <p><%= t('home.offlineModelsDescription') %></p>
-        </article>
-        <article class="card">
-          <h3><%= t('home.customSolutionsTitle') %></h3>
-          <p><%= t('home.customSolutionsDescription') %></p>
-        </article>
-        <article class="card">
-          <h3><%= t('home.secureProcessingTitle') %></h3>
-          <p><%= t('home.secureProcessingDescription') %></p>
-        </article>
-      </div>
-    </div>
-  </section>
-  </br>
-  <div class="container">
-    <h2><%= t('home.aboutSection') %></h2>
-    <p><%= t('home.aboutDescription') %></p>
-    </br>
-    <div style="text-align:center"> 
-      <a href="<%= localizePath('/about') %>" class="btn-secondary"><%= t('home.aboutButton') %></a>
-    </div>
-  </div>
-  </br>
-  <section class="products" id="products22">
-    <div class="container">
-      <div class="grid">
-        <article class="card">
-          <h3><%= t('nav.solutions') %></h3>
-            <p><%= t('home.secureDescription') %></p>
-            </br>
-            <a href="<%= localizePath('/solutions') %>" class="btn"><%= t('home.solutionsButton') %></a>
-        </article>
-        <article class="card">
-          <h3><%= t('home.aboutSection') %></h3>
-            <p><%= t('home.callToActionDescription') %></p>
-            </br>
-            <a href="<%= localizePath('/contact') %>" class="btn"><%= t('home.contactButton') %></a>
-        </article>
-        <article class="card">
-        <h3><%= t('nav.cloud') %></h3>
-          <p><%= t('cloud.introduction') %></p>
+      <section class="module-showcase" aria-labelledby="business-modules-title">
+        <div class="module-showcase__intro">
+          <h2 id="business-modules-title">Ne hagyja, hogy a manuális folyamatok és az adatbiztonsági aggályok lefékezzék a cégét. Nézzük meg, hol folyik el a legtöbb idő és pénz a szervezetében.</h2>
           <br/>
-          <a href="<%= localizePath('/solutions') %>" class="btn"><%= t('home.solutionsButton') %></a>
-        </article>
-      </div>
+          <a href="<%= localizePath('/solutions') %>" class="btn">Kérem az ingyenes folyamatautomatizálási auditot</a>
+        </div>
+      </section>
+      <br/><br/> 
     </div>
   </section>
-  <br/><br/><br/>
+  </br>
+ 
 
 <%- include('partials/footer') %>

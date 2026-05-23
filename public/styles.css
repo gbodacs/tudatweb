@@ -200,7 +200,7 @@ body {
 .theme-table td {
   padding: 1rem 1.1rem;
   text-align: left;
-  vertical-align: top;
+  vertical-align: middle;
   border-bottom: 1px solid rgba(119, 201, 212, 0.22);
 }
 
@@ -209,6 +209,7 @@ body {
   color: #ffffff;
   font-size: 0.96rem;
   letter-spacing: 0.01em;
+  text-align: center;
 }
 
 .theme-table tbody tr:nth-child(even) td {
@@ -226,6 +227,7 @@ body {
 .theme-table th.is-highlighted,
 .theme-table td.is-highlighted {
   background: rgba(87, 188, 144, 0.14);
+  text-align: center;
 }
 
 .theme-table thead th.is-highlighted {
@@ -472,42 +474,13 @@ body {
   align-items: stretch;
 }
 
-.module-card {
-  position: relative;
-  overflow: visible;
-  text-align: left;
-  padding: 1.5rem;
-  border-color: rgba(87, 188, 144, 0.26);
-  background: linear-gradient(180deg, rgba(107, 248, 204, 0.18) 0%, rgba(107, 248, 204, 0.5) 100%);
-}
-
-.module-card::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -1.5rem;
-  width: 2rem;
-  height: 0.3rem;
-  transform: translateY(-50%);
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(107, 248, 184, 0.85) 0%, rgba(119, 201, 212, 0.45) 100%);
-}
-
-.module-card:last-child::after {
-  display: none;
-}
-
-.module-card--featured {
-  background: linear-gradient(180deg, rgba(87, 228, 164, 0.18) 0%, rgba(87, 228, 164, 0.5) 100%);
-  border-color: rgba(87, 188, 144, 0.42);
-}
-
 .module-card__eyebrow {
   margin-bottom: 0.75rem;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-align: left;
   color: var(--muted);
 }
 
@@ -520,6 +493,311 @@ body {
 .module-showcase__cta {
   margin-top: 1.5rem;
   text-align: center;
+}
+
+.roi-calculator {
+  grid-column: 1 / -1;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+  background:
+    radial-gradient(circle at top left, rgba(119, 201, 212, 0.35), transparent 36%),
+    radial-gradient(circle at top right, rgba(87, 188, 144, 0.32), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(222, 246, 241, 0.96));
+  border: 1px solid rgba(87, 188, 144, 0.24);
+  box-shadow: 0 28px 60px rgba(20, 74, 76, 0.14);
+}
+
+.roi-calculator__panel {
+  padding: 1.75rem;
+}
+
+.roi-calculator__intro {
+  max-width: 58rem;
+  margin-bottom: 1.4rem;
+}
+
+.roi-calculator__subtitle {
+  color: var(--text);
+  max-width: 48rem;
+}
+
+.roi-calculator__assumption {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.roi-calculator__layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(280px, 0.92fr) minmax(320px, 1.08fr);
+  align-items: start;
+}
+
+.roi-calculator__controls {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(119, 201, 212, 0.32);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.roi-slider {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.roi-slider__label,
+.roi-slider__value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.roi-slider__label {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.roi-slider__value {
+  justify-content: flex-start;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--accent-dark);
+}
+
+.roi-slider input[type="range"] {
+  width: 100%;
+  appearance: none;
+  height: 0.7rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(119, 201, 212, 0.9), rgba(87, 188, 144, 0.9));
+  outline: none;
+}
+
+.roi-slider input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid var(--accent-dark);
+  box-shadow: 0 0 0 6px rgba(87, 188, 144, 0.16);
+  cursor: pointer;
+}
+
+.roi-slider input[type="range"]::-moz-range-thumb {
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid var(--accent-dark);
+  box-shadow: 0 0 0 6px rgba(87, 188, 144, 0.16);
+  cursor: pointer;
+}
+
+.roi-calculator__results {
+  display: grid;
+  gap: 1rem;
+}
+
+.roi-calculator__headline-metrics {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.roi-kpi {
+  position: relative;
+  overflow: hidden;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  background: linear-gradient(165deg, rgba(1, 82, 73, 0.95), rgba(9, 120, 103, 0.88));
+  color: #f6fffb;
+  box-shadow: 0 18px 34px rgba(1, 82, 73, 0.22);
+}
+
+.roi-kpi::after {
+  content: "";
+  position: absolute;
+  inset: auto -2rem -2rem auto;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(119, 201, 212, 0.34), transparent 70%);
+}
+
+.roi-kpi--optimized {
+  background: linear-gradient(165deg, rgba(36, 117, 115, 0.94), rgba(87, 188, 144, 0.9));
+}
+
+.roi-kpi__label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.roi-kpi__value {
+  display: block;
+  font-size: clamp(1.75rem, 5vw, 1.8rem);
+  line-height: 1.05;
+  text-shadow: 0 0 18px rgba(119, 201, 212, 0.28);
+}
+
+.roi-calculator__chart-card {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(180px, 0.78fr) minmax(220px, 1fr);
+  align-items: end;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, rgba(1, 82, 73, 0.08), rgba(119, 201, 212, 0.16));
+  border: 1px solid rgba(119, 201, 212, 0.28);
+}
+
+.roi-calculator__chart-kicker {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.roi-calculator__savings {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: clamp(1.7rem, 3.2vw, 2.8rem);
+  line-height: 1.05;
+  color: var(--accent-dark);
+  text-shadow: 0 0 20px rgba(87, 188, 144, 0.18);
+}
+
+.roi-calculator__chart-caption {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--text);
+  max-width: 18rem;
+}
+
+.roi-chart {
+  position: relative;
+  min-height: 240px;
+  padding: 1rem 0.5rem 0;
+}
+
+.roi-chart__grid {
+  position: absolute;
+  inset: 0.75rem 0 1.9rem;
+  background-image: linear-gradient(to top, rgba(1, 82, 73, 0.08) 1px, transparent 1px);
+  background-size: 100% 25%;
+}
+
+.roi-chart__bars {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  align-items: end;
+  height: 100%;
+}
+
+.roi-chart__bar-group {
+  display: grid;
+  gap: 0.65rem;
+  justify-items: center;
+  align-items: end;
+  height: 100%;
+}
+
+.roi-chart__value {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.roi-chart__bar {
+  width: min(100%, 6.5rem);
+  min-height: 0.75rem;
+  border-radius: 1rem 1rem 0.45rem 0.45rem;
+  align-self: end;
+  box-shadow: 0 16px 30px rgba(1, 82, 73, 0.18);
+  transition: height 0.35s ease;
+}
+
+.roi-chart__bar--current {
+  background: linear-gradient(180deg, rgba(1, 82, 73, 0.9), rgba(38, 132, 121, 0.95));
+}
+
+.roi-chart__bar--optimized {
+  background: linear-gradient(180deg, rgba(87, 188, 144, 0.92), rgba(119, 201, 212, 0.88));
+}
+
+.roi-chart__label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--muted);
+}
+
+.roi-metrics {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.roi-metric {
+  padding: 1rem 1.05rem;
+  border-radius: 0.95rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(119, 201, 212, 0.24);
+}
+
+.roi-metric dt {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.roi-metric dd {
+  margin-top: 0.35rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.roi-metric--accent {
+  background: linear-gradient(135deg, rgba(87, 188, 144, 0.2), rgba(119, 201, 212, 0.18));
+}
+
+@media (max-width: 800px) {
+  .roi-calculator__panel {
+    padding: 1.25rem;
+  }
+
+  .roi-calculator__layout,
+  .roi-calculator__chart-card,
+  .roi-calculator__headline-metrics,
+  .roi-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .roi-chart {
+    min-height: 220px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roi-chart__bar {
+    transition: none;
+  }
 }
 
 .about-page ul {

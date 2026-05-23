@@ -17,25 +17,24 @@
       </br>
       <div class="grid">
         <article class="card">
-          <p class="card-icon" aria-hidden="true"><i class="bi bi-box-seam"></i></p><h3>Raktár & Kereslet</h3>
-          <p><b>Kiszámíthatatlan készletek.</b> Folyton a raktárában ragadnak a termékei, vagy épp ellenkezőleg: kifogy a termék, mire a vásárló megvenné?</p>
+          <p class="card-icon" aria-hidden="true"><i class="bi bi-box-seam"></i></p><h3><%= t('home.painPointInventoryTitle') %></h3>
+          <p><b><%= t('home.painPointInventoryLead') %></b> <%= t('home.painPointInventoryBody') %></p>
         </article>
         <article class="card">
-          <p class="card-icon" aria-hidden="true"><i class="bi bi-clock"></i></p><h3>Tempó</h3>
-          <p><b>Lassú reakcióidő.</b> A kollégák értékes órákat töltenek e-mailek megválaszolásával, adatok manuális másolásával és riportálással ahelyett, hogy eladnának?</p>
+          <p class="card-icon" aria-hidden="true"><i class="bi bi-clock"></i></p><h3><%= t('home.painPointPaceTitle') %></h3>
+          <p><b><%= t('home.painPointPaceLead') %></b> <%= t('home.painPointPaceBody') %></p>
         </article>
         <article class="card">
-          <p class="card-icon" aria-hidden="true"><i class="bi bi-graph-down-arrow"></i></p><h3>Ügyfélmegtartás</h3>
-          <p><b>Eltűnő ügyfelek.</b> Csak akkor veszi észre, hogy egy kulcsfontosságú partnere vagy vevőcsoportja elpártolt Önöktől, amikor már késő?</p>
+          <p class="card-icon" aria-hidden="true"><i class="bi bi-graph-down-arrow"></i></p><h3><%= t('home.painPointRetentionTitle') %></h3>
+          <p><b><%= t('home.painPointRetentionLead') %></b> <%= t('home.painPointRetentionBody') %></p>
         </article>
         <article class="card">
-          <p class="card-icon" aria-hidden="true"><i class="bi bi-shield-lock"></i></p><h3>Adatbiztonság (ÚJ)</h3>
-          <p><b>Adatszivárgási kockázat.</b> Szeretné kihasználni az AI előnyeit, de tart tőle, hogy a nyilvános felhőmodellekbe feltöltött belső adatai, üzleti titkai kikerülnek a cégből?</p>
+          <p class="card-icon" aria-hidden="true"><i class="bi bi-shield-lock"></i></p><h3><%= t('home.painPointSecurityTitle') %></h3>
+          <p><b><%= t('home.painPointSecurityLead') %></b> <%= t('home.painPointSecurityBody') %></p>
         </article>
       </div>
       </br></br></br>
-      <h2>Miért kockázatosak a kész felhőmodellek, és mit kínál helyette a TudatAI?</h2>
-      </br>
+      <h2><%= t('home.comparisonTitle') %></h2>
       <div class="table-scroll">
         <table class="theme-table">
           <colgroup>
@@ -45,36 +44,36 @@
           </colgroup>
           <thead>
             <tr>
-              <th><b>Szempont</b></th>
-              <th><b>Nyilvános kész modellek (pl. ChatGPT, Claude)</b></th>
-              <th class="is-highlighted"><b>TudatAI Zárt Rendszerek</b></th>
+              <th><b><%= t('home.comparisonCriteriaHeader') %></b></th>
+              <th><b><%= t('home.comparisonPublicHeader') %></b></th>
+              <th class="is-highlighted"><b><%= t('home.comparisonPrivateHeader') %></b></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><b>Adatbiztonság</b></td>
-              <td>Az adatokat külső felhős szerverekre küldik, és felhasználhatják a modellek nyilvános tanítására.</td>
-              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b>100% lokális adatvédelem.</b> Az adatok az Ön saját szerverén vagy zárt privát felhőjében maradnak.</td>
+              <td><b><%= t('home.comparisonDataSecurityLabel') %></b></td>
+              <td><%= t('home.comparisonDataSecurityPublic') %></td>
+              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b><%= t('home.comparisonDataSecurityPrivateLead') %></b> <%= t('home.comparisonDataSecurityPrivateBody') %></td>
             </tr>
             <tr>
-              <td><b>Internet-kitettség</b></td>
-              <td>Folyamatos online kapcsolatot igényel. Egy internetkimaradás vagy külső szerverhiba leállítja a munkát.</td>
-              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b>Offline működés.</b> Megoldásaink internetkapcsolat nélkül, teljesen elszigetelt hálózaton is stabilan futnak.</td>
+              <td><b><%= t('home.comparisonInternetExposureLabel') %></b></td>
+              <td><%= t('home.comparisonInternetExposurePublic') %></td>
+              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b><%= t('home.comparisonInternetExposurePrivateLead') %></b> <%= t('home.comparisonInternetExposurePrivateBody') %></td>
             </tr>
             <tr>
-              <td><b>Üzleti titokvédelem</b></td>
-              <td>Nem garantált a teljes szuverenitás. Fennáll az ipari kémkedés és adatszivárgás kockázata.</td>
-              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b>GDPR és üzleti titok kompatibilis.</b> Harmadik fél soha, semmilyen körülmények között nem férhet hozzá az adatokhoz.</td>
+              <td><b><%= t('home.comparisonTradeSecretsLabel') %></b></td>
+              <td><%= t('home.comparisonTradeSecretsPublic') %></td>
+              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b><%= t('home.comparisonTradeSecretsPrivateLead') %></b> <%= t('home.comparisonTradeSecretsPrivateBody') %></td>
             </tr>
             <tr>
-              <td><b>Költségek skálázódása</b></td>
-              <td>Gyorsan dráguló token-alapú havidíjak. Minél többet használja a cég, annál drágább.</td>
-              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b>Kiszámítható beruházás.</b> Egyszeri fejlesztési és ismert licencdíj, nincsenek növekedésből adódó rejtett havidíjak.</td>
+              <td><b><%= t('home.comparisonCostsLabel') %></b></td>
+              <td><%= t('home.comparisonCostsPublic') %></td>
+              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b><%= t('home.comparisonCostsPrivateLead') %></b> <%= t('home.comparisonCostsPrivateBody') %></td>
             </tr>
             <tr>
-              <td><b>Személyre szabottság</b></td>
-              <td>Általános tudás. Nem ismeri a cége belső rövidítéseit, múltbéli adatait és egyedi munkafolyamatait.</td>
-              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b>Cégre hangolt működés.</b> Pontosan az Ön meglévő rendszereivel (ERP, CRM) integrálva, az Ön adataiból tanul.</td>
+              <td><b><%= t('home.comparisonCustomizationLabel') %></b></td>
+              <td><%= t('home.comparisonCustomizationPublic') %></td>
+              <td class="is-highlighted"><p class="card-icon" aria-hidden="true"><i class="bi bi-check-circle"></i></p><b><%= t('home.comparisonCustomizationPrivateLead') %></b> <%= t('home.comparisonCustomizationPrivateBody') %></td>
             </tr>
           </tbody>
         </table>
@@ -82,42 +81,221 @@
       </br></br>
       <section class="module-showcase" aria-labelledby="business-modules-title">
         <div class="module-showcase__intro">
-          <h2 id="business-modules-title">Nem dobozos szoftver – hanem az Ön cégére szabott digitális modulok</h2>
-          <p class="subtitle">Csak azt az építőkockát integráljuk a rendszerébe, amire valóban szüksége van. Nincs felesleges funkció, nincs felesleges költség.</p>
+          <h2 id="business-modules-title"><%= t('home.modulesTitle') %></h2>
+          <p class="subtitle"><%= t('home.modulesSubtitle') %></p>
         </div>
         <div class="module-showcase__grid">
-          <article class="card module-card">
-            <p class="module-card__eyebrow">Modul 01</p>
-            <h3>Készlet és kereslet optimalizálása</h3>
-            <p class="module-card__outcome">Tőkefelszabadítás a beragadó raktárkészletek megszüntetésével.</p>
+          <article class="card">
+            <p class="module-card__eyebrow"><%= t('home.module1Eyebrow') %></p>
+            <h3><%= t('home.module1Title') %></h3>
+            <p class="module-card__outcome"><%= t('home.module1Outcome') %></p>
           </article>
-          <article class="card module-card module-card--featured">
-            <p class="module-card__eyebrow">Modul 02</p>
-            <h3>Automata Dokumentum- és Adatfeldolgozó</h3>
-            <p class="module-card__outcome">Szerződések, számlák és e-mailek másodpercek alatti, kézi munka nélküli rendszerezése.</p>
+          <article class="card">
+            <p class="module-card__eyebrow"><%= t('home.module2Eyebrow') %></p>
+            <h3><%= t('home.module2Title') %></h3>
+            <p class="module-card__outcome"><%= t('home.module2Outcome') %></p>
           </article>
-          <article class="card module-card">
-            <p class="module-card__eyebrow">Modul 03</p>
-            <h3>Prediktív Ügyfélvédelmi Rendszer</h3>
-            <p class="module-card__outcome">A lemorzsolódni készülő partnerek automatikus kiszűrése még az elpártolás előtt.</p>
+          <article class="card">
+            <p class="module-card__eyebrow"><%= t('home.module3Eyebrow') %></p>
+            <h3><%= t('home.module3Title') %></h3>
+            <p class="module-card__outcome"><%= t('home.module3Outcome') %></p>
           </article>
         </div>
+        </br>
         <div class="module-showcase__cta">
-          <a href="<%= localizePath('/solutions') %>" class="btn">Az összes üzleti modul áttekintése</a>
+          <a href="<%= localizePath('/solutions') %>" class="btn"><%= t('home.modulesButton') %></a>
         </div>
+      </section>
+
+    <section class="products" id="products">
+    <div class="container">
+      </br>
+      <div class="grid">
+          <article class="card roi-calculator" id="roi-calculator" data-locale="<%= language %>">
+            <div class="roi-calculator__panel">
+              <div class="roi-calculator__intro">
+                <h2><%= t('home.roiTitle') %></h2>
+                <p class="roi-calculator__subtitle"><%= t('home.roiSubtitle') %></p>
+                <p class="roi-calculator__assumption"><%= t('home.roiAssumption') %></p>
+              </div>
+              <div class="roi-calculator__layout">
+                <div class="roi-calculator__controls" aria-label="<%= t('home.roiControlsAria') %>">
+                  <label class="roi-slider" for="roi-hourly-wage">
+                    <span class="roi-slider__label"><%= t('home.roiHourlyWageLabel') %></span>
+                    <span class="roi-slider__value" data-roi-display="hourlyWage"></span>
+                    <input id="roi-hourly-wage" type="range" min="2500" max="18000" step="250" value="6500" data-roi-input="hourlyWage" />
+                  </label>
+                  <label class="roi-slider" for="roi-admin-hours">
+                    <span class="roi-slider__label"><%= t('home.roiAdminHoursLabel') %></span>
+                    <span class="roi-slider__value" data-roi-display="adminHours"></span>
+                    <input id="roi-admin-hours" type="range" min="2" max="30" step="1" value="9" data-roi-input="adminHours" />
+                  </label>
+                  <label class="roi-slider" for="roi-employees">
+                    <span class="roi-slider__label"><%= t('home.roiEmployeesLabel') %></span>
+                    <span class="roi-slider__value" data-roi-display="employees"></span>
+                    <input id="roi-employees" type="range" min="2" max="120" step="1" value="18" data-roi-input="employees" />
+                  </label>
+                </div>
+                <div class="roi-calculator__results">
+                  <div class="roi-calculator__headline-metrics">
+                    <div class="roi-kpi roi-kpi--current">
+                      <span class="roi-kpi__label"><%= t('home.roiCurrentCostLabel') %></span>
+                      <strong class="roi-kpi__value" data-roi-output="currentCost"></strong>
+                    </div>
+                    <div class="roi-kpi roi-kpi--optimized">
+                      <span class="roi-kpi__label"><%= t('home.roiOptimizedCostLabel') %></span>
+                      <strong class="roi-kpi__value" data-roi-output="optimizedCost"></strong>
+                    </div>
+                  </div>
+                  <div class="roi-calculator__chart-card">
+                    <div class="roi-calculator__chart-copy">
+                      <p class="roi-calculator__chart-kicker"><%= t('home.roiChartKicker') %></p>
+                      <span class="roi-calculator__chart-caption"><%= t('home.roiChartCaption') %></span>
+                      <strong class="roi-calculator__savings" data-roi-output="monthlySavings"></strong>
+                    </div>
+                    <div class="roi-chart" aria-hidden="true">
+                      <div class="roi-chart__bars">
+                        <div class="roi-chart__bar-group">
+                          <span class="roi-chart__value" data-roi-output="chartCurrent"></span>
+                          <div class="roi-chart__bar roi-chart__bar--current" data-roi-bar="current"></div>
+                          <span class="roi-chart__label"><%= t('home.roiCurrentCostLabel') %></span>
+                        </div>
+                        <div class="roi-chart__bar-group">
+                          <span class="roi-chart__value" data-roi-output="chartOptimized"></span>
+                          <div class="roi-chart__bar roi-chart__bar--optimized" data-roi-bar="optimized"></div>
+                          <span class="roi-chart__label"><%= t('home.roiOptimizedCostLabel') %></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <dl class="roi-metrics">
+                    <div class="roi-metric">
+                      <dt><%= t('home.roiWeeklyAdminLabel') %></dt>
+                      <dd data-roi-output="weeklyAdministration"></dd>
+                    </div>
+                    <div class="roi-metric">
+                      <dt><%= t('home.roiMonthlyCurrentLabel') %></dt>
+                      <dd data-roi-output="monthlyCurrent"></dd>
+                    </div>
+                    <div class="roi-metric">
+                      <dt><%= t('home.roiMonthlyAiLabel') %></dt>
+                      <dd data-roi-output="monthlyAi"></dd>
+                    </div>
+                    <div class="roi-metric roi-metric--accent">
+                      <dt><%= t('home.roiEfficiencyLabel') %></dt>
+                      <dd data-roi-output="efficiencyGain"></dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
       </section>
       </br>
       <section class="module-showcase" aria-labelledby="business-modules-title">
         <div class="module-showcase__intro">
-          <h2 id="business-modules-title">Ne hagyja, hogy a manuális folyamatok és az adatbiztonsági aggályok lefékezzék a cégét. Nézzük meg, hol folyik el a legtöbb idő és pénz a szervezetében.</h2>
+          <h2 id="business-modules-title"><%= t('home.auditTitle') %></h2>
           <br/>
-          <a href="<%= localizePath('/solutions') %>" class="btn">Kérem az ingyenes folyamatautomatizálási auditot</a>
+          <a href="<%= localizePath('/solutions') %>" class="btn"><%= t('home.auditButton') %></a>
         </div>
       </section>
       <br/><br/> 
     </div>
   </section>
   </br>
- 
+  <script>
+    (() => {
+      const calculator = document.querySelector('#roi-calculator');
+
+      if (!calculator) {
+        return;
+      }
+
+      const inputs = {
+        hourlyWage: calculator.querySelector('[data-roi-input="hourlyWage"]'),
+        adminHours: calculator.querySelector('[data-roi-input="adminHours"]'),
+        employees: calculator.querySelector('[data-roi-input="employees"]'),
+      };
+
+      const displayNodes = {
+        hourlyWage: calculator.querySelector('[data-roi-display="hourlyWage"]'),
+        adminHours: calculator.querySelector('[data-roi-display="adminHours"]'),
+        employees: calculator.querySelector('[data-roi-display="employees"]'),
+      };
+
+      const outputNodes = {
+        currentCost: calculator.querySelector('[data-roi-output="currentCost"]'),
+        optimizedCost: calculator.querySelector('[data-roi-output="optimizedCost"]'),
+        monthlySavings: calculator.querySelector('[data-roi-output="monthlySavings"]'),
+        chartCurrent: calculator.querySelector('[data-roi-output="chartCurrent"]'),
+        chartOptimized: calculator.querySelector('[data-roi-output="chartOptimized"]'),
+        weeklyAdministration: calculator.querySelector('[data-roi-output="weeklyAdministration"]'),
+        monthlyCurrent: calculator.querySelector('[data-roi-output="monthlyCurrent"]'),
+        monthlyAi: calculator.querySelector('[data-roi-output="monthlyAi"]'),
+        efficiencyGain: calculator.querySelector('[data-roi-output="efficiencyGain"]'),
+      };
+
+      const barNodes = {
+        current: calculator.querySelector('[data-roi-bar="current"]'),
+        optimized: calculator.querySelector('[data-roi-bar="optimized"]'),
+      };
+
+      const locale = calculator.dataset.locale || document.documentElement.lang || 'hu';
+      const currencyFormatter = new Intl.NumberFormat(locale, {
+        style: 'currency',
+        currency: 'HUF',
+        maximumFractionDigits: 0,
+      });
+      const numberFormatter = new Intl.NumberFormat(locale, {
+        maximumFractionDigits: 0,
+      });
+      const decimalFormatter = new Intl.NumberFormat(locale, {
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1,
+      });
+
+      const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+      const calculate = () => {
+        const hourlyWage = Number(inputs.hourlyWage.value);
+        const adminHours = Number(inputs.adminHours.value);
+        const employees = Number(inputs.employees.value);
+
+        const weeklyAdministration = adminHours * employees;
+        const monthlyAdministrationHours = weeklyAdministration * 4.33;
+        const currentMonthlyCost = monthlyAdministrationHours * hourlyWage;
+        const automationRate = clamp(0.28 + (adminHours * 0.018) + (Math.log2(employees) * 0.055), 0.34, 0.74);
+        const optimizedMonthlyCost = currentMonthlyCost * (1 - automationRate);
+        const monthlySavings = currentMonthlyCost - optimizedMonthlyCost;
+        const currentBarHeight = currentMonthlyCost === 0 ? 0 : 100;
+        const optimizedBarHeight = currentMonthlyCost === 0 ? 0 : (optimizedMonthlyCost / currentMonthlyCost) * 100;
+
+        displayNodes.hourlyWage.textContent = currencyFormatter.format(hourlyWage);
+        displayNodes.adminHours.textContent = `${numberFormatter.format(adminHours)} h`;
+        displayNodes.employees.textContent = numberFormatter.format(employees);
+
+        outputNodes.currentCost.textContent = currencyFormatter.format(currentMonthlyCost);
+        outputNodes.optimizedCost.textContent = currencyFormatter.format(optimizedMonthlyCost);
+        outputNodes.monthlySavings.textContent = currencyFormatter.format(monthlySavings);
+        outputNodes.chartCurrent.textContent = currencyFormatter.format(currentMonthlyCost);
+        outputNodes.chartOptimized.textContent = currencyFormatter.format(optimizedMonthlyCost);
+        outputNodes.weeklyAdministration.textContent = `${decimalFormatter.format(weeklyAdministration)} h`;
+        outputNodes.monthlyCurrent.textContent = currencyFormatter.format(currentMonthlyCost);
+        outputNodes.monthlyAi.textContent = currencyFormatter.format(optimizedMonthlyCost);
+        outputNodes.efficiencyGain.textContent = `${numberFormatter.format(Math.round(automationRate * 100))}%`;
+
+        barNodes.current.style.height = `${currentBarHeight}%`;
+        barNodes.optimized.style.height = `${optimizedBarHeight}%`;
+      };
+
+      Object.values(inputs).forEach((input) => {
+        input.addEventListener('input', calculate);
+      });
+
+      calculate();
+    })();
+  </script>
 
 <%- include('partials/footer') %>

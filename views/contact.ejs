@@ -1,9 +1,30 @@
 <%- include('partials/header') %>
 
-  <main class="container contact-page">
-    <h1><%= t('contact.pageTitle') %></h1>
+<section class="blog-hero">
+	<div class="container">
+    <span class="blog-kicker"><%= t('contact.title') %></span>
+		<h1><%= t('contact.pageTitle') %></h1>
     <p><%= t('contact.introduction') %></p>
-    </br>
+	</div>
+</section>
+<section class="module-showcase" aria-labelledby="business-modules-title">
+    <div class="container">
+      <h2><%= t('contact.faqheader') %></h2>
+      <br/><h3><%= t('contact.faqQuestion1') %></h3>
+      <ul>
+        <li><%= t('contact.faqAnswer1') %></li>
+      </ul>
+      <br/><h3><%= t('contact.faqQuestion2') %></h3>
+      <ul>
+        <li><%= t('contact.faqAnswer2') %></li>
+      </ul>
+      <br/><h3><%= t('contact.faqQuestion3') %></h3>
+      <ul>
+        <li><%= t('contact.faqAnswer3') %></li>
+      </ul>
+    </div>
+    </section>
+  <main class="container contact-page">
     <% if (success) { %>
       <p style="color: green;"><%= t('contact.successMessage') %></p>
       </br>

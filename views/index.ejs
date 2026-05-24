@@ -106,105 +106,105 @@
           <a href="<%= localizePath('/solutions') %>" class="btn"><%= t('home.modulesButton') %></a>
         </div>
       </section>
+    </div>
+  </section>
 
-    <section class="products" id="products">
+  <section class="products" id="roi-calculator">
     <div class="container">
-      </br>
       <div class="grid">
-          <article class="card roi-calculator" id="roi-calculator" data-locale="<%= language %>">
-            <div class="roi-calculator__panel">
-              <div class="roi-calculator__intro">
-                <h2><%= t('home.roiTitle') %></h2>
-                <p class="roi-calculator__subtitle"><%= t('home.roiSubtitle') %></p>
-                <p class="roi-calculator__assumption"><%= t('home.roiAssumption') %></p>
+        <article class="card roi-calculator" id="roi-calculator" data-locale="<%= language %>">
+          <div class="roi-calculator__panel">
+            <div class="roi-calculator__intro">
+              </br><h2><%= t('home.roiTitle') %></h2>
+              <p class="roi-calculator__subtitle"><%= t('home.roiSubtitle') %></p>
+              <p class="roi-calculator__assumption"><%= t('home.roiAssumption') %></p>
+            </div>
+            <div class="roi-calculator__layout">
+              <div class="roi-calculator__controls" aria-label="<%= t('home.roiControlsAria') %>">
+                <label class="roi-slider" for="roi-hourly-wage">
+                  <span class="roi-slider__label"><%= t('home.roiHourlyWageLabel') %></span>
+                  <span class="roi-slider__value" data-roi-display="hourlyWage"></span>
+                  <input id="roi-hourly-wage" type="range" min="2500" max="18000" step="250" value="6500" data-roi-input="hourlyWage" />
+                </label>
+                <label class="roi-slider" for="roi-admin-hours">
+                  <span class="roi-slider__label"><%= t('home.roiAdminHoursLabel') %></span>
+                  <span class="roi-slider__value" data-roi-display="adminHours"></span>
+                  <input id="roi-admin-hours" type="range" min="2" max="30" step="1" value="9" data-roi-input="adminHours" />
+                </label>
+                <label class="roi-slider" for="roi-employees">
+                  <span class="roi-slider__label"><%= t('home.roiEmployeesLabel') %></span>
+                  <span class="roi-slider__value" data-roi-display="employees"></span>
+                  <input id="roi-employees" type="range" min="2" max="120" step="1" value="18" data-roi-input="employees" />
+                </label>
               </div>
-              <div class="roi-calculator__layout">
-                <div class="roi-calculator__controls" aria-label="<%= t('home.roiControlsAria') %>">
-                  <label class="roi-slider" for="roi-hourly-wage">
-                    <span class="roi-slider__label"><%= t('home.roiHourlyWageLabel') %></span>
-                    <span class="roi-slider__value" data-roi-display="hourlyWage"></span>
-                    <input id="roi-hourly-wage" type="range" min="2500" max="18000" step="250" value="6500" data-roi-input="hourlyWage" />
-                  </label>
-                  <label class="roi-slider" for="roi-admin-hours">
-                    <span class="roi-slider__label"><%= t('home.roiAdminHoursLabel') %></span>
-                    <span class="roi-slider__value" data-roi-display="adminHours"></span>
-                    <input id="roi-admin-hours" type="range" min="2" max="30" step="1" value="9" data-roi-input="adminHours" />
-                  </label>
-                  <label class="roi-slider" for="roi-employees">
-                    <span class="roi-slider__label"><%= t('home.roiEmployeesLabel') %></span>
-                    <span class="roi-slider__value" data-roi-display="employees"></span>
-                    <input id="roi-employees" type="range" min="2" max="120" step="1" value="18" data-roi-input="employees" />
-                  </label>
-                </div>
-                <div class="roi-calculator__results">
-                  <div class="roi-calculator__headline-metrics">
-                    <div class="roi-kpi roi-kpi--current">
-                      <span class="roi-kpi__label"><%= t('home.roiCurrentCostLabel') %></span>
-                      <strong class="roi-kpi__value" data-roi-output="currentCost"></strong>
-                    </div>
-                    <div class="roi-kpi roi-kpi--optimized">
-                      <span class="roi-kpi__label"><%= t('home.roiOptimizedCostLabel') %></span>
-                      <strong class="roi-kpi__value" data-roi-output="optimizedCost"></strong>
-                    </div>
+              <div class="roi-calculator__results">
+                <div class="roi-calculator__headline-metrics">
+                  <div class="roi-kpi roi-kpi--current">
+                    <span class="roi-kpi__label"><%= t('home.roiCurrentCostLabel') %></span>
+                    <strong class="roi-kpi__value" data-roi-output="currentCost"></strong>
                   </div>
-                  <div class="roi-calculator__chart-card">
-                    <div class="roi-calculator__chart-copy">
-                      <p class="roi-calculator__chart-kicker"><%= t('home.roiChartKicker') %></p>
-                      <span class="roi-calculator__chart-caption"><%= t('home.roiChartCaption') %></span>
-                      <strong class="roi-calculator__savings" data-roi-output="monthlySavings"></strong>
-                    </div>
-                    <div class="roi-chart" aria-hidden="true">
-                      <div class="roi-chart__bars">
-                        <div class="roi-chart__bar-group">
-                          <span class="roi-chart__value" data-roi-output="chartCurrent"></span>
-                          <div class="roi-chart__bar roi-chart__bar--current" data-roi-bar="current"></div>
-                          <span class="roi-chart__label"><%= t('home.roiCurrentCostLabel') %></span>
-                        </div>
-                        <div class="roi-chart__bar-group">
-                          <span class="roi-chart__value" data-roi-output="chartOptimized"></span>
-                          <div class="roi-chart__bar roi-chart__bar--optimized" data-roi-bar="optimized"></div>
-                          <span class="roi-chart__label"><%= t('home.roiOptimizedCostLabel') %></span>
-                        </div>
+                  <div class="roi-kpi roi-kpi--optimized">
+                    <span class="roi-kpi__label"><%= t('home.roiOptimizedCostLabel') %></span>
+                    <strong class="roi-kpi__value" data-roi-output="optimizedCost"></strong>
+                  </div>
+                </div>
+                <div class="roi-calculator__chart-card">
+                  <div class="roi-calculator__chart-copy">
+                    <p class="roi-calculator__chart-kicker"><%= t('home.roiChartKicker') %></p>
+                    <span class="roi-calculator__chart-caption"><%= t('home.roiChartCaption') %></span>
+                    <strong class="roi-calculator__savings" data-roi-output="monthlySavings"></strong>
+                  </div>
+                  <div class="roi-chart" aria-hidden="true">
+                    <div class="roi-chart__bars">
+                      <div class="roi-chart__bar-group">
+                        <span class="roi-chart__value" data-roi-output="chartCurrent"></span>
+                        <div class="roi-chart__bar roi-chart__bar--current" data-roi-bar="current"></div>
+                        <span class="roi-chart__label"><%= t('home.roiCurrentCostLabel') %></span>
+                      </div>
+                      <div class="roi-chart__bar-group">
+                        <span class="roi-chart__value" data-roi-output="chartOptimized"></span>
+                        <div class="roi-chart__bar roi-chart__bar--optimized" data-roi-bar="optimized"></div>
+                        <span class="roi-chart__label"><%= t('home.roiOptimizedCostLabel') %></span>
                       </div>
                     </div>
                   </div>
-                  <dl class="roi-metrics">
-                    <div class="roi-metric">
-                      <dt><%= t('home.roiWeeklyAdminLabel') %></dt>
-                      <dd data-roi-output="weeklyAdministration"></dd>
-                    </div>
-                    <div class="roi-metric">
-                      <dt><%= t('home.roiMonthlyCurrentLabel') %></dt>
-                      <dd data-roi-output="monthlyCurrent"></dd>
-                    </div>
-                    <div class="roi-metric">
-                      <dt><%= t('home.roiMonthlyAiLabel') %></dt>
-                      <dd data-roi-output="monthlyAi"></dd>
-                    </div>
-                    <div class="roi-metric roi-metric--accent">
-                      <dt><%= t('home.roiEfficiencyLabel') %></dt>
-                      <dd data-roi-output="efficiencyGain"></dd>
-                    </div>
-                  </dl>
                 </div>
+                <dl class="roi-metrics">
+                  <div class="roi-metric">
+                    <dt><%= t('home.roiWeeklyAdminLabel') %></dt>
+                    <dd data-roi-output="weeklyAdministration"></dd>
+                  </div>
+                  <div class="roi-metric">
+                    <dt><%= t('home.roiMonthlyCurrentLabel') %></dt>
+                    <dd data-roi-output="monthlyCurrent"></dd>
+                  </div>
+                  <div class="roi-metric">
+                    <dt><%= t('home.roiMonthlyAiLabel') %></dt>
+                    <dd data-roi-output="monthlyAi"></dd>
+                  </div>
+                  <div class="roi-metric roi-metric--accent">
+                    <dt><%= t('home.roiEfficiencyLabel') %></dt>
+                    <dd data-roi-output="efficiencyGain"></dd>
+                  </div>
+                </dl>
               </div>
             </div>
-          </article>
-        </div>
+          </div>
+        </article>
       </div>
-      </section>
-      </br>
-      <section class="module-showcase" aria-labelledby="business-modules-title">
-        <div class="module-showcase__intro">
-          <h2 id="business-modules-title"><%= t('home.auditTitle') %></h2>
-          <br/>
-          <a href="<%= localizePath('/solutions') %>" class="btn"><%= t('home.auditButton') %></a>
-        </div>
-      </section>
-      <br/><br/> 
     </div>
   </section>
   </br>
+  <div class="container">
+    <div class="grid">
+      <div class="module-showcase__intro">
+        <h2 id="business-modules-title"><%= t('home.auditTitle') %></h2>
+        <br/>
+        <a href="<%= localizePath('/solutions') %>" class="btn"><%= t('global.consultationButton') %></a>
+      </div>
+    </div>
+  </div>
+  <br/><br/> 
   <script>
     (() => {
       const calculator = document.querySelector('#roi-calculator');
@@ -273,7 +273,7 @@
         const optimizedBarHeight = currentMonthlyCost === 0 ? 0 : (optimizedMonthlyCost / currentMonthlyCost) * 100;
 
         displayNodes.hourlyWage.textContent = currencyFormatter.format(hourlyWage);
-        displayNodes.adminHours.textContent = `${numberFormatter.format(adminHours)} h`;
+        displayNodes.adminHours.textContent = `${numberFormatter.format(adminHours)} ` + "<%= t('home.roiHours') %>";
         displayNodes.employees.textContent = numberFormatter.format(employees);
 
         outputNodes.currentCost.textContent = currencyFormatter.format(currentMonthlyCost);
@@ -281,7 +281,7 @@
         outputNodes.monthlySavings.textContent = currencyFormatter.format(monthlySavings);
         outputNodes.chartCurrent.textContent = currencyFormatter.format(currentMonthlyCost);
         outputNodes.chartOptimized.textContent = currencyFormatter.format(optimizedMonthlyCost);
-        outputNodes.weeklyAdministration.textContent = `${decimalFormatter.format(weeklyAdministration)} h`;
+        outputNodes.weeklyAdministration.textContent = `${decimalFormatter.format(weeklyAdministration)} ` + "<%= t('home.roiHours') %>";
         outputNodes.monthlyCurrent.textContent = currencyFormatter.format(currentMonthlyCost);
         outputNodes.monthlyAi.textContent = currencyFormatter.format(optimizedMonthlyCost);
         outputNodes.efficiencyGain.textContent = `${numberFormatter.format(Math.round(automationRate * 100))}%`;

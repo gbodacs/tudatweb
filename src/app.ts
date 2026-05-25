@@ -379,24 +379,24 @@ app.get('/terms', (req, res) => {
   renderSEO(res, 'terms', req, 'terms.title', 'terms.metaDescription', req.path)
 })
 
-app.get('/automat-ai', (req, res) => {
+app.get('/services', (req, res) => {
   renderSEO(
     res,
-    'automat-ai',
+    'services',
     req,
-    'automatization.title',
-    'automatization.metaDescription',
+    'services.title',
+    'services.metaDescription',
     req.path
   )
 })
 
-app.get('/solutions', (req, res) => {
+app.get('/modules', (req, res) => {
   renderSEO(
     res,
-    'solutions',
+    'modules',
     req,
-    'solutions.title',
-    'solutions.metaDescription',
+    'modules.title',
+    'modules.metaDescription',
     req.path
   )
 })

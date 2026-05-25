@@ -1,0 +1,179 @@
+<%- include('partials/header') %>
+
+<%
+const moduleCards = [
+	{
+		icon: 'bi-graph-up-arrow',
+		nameKey: 'catalog1Name',
+		outcomeKey: 'catalog1Outcome',
+		bodyKey: 'catalog1Body',
+		roiKey: 'catalog1Roi',
+		techKey: 'catalog1Tech'
+	},
+	{
+		icon: 'bi-file-earmark-text',
+		nameKey: 'catalog2Name',
+		outcomeKey: 'catalog2Outcome',
+		bodyKey: 'catalog2Body',
+		roiKey: 'catalog2Roi',
+		techKey: 'catalog2Tech'
+	},
+	{
+		icon: 'bi-braces-asterisk',
+		nameKey: 'catalog3Name',
+		outcomeKey: 'catalog3Outcome',
+		bodyKey: 'catalog3Body',
+		roiKey: 'catalog3Roi',
+		techKey: 'catalog3Tech'
+	},
+	{
+		icon: 'bi-headset',
+		nameKey: 'catalog4Name',
+		outcomeKey: 'catalog4Outcome',
+		bodyKey: 'catalog4Body',
+		roiKey: 'catalog4Roi',
+		techKey: 'catalog4Tech'
+	}
+];
+const hardwareBenefits = [
+	{
+		icon: 'bi-shield-lock',
+		titleKey: 'hardwareBenefit1Title',
+		bodyKey: 'hardwareBenefit1Body'
+	},
+	{
+		icon: 'bi-truck',
+		titleKey: 'hardwareBenefit2Title',
+		bodyKey: 'hardwareBenefit2Body'
+	},
+	{
+		icon: 'bi-tools',
+		titleKey: 'hardwareBenefit3Title',
+		bodyKey: 'hardwareBenefit3Body'
+	}
+];
+const integrationSteps = [
+	{
+		icon: 'bi-diagram-3',
+		titleKey: 'integrationStep1Title',
+		bodyKey: 'integrationStep1Body'
+	},
+	{
+		icon: 'bi-database-gear',
+		titleKey: 'integrationStep2Title',
+		bodyKey: 'integrationStep2Body'
+	},
+	{
+		icon: 'bi-send-check',
+		titleKey: 'integrationStep3Title',
+		bodyKey: 'integrationStep3Body'
+	}
+];
+%>
+
+<section class="blog-hero">
+	<div class="container">
+    <span class="blog-kicker"><%= t('modules.title') %></span>
+		<h1><%= t('modules.pageTitle') %></h1>
+    <p><%= t('modules.introduction1') %></p>
+	</div>
+</section>
+
+<section class="services-section modules-catalog">
+	<div class="container">
+		<div class="services-section__intro modules-catalog__intro">
+			<h2><%= t('modules.catalogTitle') %></h2>
+			<p><%= t('modules.catalogIntro') %></p>
+		</div>
+		<div class="modules-catalog__grid">
+			<% moduleCards.forEach((card) => { %>
+				<article class="modules-catalog__card">
+					<p class="modules-catalog__icon" aria-hidden="true"><i class="bi <%= card.icon %>"></i></p>
+					<h3 class="modules-catalog__name"><%= t('modules.' + card.nameKey) %></h3>
+					<p class="modules-catalog__label"><%= t('modules.outcomeLabel') %></p>
+					<p class="modules-catalog__outcome"><%= t('modules.' + card.outcomeKey) %></p>
+					<p class="modules-catalog__body"><%= t('modules.' + card.bodyKey) %></p>
+					<div class="modules-catalog__metric">
+						<span class="modules-catalog__metric-label"><%= t('modules.roiLabel') %></span>
+						<p><%= t('modules.' + card.roiKey) %></p>
+					</div>
+					<details class="modules-catalog__details">
+						<summary><%= t('modules.techLabel') %></summary>
+						<p><%= t('modules.' + card.techKey) %></p>
+					</details>
+				</article>
+			<% }) %>
+		</div>
+	</div>
+</section>
+
+<section class="services-section modules-security">
+	<div class="container">
+		<div class="modules-security__panel">
+			<div class="modules-security__visual" aria-hidden="true">
+				<div class="modules-security__dome"></div>
+				<div class="modules-security__server">
+					<i class="bi bi-hdd-stack"></i>
+				</div>
+				<span class="modules-security__node modules-security__node--one"></span>
+				<span class="modules-security__node modules-security__node--two"></span>
+				<span class="modules-security__node modules-security__node--three"></span>
+				<span class="modules-security__node modules-security__node--four"></span>
+			</div>
+			<div class="modules-security__content">
+				<h2><%= t('modules.securityTitle') %></h2>
+				<p><%= t('modules.securityBody') %></p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="services-section modules-hardware">
+	<div class="container">
+		<div class="modules-hardware__panel">
+			<div class="services-section__intro modules-hardware__intro">
+				<h2><%= t('modules.hardwareTitle') %></h2>
+				<p><%= t('modules.hardwareIntro1') %></p>
+				<p><%= t('modules.hardwareIntro2') %></p>
+			</div>
+			<div class="modules-hardware__benefits">
+				<% hardwareBenefits.forEach((benefit) => { %>
+					<article class="modules-hardware__benefit">
+						<p class="modules-hardware__icon" aria-hidden="true"><i class="bi <%= benefit.icon %>"></i></p>
+						<h3><%= t('modules.' + benefit.titleKey) %></h3>
+						<p><%= t('modules.' + benefit.bodyKey) %></p>
+					</article>
+				<% }) %>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="services-section services-process modules-integration">
+	<div class="container">
+		<div class="services-section__intro">
+			<h2><%= t('modules.integrationTitle') %></h2>
+		</div>
+		<div class="services-process__steps modules-integration__steps">
+			<% integrationSteps.forEach((step) => { %>
+				<article class="services-process__step modules-integration__step">
+					<span class="services-process__badge modules-integration__badge" aria-hidden="true"><i class="bi <%= step.icon %>"></i></span>
+					<h3><%= t('modules.' + step.titleKey) %></h3>
+					<p><%= t('modules.' + step.bodyKey) %></p>
+				</article>
+			<% }) %>
+		</div>
+	</div>
+</section>
+
+<section class="services-section services-cta modules-cta">
+	<div class="container">
+		<div class="services-cta__panel modules-cta__panel">
+			<h2><%= t('modules.ctaTitle') %></h2>
+			<p><%= t('modules.ctaBody') %></p>
+			<a href="<%= localizePath('/contact') %>" class="btn-secondary services-cta__button modules-cta__button"><%= t('modules.ctaButton') %></a>
+		</div>
+	</div>
+</section>
+
+<%- include('partials/footer') %>

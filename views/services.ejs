@@ -1,0 +1,99 @@
+<%- include('partials/header') %>
+
+<section class="blog-hero">
+	<div class="container">
+    <span class="blog-kicker"><%= t('services.title') %></span>
+		<h1><%= t('services.pageTitle') %></h1>
+    <p><%= t('services.introduction') %></p>
+	</div>
+</section>
+
+  <section class="products">
+    <br/><br/>
+    <div class="container">
+    <div class="grid">
+      <article class="card">
+        <p class="card-icon" aria-hidden="true"><i class="bi bi-robot"></i></p><h3><%= t('services.portfolio1') %></h3>
+        <p><b><%= t('services.portfolio1Lead') %></b> <%= t('services.portfolio1Body') %></p>
+      </article>
+      <article class="card">
+        <p class="card-icon" aria-hidden="true"><i class="bi bi-phone"></i></p><h3><%= t('services.portfolio2') %></h3>
+        <p><b><%= t('services.portfolio2Lead') %></b> <%= t('services.portfolio2Body') %></p>
+      </article>
+      <article class="card">
+        <p class="card-icon" aria-hidden="true"><i class="bi bi-cpu"></i></p><h3><%= t('services.portfolio3') %></h3>
+        <p><b><%= t('services.portfolio3Lead') %></b> <%= t('services.portfolio3Body') %></p>
+      </article>
+      <article class="card">
+        <p class="card-icon" aria-hidden="true"><i class="bi bi-easel"></i></p><h3><%= t('services.portfolio4') %></h3>
+        <p><b><%= t('services.portfolio4Lead') %></b> <%= t('services.portfolio4Body') %></p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<section class="services-section services-dilemma">
+  <div class="container">
+    <h1><%= t('services.dilemmaTitle') %></h1>
+    <div class="services-section__intro">
+      
+      <p><%= t('services.dilemmaIntro1') %></p>
+      <p><%= t('services.dilemmaIntro2') %></p>
+    </div>
+    <div class="services-dilemma__grid">
+      <article class="services-dilemma__card services-dilemma__card--cloud">
+        <p class="services-dilemma__icon" aria-hidden="true"><i class="bi bi-cloud"></i></p>
+        <h3><%= t('services.dilemmaCloudTitle') %></h3>
+        <p><%= t('services.dilemmaCloudBody') %></p>
+      </article>
+      <article class="services-dilemma__card services-dilemma__card--offline">
+        <p class="services-dilemma__icon" aria-hidden="true"><i class="bi bi-hdd-network"></i></p>
+        <h3><%= t('services.dilemmaOfflineTitle') %></h3>
+        <p><%= t('services.dilemmaOfflineBody') %></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="services-section services-process">
+  <div class="container">
+    <div class="services-section__intro">
+      <h2><%= t('services.processTitle') %></h2>
+    </div>
+    <div class="services-process__steps">
+      <article class="services-process__step">
+        <span class="services-process__badge">1</span>
+        <h3><%= t('services.processStep1Title') %></h3>
+        <p><%= t('services.processStep1Body') %></p>
+      </article>
+      <article class="services-process__step">
+        <span class="services-process__badge">2</span>
+        <h3><%= t('services.processStep2Title') %></h3>
+        <p><%= t('services.processStep2Body') %></p>
+      </article>
+      <article class="services-process__step">
+        <span class="services-process__badge">3</span>
+        <h3><%= t('services.processStep3Title') %></h3>
+        <p><%= t('services.processStep3Body') %></p>
+      </article>
+      <article class="services-process__step">
+        <span class="services-process__badge">4</span>
+        <h3><%= t('services.processStep4Title') %></h3>
+        <p><%= t('services.processStep4Body') %></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="services-section services-cta">
+  <div class="container">
+    <div class="services-cta__panel">
+      <h2><%= t('services.ctaTitle') %></h2>
+      <p><%= t('services.ctaBody') %></p>
+      <a href="<%= localizePath('/contact') %>" class="btn-secondary services-cta__button"><%= t('services.ctaButton') %></a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

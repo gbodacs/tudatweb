@@ -90,7 +90,6 @@ const integrationSteps = [
 				<article class="modules-catalog__card">
 					<p class="modules-catalog__icon" aria-hidden="true"><i class="bi <%= card.icon %>"></i></p>
 					<h3 class="modules-catalog__name"><%= t('modules.' + card.nameKey) %></h3>
-					<p class="modules-catalog__label"><%= t('modules.outcomeLabel') %></p>
 					<p class="modules-catalog__outcome"><%= t('modules.' + card.outcomeKey) %></p>
 					<p class="modules-catalog__body"><%= t('modules.' + card.bodyKey) %></p>
 					<div class="modules-catalog__metric">
@@ -171,7 +170,7 @@ const integrationSteps = [
 		<div class="services-cta__panel modules-cta__panel">
 			<h2><%= t('modules.ctaTitle') %></h2>
 			<p><%= t('modules.ctaBody') %></p>
-			<a href="<%= localizePath('/contact') %>" class="btn-secondary services-cta__button modules-cta__button"><%= t('modules.ctaButton') %></a>
+			<a href="<%= localizePath('/contact') %>" class="btn-secondary services-cta__button modules-cta__button"><%= t('global.consultationButton') %></a>
 		</div>
 	</div>
 </section>

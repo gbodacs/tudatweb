@@ -1,40 +1,156 @@
 <%- include('partials/header') %>
+<section class="blog-hero">
+	<div class="container">
+		<span class="blog-kicker"><%= t('about.heroKicker') %></span>
+		<h1><%= t('about.pageTitle') %></h1>
+		<p><%= t('about.introduction') %></p>
+	</div>
+</section>
 
-  <section class="products">
-    <div class="container">
-     <h1><%= t('about.pageTitle') %></h1>
-      <p><%= t('about.introduction') %></p>
-  
-      <section class="features">
-        <h2><%= t('about.missionTitle') %></h2>
-        <p><%= t('about.missionDescription') %></p>
-      </section>
+<section class="about-overview about-mission">
+  <div class="container about-mission__grid">
+    <div class="about-section-heading">
+      <span class="about-section-heading__eyebrow"><%= t('about.missionEyebrow') %></span>
+      <h2><%= t('about.missionHeadline') %></h2>
+      <p><%= t('about.missionBody') %></p>
+    </div>
+    <div class="about-mission__visual" aria-hidden="true">
+      <div class="about-mission__panel">
+        <span><%= t('about.missionPillar1') %></span>
+        <span><%= t('about.missionPillar2') %></span>
+        <span><%= t('about.missionPillar3') %></span>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <section class="features">
-        <h2><%= t('about.visionTitle') %></h2>
-        <p><%= t('about.visionDescription') %></p>
-      </section>
-      <section class="features">
-        <h2><%= t('about.backgroundTitle') %></h2>
-        <ul>
-          <li><%= t('about.softwareDevelopment') %></li>
-          <li><%= t('about.itDecisionMaking') %></li>
-          <li><%= t('about.itAnalysis') %></li>
-          <li><%= t('about.productDevelopment') %></li>
-          <li><%= t('about.projectManagement') %></li>
-        </ul>
-        <p><%= t('about.backgroundMore') %></p>
-      </section>
-      <section class="features">
-        <h2><%= t('about.valuesTitle') %></h2>
-        <ul>
-          <li><%= t('about.customerFocus') %></li>
-          <li><%= t('about.qualityAndSecurity') %></li>
-          <li><%= t('about.innovationAndExpertise') %></li>
-          <li><%= t('about.transparencyAndPartnership') %></li>
-        </ul>
-      </section>
-    </div>  
-  </section>
+<section class="about-overview about-values">
+  <div class="container">
+    <div class="about-section-heading about-section-heading--centered">
+      <br/><br/>
+      <h2><%= t('about.valuesTitle') %></h2>
+      <p><%= t('about.valuesIntro') %></p>
+    </div>
+    <div class="about-values__grid">
+      <article class="about-values__card">
+        <div class="about-values__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="presentation"><path d="M12 2a5 5 0 0 0-5 5v2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 7V7a3 3 0 1 1 6 0v2H9Z"/></svg>
+        </div>
+        <h3><%= t('about.principle1Title') %></h3>
+        <p><%= t('about.principle1Body') %></p>
+      </article>
+      <article class="about-values__card">
+        <div class="about-values__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="presentation"><path d="M4 19h16v2H2V3h2v16Zm3-2H5v-6h2v6Zm6 0h-2V7h2v10Zm6 0h-2V10h2v7Z"/></svg>
+        </div>
+        <h3><%= t('about.principle2Title') %></h3>
+        <p><%= t('about.principle2Body') %></p>
+      </article>
+      <article class="about-values__card">
+        <div class="about-values__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="presentation"><path d="M16.5 13a3.5 3.5 0 1 0-2.45-5.99L12 9.05 9.95 7.01a3.5 3.5 0 1 0-2.47 5.98H8v3h8v-3h.5ZM10 17h4v2h-4z"/></svg>
+        </div>
+        <h3><%= t('about.principle3Title') %></h3>
+        <p><%= t('about.principle3Body') %></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about-overview about-team">
+  <div class="container">
+    <div class="about-section-heading about-section-heading--centered">
+      <br/><br/>
+      <h2><%= t('about.teamTitle') %></h2>
+      <br/>
+    </div>
+    <div class="about-team__grid">
+      <article class="about-team__card">
+        <div class="about-team__portrait" aria-hidden="true">F</div>
+        <span class="about-team__role"><%= t('about.teamCard1Role') %></span>
+        <h3>Donázy Zsófia
+          <a class="about-team__link about-team__link--pending" href="https://www.linkedin.com/in/anna-zsofia-bodacsne-donazy-5364ab67/">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </h3>
+        <p><%= t('about.teamCard1Bio') %></p>
+      </article>
+      <article class="about-team__card">
+        <div class="about-team__portrait" aria-hidden="true">A</div>
+        <span class="about-team__role"><%= t('about.teamCard2Role') %></span>
+        <h3>Bodács Gábor 
+          <a class="about-team__link about-team__link--pending" href="https://www.linkedin.com/in/gaborbodacs/">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </h3>
+        <p><%= t('about.teamCard2Bio') %></p>
+        
+      </article>
+      <article class="about-team__card">
+        <div class="about-team__portrait" aria-hidden="true">L</div>
+        <span class="about-team__role"><%= t('about.teamCard3Role') %></span>
+        <h3>Bodács Tibor
+          <a class="about-team__link about-team__link--pending" href="https://www.linkedin.com/in/tibor-bod%C3%A1cs-87464043/">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </h3>
+        <p><%= t('about.teamCard3Bio') %></p>
+        
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about-overview about-facts">
+  <div class="container">
+    <div class="about-section-heading about-section-heading--centered">
+      <br/><br/>
+      <h2><%= t('about.factsTitle') %></h2>
+    </div>
+    <div class="about-facts__grid">
+      <article class="about-facts__card">
+        <strong><%= t('about.fact1Value') %></strong>
+        <span><%= t('about.fact1Label') %></span>
+        <p><%= t('about.fact1Body') %></p>
+      </article>
+      <article class="about-facts__card">
+        <strong><%= t('about.fact2Value') %></strong>
+        <span><%= t('about.fact2Label') %></span>
+        <p><%= t('about.fact2Body') %></p>
+      </article>
+      <article class="about-facts__card">
+        <strong><%= t('about.fact3Value') %></strong>
+        <span><%= t('about.fact3Label') %></span>
+        <p><%= t('about.fact3Body') %></p>
+      </article>
+      <article class="about-facts__card">
+        <strong><%= t('about.fact4Value') %></strong>
+        <span><%= t('about.fact4Label') %></span>
+        <p><%= t('about.fact4Body') %></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about-overview about-guarantee">
+  <div class="container">
+    <div class="about-guarantee__panel">
+      <p><%= t('about.guaranteeBody') %></p>
+    </div>
+  </div>
+</section>
+
+<section class="about-overview about-cta">
+  <div class="container">
+    <div class="about-cta__panel">
+      <div>
+        <span class="about-section-heading__eyebrow"><%= t('about.ctaEyebrow') %></span>
+        <h2><%= t('about.ctaTitle') %></h2>
+        <p><%= t('about.ctaBody') %></p>
+      </div>
+      <a class="btn btn-secondary about-cta__button" href="/contact"><%= t('about.ctaButton') %></a>
+    </div>
+  </div>
+</section>
 
 <%- include('partials/footer') %>

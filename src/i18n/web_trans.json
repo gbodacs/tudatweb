@@ -470,6 +470,30 @@
       "section4Result": "Egy jól kiválasztott, testreszabott megoldás gyakran már néhány hét alatt eredményt mutathat.",
       "section5Heading": "Az AI itt nem helyettesíti az embert, de gyorsít",
       "section5Conclusion": "Az ajánlatírás továbbra is emberi döntéseken múlik. De ha az AI át tudja venni a <b>keresést, az összeszerkesztést és az első, átnézésre kész ajánlat elkészítését</b> akkor a csapat több időt tud fordítani arra, ami igazán számít, vagyis <b>az ügyfél megértésére és a valóban jó ajánlat kialakítására.</b>"
+    },
+    "blog3": {
+      "title": "Miért nem teszik a cégek a belső adatokat ChatGPT-be?",
+      "summary": "Sok szervezet érdeklődik, mégis kevesen lépnek tovább. Miért? Mert a belső adatok védelme és a biztonságos AI-használat nem triviális kérdés.",
+      "eyebrow": "Termelékenység",
+      "readTime": "6 perc olvasás"
+    },
+    "blog4": {
+      "title": "Hogyan kezelhető a munkaerőhiány az ügyfélszolgálaton?",
+      "summary": "0-24 órás többnyelvű vevőkiszolgálás AI-ügynökökkel - a mai rohanó üzleti világban a vásárlók türelme véges.",
+      "eyebrow": "Termelékenység",
+      "readTime": "6 perc olvasás"
+    },
+    "blog5": {
+      "title": "Felhő vs. Lokális AI szerver: Hogyan válasszon technológiát a cége a növekvő licencdíjak korában?",
+      "summary": "A mesterséges intelligencia integrációja ma már nem a jövő, hanem a jelen versenyelőnye.",
+      "eyebrow": "Termelékenység",
+      "readTime": "8 perc olvasás"
+    },
+    "blog6": {
+      "title": "Hol veszít időt egy KKV naponta - és mit lehet automatizálni AI használatával?",
+      "summary": "A legtöbb kis- és középvállalat nem ott veszít időt, ahol elsőre gondolná.",
+      "eyebrow": "Termelékenység",
+      "readTime": "8 perc olvasás"
     }
   },
   "en": {

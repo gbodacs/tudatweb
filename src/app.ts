@@ -12,6 +12,12 @@ import {
 import { isAIStreamRequested, toAIProxy, toAIProxyStream } from './aiproxy'
 import { chatApiCors, webCors } from './cors'
 import { chatRateLimiters, webRateLimiters } from './ratelimiter'
+import { createPost1 } from './posts/post1'
+import { createPost2 } from './posts/post2'
+import { createPost3 } from './posts/post3'
+import { createPost4 } from './posts/post4'
+import { createPost5 } from './posts/post5'
+import { createPost6 } from './posts/post6'
 
 dotenv.config()
 
@@ -402,7 +408,9 @@ app.get('/modules', (req, res) => {
 })
 
 app.get('/blog', (req, res) => {
-  renderSEO(res, 'blog', req, 'blog.title', 'blog.metaDescription', req.path)
+  const t = (req as any).i18n.t
+  const posts = [createPost1(t), createPost2(t), createPost3(t), createPost4(t), createPost5(t), createPost6(t)]
+  renderSEO(res, 'blog', req, 'blog.title', 'blog.metaDescription', req.path, { posts })
 })
 
 app.listen(port, () => {

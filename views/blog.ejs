@@ -1,6 +1,8 @@
 <%- include('partials/header') %>
 
 <% const blogPosts = posts || [] %>
+<% const defaultPost = blogPosts[blogPosts.length - 1] %>
+<% const defaultPostId = defaultPost ? defaultPost.id : '' %>
 
 <section class="blog-hero">
 	<div class="container">
@@ -17,28 +19,25 @@
 				<p class="blog-sidebar-label">Table of contents</p>
 				<nav class="blog-toc">
 					<% blogPosts.forEach(post => { %>
-						<a href="#<%= post.id %>"><%= post.title %></a>
+						<a
+							href="#<%= post.id %>"
+							data-post-link="<%= post.id %>"
+							class="<%= defaultPost && defaultPost.id === post.id ? 'is-active' : '' %>"
+							aria-current="<%= defaultPost && defaultPost.id === post.id ? 'true' : 'false' %>"
+						><%= post.title %></a>
 					<% }); %>
 				</nav>
 			</div>
-
-			<div class="blog-sidebar-card">
-				<p class="blog-sidebar-label">Blog posts</p>
-				<div class="blog-post-list">
-					<% blogPosts.forEach(post => { %>
-						<a class="blog-post-link" href="#<%= post.id %>">
-							<span class="blog-post-link-meta"><%= post.eyebrow %> · <%= post.readTime %></span>
-							<strong><%= post.title %></strong>
-							<span><%= post.summary %></span>
-						</a>
-					<% }); %>
-				</div>
-			</div>
 		</aside>
 
-		<div class="blog-content" aria-label="Blog posts">
+		<div class="blog-content" aria-label="Blog posts" data-blog-content data-default-post="<%= defaultPostId %>">
 			<% blogPosts.forEach(post => { %>
-				<article class="blog-post" id="<%= post.id %>">
+				<article
+					class="blog-post <%= defaultPost && defaultPost.id === post.id ? 'is-active' : '' %>"
+					id="<%= post.id %>"
+					data-blog-post="<%= post.id %>"
+					<%- defaultPost && defaultPost.id === post.id ? '' : 'hidden' %>
+				>
 					<div class="blog-post-header">
 						<span class="blog-post-eyebrow"><%= post.eyebrow %></span>
 						<div class="blog-post-meta">
@@ -49,15 +48,16 @@
 						<p><%= post.summary %></p>
 					</div>
 					
-					<div class="blog-post-body">
+					
 						<section class ="blog-post-section">
 							<%- post.body %>
 						</section>
-					</div>
+					
 				</article>
 			<% }); %>
 		</div>
 	</div>
 </section>
+<script src="/blog.js"></script>
 
 <%- include('partials/footer') %>

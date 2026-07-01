@@ -5,7 +5,7 @@ return {
         title: t('blog6.title'),
         summary: t('blog6.summary'),
         id: 'blog6',
-        date: '2026-06-15',
+        date: '2026-07-01',
         readTime: t('blog6.readTime'),
         eyebrow: t('blog6.eyebrow'),
         body: `
